@@ -36,7 +36,7 @@ ilkerflix_servers:
       ansible_host: 100.64.0.10
     rpi3:
       ansible_host: 100.64.0.7
-  
+
   # NOTE: vars are in the group_vars/lxcs.yml
   # vars:
   #   dummy_var: dummy_value
