@@ -1,0 +1,24 @@
+---
+- name: Debug Docker Manage Script
+  hosts: homeserver
+  become: true
+  become_user: "{{ user_name }}"
+
+  tasks:
+    - name: Debug Variable info
+      ansible.builtin.debug:
+        msg: "Repo Path is: {{ repo_path }}"
+
+    - name: Check if file exists (stat)
+      ansible.builtin.stat:
+        path: "{{ repo_path }}/scripts/docker-manage.sh"
+      register: script_stat
+
+    - name: Print Stat Result
+      ansible.builtin.debug:
+        var: script_stat.stat.exists
+
+    - name: Fail if file is missing
+      ansible.builtin.fail:
+        msg: "The file is physically missing from {{ repo_path }}/scripts/docker-manage.sh"
+      when: not script_stat.stat.exists

@@ -1,0 +1,22 @@
+---
+- name: Stop Docker Containers
+  hosts: homeserver
+  become: true
+  become_user: "{{ user_name }}"
+
+  tasks:
+    - name: Ensure docker-manage script is executable
+      ansible.builtin.file:
+        path: "{{ repo_path }}/scripts/docker-manage.sh"
+        mode: '0755'
+
+    - name: Run docker-manage down
+      ansible.builtin.command:
+        cmd: "bash {{ repo_path }}/scripts/docker-manage.sh down"
+      args:
+        chdir: "{{ repo_path }}"
+      environment:
+        MY_HOSTNAME: "{{ inventory_hostname }}"
+      register: compose_output
+      changed_when:
+        - "'Stopping' in compose_output.stdout"

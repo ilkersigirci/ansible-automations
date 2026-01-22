@@ -14,29 +14,25 @@ lxcs:
 
 rpis:
   hosts:
-    # rpi:
-    #   ansible_host: 192.168.2.12
+    rpi0:
+      ansible_host: 192.168.2.12
     # rpi1:
     #   ansible_host: 192.168.2.13
-    # rpi2:
-    #   ansible_host: 192.168.2.14
+    rpi2:
+      ansible_host: 192.168.2.14
     rpi3:
       ansible_host: 192.168.2.15
 
-ilkerflix_servers:
+homeserver:
   hosts:
     gpu:
       ansible_host: 100.64.0.19
-    # TODO:  user is ubuntu
     remoteserver:
       ansible_host: 100.64.0.4
+      user_name: ubuntu
     rpi0:
       ansible_host: 100.64.0.17
     rpi1:
       ansible_host: 100.64.0.10
     rpi3:
       ansible_host: 100.64.0.7
-
-  # NOTE: vars are in the group_vars/lxcs.yml
-  # vars:
-  #   dummy_var: dummy_value

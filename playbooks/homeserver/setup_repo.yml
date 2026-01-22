@@ -1,6 +1,6 @@
 ---
 - name: Setup Repository
-  hosts: all
+  hosts: homeserver
   become: false
   gather_facts: false
 

@@ -1,0 +1,30 @@
+---
+- name: Pull Docker Images
+  hosts: homeserver
+  become: true
+  become_user: "{{ user_name }}"
+
+  tasks:
+    - name: Pull latest changes from git
+      ansible.builtin.include_role:
+        name: git_pull
+
+    - name: Ensure docker-manage script is executable
+      ansible.builtin.file:
+        path: "{{ repo_path }}/scripts/docker-manage.sh"
+        mode: '0755'
+
+    - name: Run docker-manage pull
+      ansible.builtin.command:
+        cmd: "bash {{ repo_path }}/scripts/docker-manage.sh pull"
+      args:
+        chdir: "{{ repo_path }}"
+      environment:
+        MY_HOSTNAME: "{{ inventory_hostname }}"
+      register: docker_pull_output
+      changed_when:
+        - >
+          'Pulled' in docker_pull_output.stderr or
+          'Started' in docker_pull_output.stderr or
+          'Recreated' in docker_pull_output.stderr or
+          'Created' in docker_pull_output.stderr
