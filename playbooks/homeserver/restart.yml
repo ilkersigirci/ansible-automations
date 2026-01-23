@@ -1,4 +1,11 @@
 ---
+- name: Check prerequisites
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - check_rbw
+
 - name: Restart Docker Containers
   hosts: homeserver
   become: true

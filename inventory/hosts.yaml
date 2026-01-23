@@ -34,5 +34,5 @@ homeserver:
       ansible_host: 100.64.0.17
     rpi1:
       ansible_host: 100.64.0.10
-    rpi3:
-      ansible_host: 100.64.0.7
+    # rpi3:
+    #   ansible_host: 100.64.0.7
