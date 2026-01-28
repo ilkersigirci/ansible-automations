@@ -5,6 +5,15 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.remoteserver"
     field: "DOMAINNAME"
+  GOTIFY_DEFAULT_USER_PASS:
+    item: "gotify.remoteserver"
+    field: "password"
+  GOTIFY_GATUS_NOTIFICATION_TOKEN:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_GATUS_NOTIFICATION_TOKEN"
+  GOTIFY_HOMEPAGE_CLIENT_TOKEN:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_HOMEPAGE_CLIENT_TOKEN"
   PGID:
     item: "Homeserver.remoteserver"
     field: "PGID"

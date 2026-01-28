@@ -1,0 +1,19 @@
+env_vars_mapping:
+  CHANGEDETECTION_API_KEY:
+    item: "changedetection.gpu"
+    field: "CHANGEDETECTION_API_KEY"
+  GITHUB_DASHBOARD_TOKEN:
+    item: "github.sigirciilker"
+    field: "GITHUB_DASHBOARD_TOKEN"
+  HEADSCALE_API_KEY:
+    item: "headscale.remoteserver"
+    field: "HEADSCALE_API_KEY"
+  JELLYFIN_API_KEY:
+    item: "jellyfin.gpu"
+    field: "JELLYFIN_API_KEY"
+  JELLYFIN_URL:
+    item: "Homeserver.rpi0"
+    field: "JELLYFIN_URL"
+  JELLYFIN_USER_ID:
+    item: "jellyfin.gpu"
+    field: "JELLYFIN_USER_ID"

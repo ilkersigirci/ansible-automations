@@ -25,6 +25,12 @@
       BASE_DOMAINNAME:
         item: "Homeserver.COMMON"
         field: "BASE_DOMAINNAME"
+      BESZEL_AGENT_KEY:
+        item: "beszel.gpu"
+        field: "BESZEL_AGENT_KEY"
+      BESZEL_AGENT_TOKEN:
+        item: "beszel.gpu"
+        field: "BESZEL_AGENT_TOKEN"
       CLOUDFLARE_DNS_API_TOKEN:
         item: "Cloudflare.me"
         field: "CLOUDFLARE_DNS_API_TOKEN"
