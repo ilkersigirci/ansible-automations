@@ -1,0 +1,16 @@
+env_vars_mapping:
+  DOCKERDIR:
+    item: "Homeserver.remoteserver"
+    field: "DOCKERDIR"
+  DOMAINNAME:
+    item: "Homeserver.remoteserver"
+    field: "DOMAINNAME"
+  PGID:
+    item: "Homeserver.remoteserver"
+    field: "PGID"
+  PUID:
+    item: "Homeserver.remoteserver"
+    field: "PUID"
+  USERDIR:
+    item: "Homeserver.remoteserver"
+    field: "USERDIR"

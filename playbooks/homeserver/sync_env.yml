@@ -1,0 +1,151 @@
+---
+# -------------------------------------------------------------------------
+# PREREQUISITES:
+# 1. Install Unofficial Bitwarden CLI ('rbw') https://github.com/doy/rbw
+# 2. Ensure rbw is configured and unlocked (run 'rbw login' and 'rbw unlock')
+# -------------------------------------------------------------------------
+
+- name: Check prerequisites
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - check_rbw
+
+- name: Sync environment variables from rbw to .env files
+  hosts: homeserver
+  become: true
+  become_user: "{{ user_name }}"
+  gather_facts: false
+
+  vars:
+    # Default mapping of environment variables to rbw items and fields
+    # Can be overridden in inventory/group_vars/homeserver.yml or inventory/host_vars/<hostname>.yml
+    default_env_vars_mapping:
+      BASE_DOMAINNAME:
+        item: "Homeserver.COMMON"
+        field: "BASE_DOMAINNAME"
+      CLOUDFLARE_DNS_API_TOKEN:
+        item: "Cloudflare.me"
+        field: "CLOUDFLARE_DNS_API_TOKEN"
+      CLOUDFLARE_EMAIL:
+        item: "Cloudflare.me"
+        field: "username"
+      CLOUDFLARE_IPS:
+        item: "Homeserver.COMMON"
+        field: "CLOUDFLARE_IPS"
+      CONFIGDIR:
+        item: "Homeserver.COMMON"
+        field: "CONFIGDIR"
+      DATADIR:
+        item: "Homeserver.COMMON"
+        field: "DATADIR"
+      DOCKERDIR:
+        item: "Homeserver.COMMON"
+        field: "DOCKERDIR"
+      DOMAINNAME:
+        item: "Homeserver.COMMON"
+        field: "DOMAINNAME"
+      LOCAL_IPS:
+        item: "Homeserver.COMMON"
+        field: "LOCAL_IPS"
+      LOCAL_STATIC_IP:
+        item: "Homeserver.COMMON"
+        field: "LOCAL_STATIC_IP"
+      PGID:
+        item: "Homeserver.COMMON"
+        field: "PGID"
+      PUID:
+        item: "Homeserver.COMMON"
+        field: "PUID"
+      SECRETSDIR:
+        item: "Homeserver.COMMON"
+        field: "SECRETSDIR"
+      TZ:
+        item: "Homeserver.COMMON"
+        field: "TZ"
+      USERDIR:
+        item: "Homeserver.COMMON"
+        field: "USERDIR"
+
+    # Merge default mapping with custom mapping from group_vars
+    env_mapping: "{{ default_env_vars_mapping | combine(env_vars_mapping | default({})) }}"
+    env_file_path: "{{ repo_path }}/.env"
+
+  tasks:
+    - name: Fetch environment variables from rbw on localhost
+      delegate_to: localhost
+      connection: local
+      become: false
+      block:
+        - name: Retrieve secrets from rbw
+          ansible.builtin.command:
+            cmd: "rbw get {{ item.value.item }} --field {{ item.value.field }}"
+          loop: "{{ env_mapping | dict2items }}"
+          register: rbw_secrets
+          changed_when: false
+          no_log: true
+
+        - name: Build environment variables dictionary
+          ansible.builtin.set_fact:
+            env_vars_dict: >-
+              {{
+                env_vars_dict | default({}) | combine({
+                  item.item.key: item.stdout
+                })
+              }}
+          loop: "{{ rbw_secrets.results }}"
+          no_log: true
+
+    - name: Generate .env file content
+      ansible.builtin.set_fact:
+        env_file_content: |
+          {% for key in (env_mapping.keys() | sort) %}
+          {{ key }}={{ env_vars_dict[key] }}
+          {% endfor %}
+      no_log: true
+
+    # - name: Debug - Display .env file content
+    #   ansible.builtin.debug:
+    #     msg: |
+    #       .env file content that will be synced:
+    #       {{ env_file_content }}
+
+    - name: Check if .env file exists
+      ansible.builtin.stat:
+        path: "{{ env_file_path }}"
+      register: env_file_stat
+
+    - name: Read existing .env file
+      ansible.builtin.slurp:
+        src: "{{ env_file_path }}"
+      register: existing_env_file
+      when: env_file_stat.stat.exists
+      no_log: true
+
+    - name: Determine if .env file needs update
+      ansible.builtin.set_fact:
+        env_file_changed: >-
+          {{
+            not env_file_stat.stat.exists or
+            (existing_env_file.content | b64decode) != env_file_content
+          }}
+
+    - name: Create or update .env file
+      ansible.builtin.copy:
+        content: "{{ env_file_content }}"
+        dest: "{{ env_file_path }}"
+        mode: '0600'
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+      when: env_file_changed
+      no_log: true
+
+    - name: Display sync status
+      ansible.builtin.debug:
+        msg: >-
+          {% if env_file_changed %}
+          .env file updated with {{ env_mapping.keys() | length }} environment variables
+          {% else %}
+          .env file is already up to date
+          {% endif %}
