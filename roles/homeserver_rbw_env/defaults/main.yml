@@ -1,0 +1,88 @@
+---
+# Default mapping of environment variables to rbw items and fields
+# Can be overridden in inventory/group_vars or host_vars
+homeserver_rbw_env_default_mapping:
+  ARCANE_AGENT_BOOTSTRAP_TOKEN:
+    item: "Homeserver.COMMON"
+    field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
+  BASE_DOMAINNAME:
+    item: "Homeserver.COMMON"
+    field: "BASE_DOMAINNAME"
+  BESZEL_AGENT_KEY:
+    item: "beszel.gpu"
+    field: "BESZEL_AGENT_KEY"
+  BESZEL_AGENT_TOKEN:
+    item: "beszel.gpu"
+    field: "BESZEL_AGENT_TOKEN"
+  CLOUDFLARE_DNS_API_TOKEN:
+    item: "Cloudflare.me"
+    field: "CLOUDFLARE_DNS_API_TOKEN"
+  CLOUDFLARE_EMAIL:
+    item: "Cloudflare.me"
+    field: "username"
+  CLOUDFLARE_IPS:
+    item: "Homeserver.COMMON"
+    field: "CLOUDFLARE_IPS"
+  LOCAL_IPS:
+    item: "Homeserver.COMMON"
+    field: "LOCAL_IPS"
+  OPENAI_API_KEY:
+    item: "openai.work"
+    field: "restricted.api.key"
+  OPENROUTER_API_BASE_URL:
+    item: "Homeserver.COMMON"
+    field: "OPENROUTER_API_BASE_URL"
+  OPENROUTER_API_KEY:
+    item: "openrouter.ai"
+    field: "OPENROUTER_API_KEY"
+  PGID:
+    item: "Homeserver.COMMON"
+    field: "PGID"
+  PUID:
+    item: "Homeserver.COMMON"
+    field: "PUID"
+  REPO_PATH:
+    item: "Homeserver.COMMON"
+    field: "REPO_PATH"
+  RESTART_POLICY_CORE:
+    item: "Homeserver.COMMON"
+    field: "RESTART_POLICY_CORE"
+  RESTART_POLICY_DESKTOP_IMAGES:
+    item: "Homeserver.COMMON"
+    field: "RESTART_POLICY_DESKTOP_IMAGES"
+  RESTART_POLICY_MAINTENANCE:
+    item: "Homeserver.COMMON"
+    field: "RESTART_POLICY_MAINTENANCE"
+  RESTART_POLICY_MEDIA:
+    item: "Homeserver.COMMON"
+    field: "RESTART_POLICY_MEDIA"
+  RESTART_POLICY_ML:
+    item: "Homeserver.COMMON"
+    field: "RESTART_POLICY_ML"
+  RESTART_POLICY_OTHERS:
+    item: "Homeserver.COMMON"
+    field: "RESTART_POLICY_OTHERS"
+  TINYAUTH_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "TINYAUTH_CLIENT_ID"
+  TINYAUTH_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "TINYAUTH_CLIENT_SECRET"
+  TZ:
+    item: "Homeserver.COMMON"
+    field: "TZ"
+  USERDIR:
+    item: "Homeserver.COMMON"
+    field: "USERDIR"
+  WEBFINGER_USERNAME:
+    item: "Homeserver.COMMON"
+    field: "WEBFINGER_USERNAME"
+
+# Custom mapping to merge with defaults (override in group_vars/host_vars)
+homeserver_rbw_env_custom_mapping: {}
+
+# Destination path for .env file
+homeserver_rbw_env_file_path: "{{ repo_path }}/.env"
+
+# File permissions
+homeserver_rbw_env_file_mode: "0600"

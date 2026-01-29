@@ -1,11 +1,13 @@
 ---
 # -------------------------------------------------------------------------
+# Sync environment variables from rbw (Bitwarden CLI) to .env files
+#
 # PREREQUISITES:
-# 1. Install Unofficial Bitwarden CLI ('rbw') https://github.com/doy/rbw
-# 2. Ensure rbw is configured and unlocked (run 'rbw login' and 'rbw unlock')
+# 1. Install rbw: https://github.com/doy/rbw
+# 2. Configure and unlock: 'rbw login' and 'rbw unlock'
 # -------------------------------------------------------------------------
 
-- name: Check prerequisites
+- name: Check rbw prerequisites
   hosts: localhost
   connection: local
   gather_facts: false
@@ -17,167 +19,7 @@
   become: true
   become_user: "{{ user_name }}"
   gather_facts: false
-
   vars:
-    # Default mapping of environment variables to rbw items and fields
-    # Can be overridden in inventory/group_vars/homeserver.yml or inventory/host_vars/<hostname>.yml
-    default_env_vars_mapping:
-      ARCANE_AGENT_BOOTSTRAP_TOKEN:
-        item: "Homeserver.COMMON"
-        field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
-      BASE_DOMAINNAME:
-        item: "Homeserver.COMMON"
-        field: "BASE_DOMAINNAME"
-      BESZEL_AGENT_KEY:
-        item: "beszel.gpu"
-        field: "BESZEL_AGENT_KEY"
-      BESZEL_AGENT_TOKEN:
-        item: "beszel.gpu"
-        field: "BESZEL_AGENT_TOKEN"
-      CLOUDFLARE_DNS_API_TOKEN:
-        item: "Cloudflare.me"
-        field: "CLOUDFLARE_DNS_API_TOKEN"
-      CLOUDFLARE_EMAIL:
-        item: "Cloudflare.me"
-        field: "username"
-      CLOUDFLARE_IPS:
-        item: "Homeserver.COMMON"
-        field: "CLOUDFLARE_IPS"
-      LOCAL_IPS:
-        item: "Homeserver.COMMON"
-        field: "LOCAL_IPS"
-      OPENAI_API_KEY:
-        item: "openai.work"
-        field: "restricted.api.key"
-      OPENROUTER_API_BASE_URL:
-        item: "Homeserver.COMMON"
-        field: "OPENROUTER_API_BASE_URL"
-      OPENROUTER_API_KEY:
-        item: "openrouter.ai"
-        field: "OPENROUTER_API_KEY"
-      PGID:
-        item: "Homeserver.COMMON"
-        field: "PGID"
-      PUID:
-        item: "Homeserver.COMMON"
-        field: "PUID"
-      # TODO: Get from `{{ repo_path }}` ansible env
-      REPO_PATH:
-        item: "Homeserver.COMMON"
-        field: "REPO_PATH"
-      RESTART_POLICY_CORE:
-        item: "Homeserver.COMMON"
-        field: "RESTART_POLICY_CORE"
-      RESTART_POLICY_DESKTOP_IMAGES:
-        item: "Homeserver.COMMON"
-        field: "RESTART_POLICY_DESKTOP_IMAGES"
-      RESTART_POLICY_MAINTENANCE:
-        item: "Homeserver.COMMON"
-        field: "RESTART_POLICY_MAINTENANCE"
-      RESTART_POLICY_MEDIA:
-        item: "Homeserver.COMMON"
-        field: "RESTART_POLICY_MEDIA"
-      RESTART_POLICY_ML:
-        item: "Homeserver.COMMON"
-        field: "RESTART_POLICY_ML"
-      RESTART_POLICY_OTHERS:
-        item: "Homeserver.COMMON"
-        field: "RESTART_POLICY_OTHERS"
-      TINYAUTH_CLIENT_ID:
-        item: "ilker.pocketid"
-        field: "TINYAUTH_CLIENT_ID"
-      TINYAUTH_CLIENT_SECRET:
-        item: "ilker.pocketid"
-        field: "TINYAUTH_CLIENT_SECRET"
-      TZ:
-        item: "Homeserver.COMMON"
-        field: "TZ"
-      # TODO: Get from `{{ username }}` ansible env
-      USERDIR:
-        item: "Homeserver.COMMON"
-        field: "USERDIR"
-      WEBFINGER_USERNAME:
-        item: "Homeserver.COMMON"
-        field: "WEBFINGER_USERNAME"
-
-    # Merge default mapping with custom mapping from group_vars
-    env_mapping: "{{ default_env_vars_mapping | combine(env_vars_mapping | default({})) }}"
-    env_file_path: "{{ repo_path }}/.env"
-
-  tasks:
-    - name: Fetch environment variables from rbw on localhost
-      delegate_to: localhost
-      connection: local
-      become: false
-      block:
-        - name: Retrieve secrets from rbw
-          ansible.builtin.command:
-            cmd: "rbw get {{ item.value.item }} --field {{ item.value.field }}"
-          loop: "{{ env_mapping | dict2items }}"
-          register: rbw_secrets
-          changed_when: false
-          no_log: true
-
-        - name: Build environment variables dictionary
-          ansible.builtin.set_fact:
-            env_vars_dict: >-
-              {{
-                env_vars_dict | default({}) | combine({
-                  item.item.key: item.stdout
-                })
-              }}
-          loop: "{{ rbw_secrets.results }}"
-          no_log: true
-
-    - name: Generate .env file content
-      ansible.builtin.set_fact:
-        env_file_content: |
-          {% for key in (env_mapping.keys() | sort) %}
-          {{ key }}={{ env_vars_dict[key] }}
-          {% endfor %}
-      no_log: true
-
-    # - name: Debug - Display .env file content
-    #   ansible.builtin.debug:
-    #     msg: |
-    #       .env file content that will be synced:
-    #       {{ env_file_content }}
-
-    - name: Check if .env file exists
-      ansible.builtin.stat:
-        path: "{{ env_file_path }}"
-      register: env_file_stat
-
-    - name: Read existing .env file
-      ansible.builtin.slurp:
-        src: "{{ env_file_path }}"
-      register: existing_env_file
-      when: env_file_stat.stat.exists
-      no_log: true
-
-    - name: Determine if .env file needs update
-      ansible.builtin.set_fact:
-        env_file_changed: >-
-          {{
-            not env_file_stat.stat.exists or
-            (existing_env_file.content | b64decode) != env_file_content
-          }}
-
-    - name: Create or update .env file
-      ansible.builtin.copy:
-        content: "{{ env_file_content }}"
-        dest: "{{ env_file_path }}"
-        mode: '0600'
-        owner: "{{ user_name }}"
-        group: "{{ user_name }}"
-      when: env_file_changed
-      no_log: true
-
-    - name: Display sync status
-      ansible.builtin.debug:
-        msg: >-
-          {% if env_file_changed %}
-          .env file updated with {{ env_mapping.keys() | length }} environment variables
-          {% else %}
-          .env file is already up to date
-          {% endif %}
+    homeserver_rbw_env_custom_mapping: "{{ env_vars_mapping | default({}) }}"
+  roles:
+    - homeserver_rbw_env

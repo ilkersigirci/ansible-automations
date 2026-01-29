@@ -60,7 +60,7 @@ env_vars_mapping:
     item: "gotify.remoteserver"
     field: "GOTIFY_LOGGIFLY_APPRISE_URL"
   IMMICH_API_KEY:
-    item: " immich.photos.me"
+    item: "immich.photos.me"
     field: "IMMICH_API_KEY"
   IMMICH_DB_DATABASE_NAME:
     item: "Homeserver.gpu"
@@ -148,10 +148,10 @@ env_vars_mapping:
     field: "NETWORK_INTERFACE_NAMES"
   PGADMIN_DEFAULT_EMAIL:
     item: "pgadmin.gpu"
-    field: "PGADMIN_DEFAULT_EMAIL"
+    field: "username"
   PGADMIN_DEFAULT_PASSWORD:
     item: "pgadmin.gpu"
-    field: "PGADMIN_DEFAULT_PASSWORD"
+    field: "password"
   SABNZBD_API_KEY:
     item: "sabnzbd.gpu"
     field: "SABNZBD_API_KEY"
