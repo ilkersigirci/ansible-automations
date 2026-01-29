@@ -2,6 +2,12 @@ env_vars_mapping:
   CHANGEDETECTION_API_KEY:
     item: "changedetection.gpu"
     field: "CHANGEDETECTION_API_KEY"
+  DIR_HARDDISKROOT:
+    item: "Homeserver.rpi0"
+    field: "DIR_HARDDISKROOT"
+  DIR_NOTES:
+    item: "Homeserver.rpi0"
+    field: "DIR_NOTES"
   DOMAINNAME:
     item: "Homeserver.rpi0"
     field: "DOMAINNAME"
@@ -26,6 +32,9 @@ env_vars_mapping:
   POCKETID_ENCRYPTION_KEY:
     item: "Homeserver.rpi0"
     field: "POCKETID_ENCRYPTION_KEY"
+  SYNCTHING_API_KEY:
+    item: "syncthing.home"
+    field: "SYNCTHING_API_KEY"
   QUARTZ_REBUILD_WEBHOOK_SECRET:
     item: "Homeserver.rpi0"
     field: "QUARTZ_REBUILD_WEBHOOK_SECRET"

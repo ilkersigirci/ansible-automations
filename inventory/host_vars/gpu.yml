@@ -32,6 +32,27 @@ env_vars_mapping:
   CUSTOM_OPENAI_MODEL_NAME:
     item: "chat.gpu"
     field: "CUSTOM_OPENAI_MODEL_NAME"
+  DIR_BACKUP:
+    item: "Homeserver.gpu"
+    field: "DIR_BACKUP"
+  DIR_HARDDISKROOT:
+    item: "Homeserver.gpu"
+    field: "DIR_HARDDISKROOT"
+  DIR_KIWIX:
+    item: "Homeserver.gpu"
+    field: "DIR_KIWIX"
+  DIR_MEDIA:
+    item: "Homeserver.gpu"
+    field: "DIR_MEDIA"
+  DIR_MYREPOS:
+    item: "Homeserver.gpu"
+    field: "DIR_MYREPOS"
+  DIR_NOTES:
+    item: "Homeserver.gpu"
+    field: "DIR_NOTES"
+  DIR_PHOTOS:
+    item: "Homeserver.gpu"
+    field: "DIR_PHOTOS"
   DOMAINNAME:
     item: "Homeserver.gpu"
     field: "DOMAINNAME"

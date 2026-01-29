@@ -1,4 +1,7 @@
 env_vars_mapping:
+  DIR_HARDDISKROOT:
+    item: "Homeserver.rpi2"
+    field: "DIR_HARDDISKROOT"
   DOMAINNAME:
     item: "Homeserver.rpi2"
     field: "DOMAINNAME"

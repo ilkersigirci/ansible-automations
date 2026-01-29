@@ -22,6 +22,9 @@
     # Default mapping of environment variables to rbw items and fields
     # Can be overridden in inventory/group_vars/homeserver.yml or inventory/host_vars/<hostname>.yml
     default_env_vars_mapping:
+      ARCANE_AGENT_BOOTSTRAP_TOKEN:
+        item: "Homeserver.COMMON"
+        field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
       BASE_DOMAINNAME:
         item: "Homeserver.COMMON"
         field: "BASE_DOMAINNAME"
@@ -46,6 +49,12 @@
       OPENAI_API_KEY:
         item: "openai.work"
         field: "restricted.api.key"
+      OPENROUTER_API_BASE_URL:
+        item: "Homeserver.COMMON"
+        field: "OPENROUTER_API_BASE_URL"
+      OPENROUTER_API_KEY:
+        item: "openrouter.ai"
+        field: "OPENROUTER_API_KEY"
       PGID:
         item: "Homeserver.COMMON"
         field: "PGID"
