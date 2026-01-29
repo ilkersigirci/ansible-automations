@@ -95,3 +95,75 @@ env_vars_mapping:
   LANGFUSE_SALT:
     item: "Homeserver.gpu"
     field: "LANGFUSE_SALT"
+  LINKWARDEN_ACCESS_TOKEN:
+    item: "linkwarden.gpu"
+    field: "LINKWARDEN_ACCESS_TOKEN"
+  LINKWARDEN_CLIENT_ID:
+    item: "Homeserver.gpu"
+    field: "LINKWARDEN_CLIENT_ID"
+  LINKWARDEN_CLIENT_SECRET:
+    item: "Homeserver.gpu"
+    field: "LINKWARDEN_CLIENT_SECRET"
+  LINKWARDEN_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "LINKWARDEN_NEXTAUTH_SECRET"
+  LOCAL_STATIC_IP:
+    item: "Homeserver.gpu"
+    field: "LOCAL_STATIC_IP"
+  MINIO_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "MINIO_CLIENT_ID"
+  MINIO_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "MINIO_CLIENT_SECRET"
+  MINIO_ROOT_PASSWORD:
+    item: "minio.gpu"
+    field: "password"
+  MINIO_ROOT_USER:
+    item: "minio.gpu"
+    field: "username"
+  NETWORK_INTERFACE_NAMES:
+    item: "Homeserver.gpu"
+    field: "NETWORK_INTERFACE_NAMES"
+  PGADMIN_DEFAULT_EMAIL:
+    item: "pgadmin.gpu"
+    field: "PGADMIN_DEFAULT_EMAIL"
+  PGADMIN_DEFAULT_PASSWORD:
+    item: "pgadmin.gpu"
+    field: "PGADMIN_DEFAULT_PASSWORD"
+  SABNZBD_API_KEY:
+    item: "sabnzbd.gpu"
+    field: "SABNZBD_API_KEY"
+  SPLITPRO_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "SPLITPRO_CLIENT_ID"
+  SPLITPRO_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "SPLITPRO_CLIENT_SECRET"
+  SPLITPRO_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "SPLITPRO_NEXTAUTH_SECRET"
+  STRAVA_CLIENT_ID:
+    item: "strava.com"
+    field: "STRAVA_STATISTICS_CLIENT_ID"
+  STRAVA_CLIENT_SECRET:
+    item: "strava.com"
+    field: "STRAVA_STATISTICS_CLIENT_SECRET"
+  STRAVA_REFRESH_TOKEN:
+    item: "Homeserver.gpu"
+    field: "STRAVA_REFRESH_TOKEN"
+  TRAEFIK_AUTH_BYPASS_KEY:
+    item: "Homeserver.gpu"
+    field: "TRAEFIK_AUTH_BYPASS_KEY"
+  TWITTER_AUTH_TOKEN:
+    item: "twitter.com"
+    field: "TWITTER_AUTH_TOKEN"
+  YAMTRACK_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "YAMTRACK_CLIENT_ID"
+  YAMTRACK_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "YAMTRACK_CLIENT_SECRET"
+  YAMTRACK_SECRET:
+    item: "Homeserver.gpu"
+    field: "YAMTRACK_SECRET"

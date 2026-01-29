@@ -20,6 +20,9 @@ env_vars_mapping:
   PUID:
     item: "Homeserver.remoteserver"
     field: "PUID"
+  RYBBIT_BETTER_AUTH_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "RYBBIT_BETTER_AUTH_SECRET"
   USERDIR:
     item: "Homeserver.remoteserver"
     field: "USERDIR"

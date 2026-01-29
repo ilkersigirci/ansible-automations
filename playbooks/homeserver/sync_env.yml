@@ -58,6 +58,9 @@
       LOCAL_STATIC_IP:
         item: "Homeserver.COMMON"
         field: "LOCAL_STATIC_IP"
+      OPENAI_API_KEY:
+        item: "openai.work"
+        field: "restricted.api.key"
       PGID:
         item: "Homeserver.COMMON"
         field: "PGID"
@@ -67,12 +70,21 @@
       SECRETSDIR:
         item: "Homeserver.COMMON"
         field: "SECRETSDIR"
+      TINYAUTH_CLIENT_ID:
+        item: "ilker.pocketid"
+        field: "TINYAUTH_CLIENT_ID"
+      TINYAUTH_CLIENT_SECRET:
+        item: "ilker.pocketid"
+        field: "TINYAUTH_CLIENT_SECRET"
       TZ:
         item: "Homeserver.COMMON"
         field: "TZ"
       USERDIR:
         item: "Homeserver.COMMON"
         field: "USERDIR"
+      WEBFINGER_USERNAME:
+        item: "Homeserver.COMMON"
+        field: "WEBFINGER_USERNAME"
 
     # Merge default mapping with custom mapping from group_vars
     env_mapping: "{{ default_env_vars_mapping | combine(env_vars_mapping | default({})) }}"
