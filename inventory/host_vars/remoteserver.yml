@@ -2,6 +2,9 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.remoteserver"
     field: "DOMAINNAME"
+  LOCAL_STATIC_IP:
+    item: "Homeserver.remoteserver"
+    field: "LOCAL_STATIC_IP"
   GOTIFY_DEFAULT_USER_PASS:
     item: "gotify.remoteserver"
     field: "password"

@@ -20,6 +20,9 @@ env_vars_mapping:
   JELLYFIN_USER_ID:
     item: "jellyfin.gpu"
     field: "JELLYFIN_USER_ID"
+  LOCAL_STATIC_IP:
+    item: "Homeserver.rpi0"
+    field: "LOCAL_STATIC_IP"
   POCKETID_ENCRYPTION_KEY:
     item: "Homeserver.rpi0"
     field: "POCKETID_ENCRYPTION_KEY"

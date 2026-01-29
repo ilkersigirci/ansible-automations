@@ -40,15 +40,9 @@
       CLOUDFLARE_IPS:
         item: "Homeserver.COMMON"
         field: "CLOUDFLARE_IPS"
-      DOMAINNAME:
-        item: "Homeserver.COMMON"
-        field: "DOMAINNAME"
       LOCAL_IPS:
         item: "Homeserver.COMMON"
         field: "LOCAL_IPS"
-      LOCAL_STATIC_IP:
-        item: "Homeserver.COMMON"
-        field: "LOCAL_STATIC_IP"
       OPENAI_API_KEY:
         item: "openai.work"
         field: "restricted.api.key"
@@ -62,9 +56,24 @@
       REPO_PATH:
         item: "Homeserver.COMMON"
         field: "REPO_PATH"
-      SECRETSDIR:
+      RESTART_POLICY_CORE:
         item: "Homeserver.COMMON"
-        field: "SECRETSDIR"
+        field: "RESTART_POLICY_CORE"
+      RESTART_POLICY_DESKTOP_IMAGES:
+        item: "Homeserver.COMMON"
+        field: "RESTART_POLICY_DESKTOP_IMAGES"
+      RESTART_POLICY_MAINTENANCE:
+        item: "Homeserver.COMMON"
+        field: "RESTART_POLICY_MAINTENANCE"
+      RESTART_POLICY_MEDIA:
+        item: "Homeserver.COMMON"
+        field: "RESTART_POLICY_MEDIA"
+      RESTART_POLICY_ML:
+        item: "Homeserver.COMMON"
+        field: "RESTART_POLICY_ML"
+      RESTART_POLICY_OTHERS:
+        item: "Homeserver.COMMON"
+        field: "RESTART_POLICY_OTHERS"
       TINYAUTH_CLIENT_ID:
         item: "ilker.pocketid"
         field: "TINYAUTH_CLIENT_ID"
