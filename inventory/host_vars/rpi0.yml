@@ -2,6 +2,9 @@ env_vars_mapping:
   CHANGEDETECTION_API_KEY:
     item: "changedetection.gpu"
     field: "CHANGEDETECTION_API_KEY"
+  DOMAINNAME:
+    item: "Homeserver.rpi0"
+    field: "DOMAINNAME"
   GITHUB_DASHBOARD_TOKEN:
     item: "github.sigirciilker"
     field: "GITHUB_DASHBOARD_TOKEN"

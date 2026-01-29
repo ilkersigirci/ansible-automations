@@ -40,15 +40,6 @@
       CLOUDFLARE_IPS:
         item: "Homeserver.COMMON"
         field: "CLOUDFLARE_IPS"
-      CONFIGDIR:
-        item: "Homeserver.COMMON"
-        field: "CONFIGDIR"
-      DATADIR:
-        item: "Homeserver.COMMON"
-        field: "DATADIR"
-      DOCKERDIR:
-        item: "Homeserver.COMMON"
-        field: "DOCKERDIR"
       DOMAINNAME:
         item: "Homeserver.COMMON"
         field: "DOMAINNAME"
@@ -67,6 +58,10 @@
       PUID:
         item: "Homeserver.COMMON"
         field: "PUID"
+      # TODO: Get from `{{ repo_path }}` ansible env
+      REPO_PATH:
+        item: "Homeserver.COMMON"
+        field: "REPO_PATH"
       SECRETSDIR:
         item: "Homeserver.COMMON"
         field: "SECRETSDIR"
@@ -79,6 +74,7 @@
       TZ:
         item: "Homeserver.COMMON"
         field: "TZ"
+      # TODO: Get from `{{ username }}` ansible env
       USERDIR:
         item: "Homeserver.COMMON"
         field: "USERDIR"

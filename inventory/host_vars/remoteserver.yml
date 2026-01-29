@@ -1,7 +1,4 @@
 env_vars_mapping:
-  DOCKERDIR:
-    item: "Homeserver.remoteserver"
-    field: "DOCKERDIR"
   DOMAINNAME:
     item: "Homeserver.remoteserver"
     field: "DOMAINNAME"
@@ -20,9 +17,14 @@ env_vars_mapping:
   PUID:
     item: "Homeserver.remoteserver"
     field: "PUID"
+  # TODO: Get from `{{ repo_path }}` ansible env
+  REPO_PATH:
+    item: "Homeserver.remoteserver"
+    field: "REPO_PATH"
   RYBBIT_BETTER_AUTH_SECRET:
     item: "Homeserver.remoteserver"
     field: "RYBBIT_BETTER_AUTH_SECRET"
+  # TODO: Get from `{{ username }}` ansible env
   USERDIR:
     item: "Homeserver.remoteserver"
     field: "USERDIR"

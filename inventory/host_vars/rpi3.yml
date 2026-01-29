@@ -1,0 +1,4 @@
+env_vars_mapping:
+  DOMAINNAME:
+    item: "Homeserver.rpi3"
+    field: "DOMAINNAME"
