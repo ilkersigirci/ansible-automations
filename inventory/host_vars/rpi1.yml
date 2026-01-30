@@ -1,9 +1,9 @@
 env_vars_mapping:
   ADGUARD_PASSWORD:
-    item: "adguard.rpi1"
+    item: "adguardhome.rpi1"
     field: "password"
   ADGUARD_USERNAME:
-    item: "adguard.rpi1"
+    item: "adguardhome.rpi1"
     field: "username"
   DIR_HARDDISKROOT:
     item: "Homeserver.rpi1"

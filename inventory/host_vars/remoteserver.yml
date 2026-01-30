@@ -1,9 +1,9 @@
 env_vars_mapping:
   ADGUARD_PASSWORD:
-    item: "adguard.rpi1"
+    item: "adguardhome.rpi1"
     field: "password"
   ADGUARD_USERNAME:
-    item: "adguard.rpi1"
+    item: "adguardhome.rpi1"
     field: "username"
   AIOSTREAMS_AUTH:
     item: "aiostreams.remoteserver"
@@ -20,6 +20,9 @@ env_vars_mapping:
   DIR_HARDDISKROOT:
     item: "Homeserver.remoteserver"
     field: "DIR_HARDDISKROOT"
+  DIR_NOTES:
+    item: "Homeserver.remoteserver"
+    field: "DIR_NOTES"
   DOMAINNAME:
     item: "Homeserver.remoteserver"
     field: "DOMAINNAME"
