@@ -20,6 +20,9 @@ env_vars_mapping:
   DIR_HARDDISKROOT:
     item: "Homeserver.remoteserver"
     field: "DIR_HARDDISKROOT"
+  DIR_MEDIA:
+    item: "Homeserver.remoteserver"
+    field: "DIR_MEDIA"
   DIR_NOTES:
     item: "Homeserver.remoteserver"
     field: "DIR_NOTES"
