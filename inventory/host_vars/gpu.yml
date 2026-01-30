@@ -1,0 +1,193 @@
+env_vars_mapping:
+  ARCANE_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "ARCANE_CLIENT_ID"
+  ARCANE_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "ARCANE_CLIENT_SECRET"
+  ARCANE_ENCRYPTION_KEY:
+    item: "arcane.gpu"
+    field: "ARCANE_ENCRYPTION_KEY"
+  ARCANE_JWT_SECRET:
+    item: "arcane.gpu"
+    field: "ARCANE_JWT_SECRET"
+  BESZEL_EMAIL:
+    item: "beszel.gpu"
+    field: "username"
+  BESZEL_PASSWORD:
+    item: "beszel.gpu"
+    field: "password"
+  BICHON_ENCRYPT_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "BICHON_ENCRYPT_PASSWORD"
+  CHANGEDETECTION_API_KEY:
+    item: "changedetection.gpu"
+    field: "CHANGEDETECTION_API_KEY"
+  CUSTOM_OPENAI_API_KEY:
+    item: "chat.gpu"
+    field: "CUSTOM_OPENAI_API_KEY"
+  CUSTOM_OPENAI_BASE_URL:
+    item: "chat.gpu"
+    field: "CUSTOM_OPENAI_BASE_URL"
+  CUSTOM_OPENAI_MODEL_NAME:
+    item: "chat.gpu"
+    field: "CUSTOM_OPENAI_MODEL_NAME"
+  DIR_BACKUP:
+    item: "Homeserver.gpu"
+    field: "DIR_BACKUP"
+  DIR_HARDDISKROOT:
+    item: "Homeserver.gpu"
+    field: "DIR_HARDDISKROOT"
+  DIR_KIWIX:
+    item: "Homeserver.gpu"
+    field: "DIR_KIWIX"
+  DIR_MEDIA:
+    item: "Homeserver.gpu"
+    field: "DIR_MEDIA"
+  DIR_MYREPOS:
+    item: "Homeserver.gpu"
+    field: "DIR_MYREPOS"
+  DIR_NOTES:
+    item: "Homeserver.gpu"
+    field: "DIR_NOTES"
+  DIR_PHOTOS:
+    item: "Homeserver.gpu"
+    field: "DIR_PHOTOS"
+  DOCKER_REMOTE_HOSTS:
+    item: "Homeserver.gpu"
+    field: "DOCKER_REMOTE_HOSTS"
+  DOMAINNAME:
+    item: "Homeserver.gpu"
+    field: "DOMAINNAME"
+  GOTIFY_LOGGIFLY_APPRISE_URL:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_LOGGIFLY_APPRISE_URL"
+  IMMICH_API_KEY:
+    item: "immich.photos.me"
+    field: "IMMICH_API_KEY"
+  IMMICH_DB_DATABASE_NAME:
+    item: "Homeserver.gpu"
+    field: "IMMICH_DB_DATABASE_NAME"
+  IMMICH_DB_HOSTNAME:
+    item: "Homeserver.gpu"
+    field: "IMMICH_DB_HOSTNAME"
+  IMMICH_DB_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "IMMICH_DB_PASSWORD"
+  IMMICH_DB_USERNAME:
+    item: "Homeserver.gpu"
+    field: "IMMICH_DB_USERNAME"
+  IMMICH_REDIS_HOSTNAME:
+    item: "Homeserver.gpu"
+    field: "IMMICH_REDIS_HOSTNAME"
+  IMMICH_UPLOAD_LOCATION:
+    item: "Homeserver.gpu"
+    field: "IMMICH_UPLOAD_LOCATION"
+  JELLYFIN_API_KEY:
+    item: "jellyfin.gpu"
+    field: "JELLYFIN_API_KEY"
+  JELLYSEERR_API_KEY:
+    item: "jellyseerr.gpu"
+    field: "JELLYSEERR_API_KEY"
+  KOMODO_DB_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "KOMODO_DB_PASSWORD"
+  KOMODO_DB_USERNAME:
+    item: "Homeserver.gpu"
+    field: "KOMODO_DB_USERNAME"
+  LANGFUSE_CLICKHOUSE_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_CLICKHOUSE_PASSWORD"
+  LANGFUSE_CLICKHOUSE_USER:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_CLICKHOUSE_USER"
+  LANGFUSE_ENCRYPTION_KEY:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_ENCRYPTION_KEY"
+  LANGFUSE_INIT_USER_EMAIL:
+    item: "langfuse.gpu"
+    field: "username"
+  LANGFUSE_INIT_USER_NAME:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_INIT_USER_NAME"
+  LANGFUSE_INIT_USER_PASSWORD:
+    item: "langfuse.gpu"
+    field: "password"
+  LANGFUSE_REDIS_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_REDIS_PASSWORD"
+  LANGFUSE_SALT_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_SALT_NEXTAUTH_SECRET"
+  LANGFUSE_SALT:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_SALT"
+  LINKWARDEN_ACCESS_TOKEN:
+    item: "linkwarden.gpu"
+    field: "LINKWARDEN_ACCESS_TOKEN"
+  LINKWARDEN_CLIENT_ID:
+    item: "Homeserver.gpu"
+    field: "LINKWARDEN_CLIENT_ID"
+  LINKWARDEN_CLIENT_SECRET:
+    item: "Homeserver.gpu"
+    field: "LINKWARDEN_CLIENT_SECRET"
+  LINKWARDEN_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "LINKWARDEN_NEXTAUTH_SECRET"
+  MINIO_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "MINIO_CLIENT_ID"
+  MINIO_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "MINIO_CLIENT_SECRET"
+  MINIO_ROOT_PASSWORD:
+    item: "minio.gpu"
+    field: "password"
+  MINIO_ROOT_USER:
+    item: "minio.gpu"
+    field: "username"
+  NETWORK_INTERFACE_NAMES:
+    item: "Homeserver.gpu"
+    field: "NETWORK_INTERFACE_NAMES"
+  PGADMIN_DEFAULT_EMAIL:
+    item: "pgadmin.gpu"
+    field: "username"
+  PGADMIN_DEFAULT_PASSWORD:
+    item: "pgadmin.gpu"
+    field: "password"
+  SABNZBD_API_KEY:
+    item: "sabnzbd.gpu"
+    field: "SABNZBD_API_KEY"
+  SPLITPRO_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "SPLITPRO_CLIENT_ID"
+  SPLITPRO_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "SPLITPRO_CLIENT_SECRET"
+  SPLITPRO_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "SPLITPRO_NEXTAUTH_SECRET"
+  STRAVA_CLIENT_ID:
+    item: "strava.com"
+    field: "STRAVA_STATISTICS_CLIENT_ID"
+  STRAVA_CLIENT_SECRET:
+    item: "strava.com"
+    field: "STRAVA_STATISTICS_CLIENT_SECRET"
+  STRAVA_REFRESH_TOKEN:
+    item: "Homeserver.gpu"
+    field: "STRAVA_REFRESH_TOKEN"
+  TRAEFIK_AUTH_BYPASS_KEY:
+    item: "Homeserver.gpu"
+    field: "TRAEFIK_AUTH_BYPASS_KEY"
+  TWITTER_AUTH_TOKEN:
+    item: "twitter.com"
+    field: "TWITTER_AUTH_TOKEN"
+  YAMTRACK_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "YAMTRACK_CLIENT_ID"
+  YAMTRACK_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "YAMTRACK_CLIENT_SECRET"
+  YAMTRACK_SECRET:
+    item: "Homeserver.gpu"
+    field: "YAMTRACK_SECRET"

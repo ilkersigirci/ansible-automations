@@ -1,0 +1,82 @@
+env_vars_mapping:
+  ADGUARD_PASSWORD:
+    item: "adguardhome.rpi1"
+    field: "password"
+  ADGUARD_USERNAME:
+    item: "adguardhome.rpi1"
+    field: "username"
+  AIOSTREAMS_AUTH:
+    item: "aiostreams.remoteserver"
+    field: "AIOSTREAMS_AUTH"
+  AIOSTREAMS_SECRET_KEY:
+    item: "Homeserver.remoteserver"
+    field: "AIOSTREAMS_SECRET_KEY"
+  CROWDSEC_ENROLL_CONTEXT:
+    item: "Homeserver.remoteserver"
+    field: "CROWDSEC_ENROLL_CONTEXT"
+  CROWDSEC_TRAEFIK_BOUNCER_API_KEY:
+    item: "Homeserver.remoteserver"
+    field: "CROWDSEC_TRAEFIK_BOUNCER_API_KEY"
+  DIR_HARDDISKROOT:
+    item: "Homeserver.remoteserver"
+    field: "DIR_HARDDISKROOT"
+  DIR_NOTES:
+    item: "Homeserver.remoteserver"
+    field: "DIR_NOTES"
+  DOMAINNAME:
+    item: "Homeserver.remoteserver"
+    field: "DOMAINNAME"
+  # LOCAL_STATIC_IP:
+  #   item: "cloud.oracle.com"
+  #   field: "REMOTE_SERVER_PRIVATE_IP"
+  GATUS_TITLE:
+    item: "Homeserver.remoteserver"
+    field: "GATUS_TITLE"
+  GOTIFY_DEFAULT_USER_PASS:
+    item: "gotify.remoteserver"
+    field: "password"
+  GOTIFY_GATUS_NOTIFICATION_TOKEN:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_GATUS_NOTIFICATION_TOKEN"
+  GOTIFY_HOMEPAGE_CLIENT_TOKEN:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_HOMEPAGE_CLIENT_TOKEN"
+  HEADPLANE_COOKIE_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "HEADPLANE_COOKIE_SECRET"
+  HEADPLANE_AGENT_HOST_NAME:
+    item: "Homeserver.remoteserver"
+    field: "HEADPLANE_AGENT_HOST_NAME"
+  HEADPLANE_AGENT_PRE_AUTHKEY:
+    item: "headscale.remoteserver"
+    field: "HEADPLANE_AGENT_PRE_AUTHKEY"
+  OPEN_WEB_UI_BETUS_CLIENT_ID:
+    item: "ilker.pocketid"
+    field: "OPEN_WEB_UI_BETUS_CLIENT_ID"
+  OPEN_WEB_UI_BETUS_CLIENT_SECRET:
+    item: "ilker.pocketid"
+    field: "OPEN_WEB_UI_BETUS_CLIENT_SECRET"
+  PGID:
+    item: "Homeserver.remoteserver"
+    field: "PGID"
+  PUID:
+    item: "Homeserver.remoteserver"
+    field: "PUID"
+  REMOTE_SERVER_PRIVATE_IP:
+    item: "cloud.oracle.com"
+    field: "REMOTE_SERVER_PRIVATE_IP"
+  REMOTE_SERVER_PUBLIC_IP:
+    item: "cloud.oracle.com"
+    field: "REMOTE_SERVER_PUBLIC_IP"
+  RYBBIT_BETTER_AUTH_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "RYBBIT_BETTER_AUTH_SECRET"
+  SYNCTHING_API_KEY:
+    item: "syncthing.remoteserver"
+    field: "SYNCTHING_API_KEY"
+  TMDB_API_READ_ACCESS_TOKEN:
+    item: "tmdb.themoviedb"
+    field: "TMDB_API_READ_ACCESS_TOKEN"
+  ZIPLINE_CORE_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "ZIPLINE_CORE_SECRET"

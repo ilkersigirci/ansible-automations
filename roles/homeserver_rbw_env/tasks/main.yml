@@ -1,0 +1,67 @@
+---
+- name: Build combined environment mapping
+  ansible.builtin.set_fact:
+    homeserver_rbw_env_mapping: "{{ homeserver_rbw_env_default_mapping | combine(homeserver_rbw_env_custom_mapping) }}"
+
+- name: Retrieve secrets from rbw
+  delegate_to: localhost
+  become: false
+  block:
+    - name: Fetch all secrets from rbw
+      ansible.builtin.shell:
+        cmd: |
+          set -e
+          {% for key, value in homeserver_rbw_env_mapping.items() %}
+          if ! result=$(rbw get "{{ value.item }}" --field "{{ value.field }}" 2>&1); then
+            echo "FAILED: {{ key }} - item='{{ value.item }}' field='{{ value.field }}'" >&2
+            echo "$result" >&2
+            exit 1
+          fi
+          if [ -z "$result" ]; then
+            echo "FAILED: {{ key }} - empty value (item='{{ value.item }}' field='{{ value.field }}')" >&2
+            exit 1
+          fi
+          echo "{{ key }}=$result"
+          {% endfor %}
+        executable: /bin/bash
+      register: homeserver_rbw_env_secrets_result
+      changed_when: false
+      failed_when: false
+      no_log: true
+
+    - name: Fail if rbw retrieval failed
+      ansible.builtin.fail:
+        msg: "{{ homeserver_rbw_env_secrets_result.stderr }}"
+      when: homeserver_rbw_env_secrets_result.rc != 0
+
+    - name: Parse secrets into dictionary
+      ansible.builtin.set_fact:
+        homeserver_rbw_env_vars: "{{ dict(homeserver_rbw_env_secrets_result.stdout_lines | map('split', '=', 1)) }}"
+      no_log: true
+
+- name: Generate .env file content (escape $ as $$ for docker-compose)
+  ansible.builtin.set_fact:
+    homeserver_rbw_env_content: |
+      {% for key in (homeserver_rbw_env_mapping.keys() | sort) %}
+      {{ key }}={{ homeserver_rbw_env_vars[key] | regex_replace('\$', '$$') }}
+      {% endfor %}
+      LOCAL_STATIC_IP={{ local_static_ip }}
+      REPO_PATH={{ repo_path }}
+      USERDIR=/home/{{ user_name }}
+  no_log: true
+
+- name: Deploy .env file
+  ansible.builtin.copy:
+    content: "{{ homeserver_rbw_env_content }}"
+    dest: "{{ homeserver_rbw_env_file_path }}"
+    mode: "{{ homeserver_rbw_env_file_mode }}"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  no_log: true
+
+- name: Display sync status
+  ansible.builtin.debug:
+    msg: >-
+      Synced {{ homeserver_rbw_env_mapping | length + 3 }} environment variables
+      to {{ homeserver_rbw_env_file_path }}
+      ({{ homeserver_rbw_env_mapping | length }} from rbw + 3 from inventory)

@@ -1,0 +1,25 @@
+---
+# -------------------------------------------------------------------------
+# Sync environment variables from rbw (Bitwarden CLI) to .env files
+#
+# PREREQUISITES:
+# 1. Install rbw: https://github.com/doy/rbw
+# 2. Configure and unlock: 'rbw login' and 'rbw unlock'
+# -------------------------------------------------------------------------
+
+- name: Check rbw prerequisites
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - check_rbw
+
+- name: Sync environment variables from rbw to .env files
+  hosts: homeserver
+  become: true
+  become_user: "{{ user_name }}"
+  gather_facts: false
+  vars:
+    homeserver_rbw_env_custom_mapping: "{{ env_vars_mapping | default({}) }}"
+  roles:
+    - homeserver_rbw_env
