@@ -39,11 +39,11 @@
         homeserver_rbw_env_vars: "{{ dict(homeserver_rbw_env_secrets_result.stdout_lines | map('split', '=', 1)) }}"
       no_log: true
 
-- name: Generate .env file content
+- name: Generate .env file content (escape $ as $$ for docker-compose)
   ansible.builtin.set_fact:
     homeserver_rbw_env_content: |
       {% for key in (homeserver_rbw_env_mapping.keys() | sort) %}
-      {{ key }}={{ homeserver_rbw_env_vars[key] }}
+      {{ key }}={{ homeserver_rbw_env_vars[key] | regex_replace('\$', '$$') }}
       {% endfor %}
   no_log: true
 

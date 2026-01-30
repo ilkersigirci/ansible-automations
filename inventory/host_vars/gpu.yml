@@ -53,6 +53,9 @@ env_vars_mapping:
   DIR_PHOTOS:
     item: "Homeserver.gpu"
     field: "DIR_PHOTOS"
+  DOCKER_REMOTE_HOSTS:
+    item: "Homeserver.gpu"
+    field: "DOCKER_REMOTE_HOSTS"
   DOMAINNAME:
     item: "Homeserver.gpu"
     field: "DOMAINNAME"
@@ -80,6 +83,9 @@ env_vars_mapping:
   IMMICH_UPLOAD_LOCATION:
     item: "Homeserver.gpu"
     field: "IMMICH_UPLOAD_LOCATION"
+  JELLYFIN_API_KEY:
+    item: "jellyfin.gpu"
+    field: "JELLYFIN_API_KEY"
   JELLYSEERR_API_KEY:
     item: "jellyseerr.gpu"
     field: "JELLYSEERR_API_KEY"
