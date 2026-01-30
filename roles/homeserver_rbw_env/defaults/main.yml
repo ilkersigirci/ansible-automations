@@ -41,9 +41,6 @@ homeserver_rbw_env_default_mapping:
   PUID:
     item: "Homeserver.COMMON"
     field: "PUID"
-  REPO_PATH:
-    item: "Homeserver.COMMON"
-    field: "REPO_PATH"
   RESTART_POLICY_CORE:
     item: "Homeserver.COMMON"
     field: "RESTART_POLICY_CORE"
@@ -71,9 +68,6 @@ homeserver_rbw_env_default_mapping:
   TZ:
     item: "Homeserver.COMMON"
     field: "TZ"
-  USERDIR:
-    item: "Homeserver.COMMON"
-    field: "USERDIR"
   WEBFINGER_USERNAME:
     item: "Homeserver.COMMON"
     field: "WEBFINGER_USERNAME"

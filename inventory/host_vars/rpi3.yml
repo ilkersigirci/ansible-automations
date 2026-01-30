@@ -5,6 +5,3 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.rpi3"
     field: "DOMAINNAME"
-  LOCAL_STATIC_IP:
-    item: "Homeserver.rpi3"
-    field: "LOCAL_STATIC_IP"

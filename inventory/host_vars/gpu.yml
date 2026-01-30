@@ -134,9 +134,6 @@ env_vars_mapping:
   LINKWARDEN_NEXTAUTH_SECRET:
     item: "Homeserver.gpu"
     field: "LINKWARDEN_NEXTAUTH_SECRET"
-  LOCAL_STATIC_IP:
-    item: "Homeserver.gpu"
-    field: "LOCAL_STATIC_IP"
   MINIO_CLIENT_ID:
     item: "ilker.pocketid"
     field: "MINIO_CLIENT_ID"

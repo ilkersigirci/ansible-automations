@@ -45,6 +45,9 @@
       {% for key in (homeserver_rbw_env_mapping.keys() | sort) %}
       {{ key }}={{ homeserver_rbw_env_vars[key] | regex_replace('\$', '$$') }}
       {% endfor %}
+      LOCAL_STATIC_IP={{ local_static_ip }}
+      REPO_PATH={{ repo_path }}
+      USERDIR=/home/{{ user_name }}
   no_log: true
 
 - name: Deploy .env file
@@ -58,4 +61,7 @@
 
 - name: Display sync status
   ansible.builtin.debug:
-    msg: "Synced {{ homeserver_rbw_env_mapping | length }} environment variables to {{ homeserver_rbw_env_file_path }}"
+    msg: >-
+      Synced {{ homeserver_rbw_env_mapping | length + 3 }} environment variables
+      to {{ homeserver_rbw_env_file_path }}
+      ({{ homeserver_rbw_env_mapping | length }} from rbw + 3 from inventory)

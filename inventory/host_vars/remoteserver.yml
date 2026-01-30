@@ -23,9 +23,9 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.remoteserver"
     field: "DOMAINNAME"
-  LOCAL_STATIC_IP:
-    item: "cloud.oracle.com"
-    field: "REMOTE_SERVER_PRIVATE_IP"
+  # LOCAL_STATIC_IP:
+  #   item: "cloud.oracle.com"
+  #   field: "REMOTE_SERVER_PRIVATE_IP"
   GATUS_TITLE:
     item: "Homeserver.remoteserver"
     field: "GATUS_TITLE"
@@ -65,23 +65,15 @@ env_vars_mapping:
   REMOTE_SERVER_PUBLIC_IP:
     item: "cloud.oracle.com"
     field: "REMOTE_SERVER_PUBLIC_IP"
-  # TODO: Get from `{{ repo_path }}` ansible env
-  REPO_PATH:
-    item: "Homeserver.remoteserver"
-    field: "REPO_PATH"
   RYBBIT_BETTER_AUTH_SECRET:
     item: "Homeserver.remoteserver"
     field: "RYBBIT_BETTER_AUTH_SECRET"
-  # TODO: Get from `{{ username }}` ansible env
   SYNCTHING_API_KEY:
     item: "syncthing.remoteserver"
     field: "SYNCTHING_API_KEY"
   TMDB_API_READ_ACCESS_TOKEN:
     item: "tmdb.themoviedb"
     field: "TMDB_API_READ_ACCESS_TOKEN"
-  USERDIR:
-    item: "Homeserver.remoteserver"
-    field: "USERDIR"
   ZIPLINE_CORE_SECRET:
     item: "Homeserver.remoteserver"
     field: "ZIPLINE_CORE_SECRET"
