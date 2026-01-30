@@ -14,6 +14,12 @@ env_vars_mapping:
   GITHUB_DASHBOARD_TOKEN:
     item: "github.sigirciilker"
     field: "GITHUB_DASHBOARD_TOKEN"
+  GLANCE_SECRET_TOKEN:
+    item: "Homeserver.rpi0"
+    field: "GLANCE_SECRET_TOKEN"
+  HASS_API_KEY:
+    item: "homeassistant.home"
+    field: "HASS_API_KEY"
   HEADSCALE_API_KEY:
     item: "headscale.remoteserver"
     field: "HEADSCALE_API_KEY"
@@ -32,6 +38,9 @@ env_vars_mapping:
   SYNCTHING_API_KEY:
     item: "syncthing.home"
     field: "SYNCTHING_API_KEY"
+  SYNCTHING_NOTES_FOLDER_ID:
+    item: "syncthing.home"
+    field: "SYNCTHING_NOTES_FOLDER_ID"
   QUARTZ_REBUILD_WEBHOOK_SECRET:
     item: "Homeserver.rpi0"
     field: "QUARTZ_REBUILD_WEBHOOK_SECRET"
