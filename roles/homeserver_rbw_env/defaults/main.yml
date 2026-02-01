@@ -60,10 +60,10 @@ homeserver_rbw_env_default_mapping:
     item: "Homeserver.COMMON"
     field: "RESTART_POLICY_OTHERS"
   TINYAUTH_CLIENT_ID:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "TINYAUTH_CLIENT_ID"
   TINYAUTH_CLIENT_SECRET:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "TINYAUTH_CLIENT_SECRET"
   TZ:
     item: "Homeserver.COMMON"

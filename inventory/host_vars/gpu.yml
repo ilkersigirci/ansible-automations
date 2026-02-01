@@ -1,9 +1,9 @@
 env_vars_mapping:
   ARCANE_CLIENT_ID:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "ARCANE_CLIENT_ID"
   ARCANE_CLIENT_SECRET:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "ARCANE_CLIENT_SECRET"
   ARCANE_ENCRYPTION_KEY:
     item: "arcane.gpu"
@@ -135,10 +135,10 @@ env_vars_mapping:
     item: "Homeserver.gpu"
     field: "LINKWARDEN_NEXTAUTH_SECRET"
   MINIO_CLIENT_ID:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "MINIO_CLIENT_ID"
   MINIO_CLIENT_SECRET:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "MINIO_CLIENT_SECRET"
   MINIO_ROOT_PASSWORD:
     item: "minio.gpu"
@@ -159,10 +159,10 @@ env_vars_mapping:
     item: "sabnzbd.gpu"
     field: "SABNZBD_API_KEY"
   SPLITPRO_CLIENT_ID:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "SPLITPRO_CLIENT_ID"
   SPLITPRO_CLIENT_SECRET:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "SPLITPRO_CLIENT_SECRET"
   SPLITPRO_NEXTAUTH_SECRET:
     item: "Homeserver.gpu"
@@ -183,10 +183,10 @@ env_vars_mapping:
     item: "twitter.com"
     field: "TWITTER_AUTH_TOKEN"
   YAMTRACK_CLIENT_ID:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "YAMTRACK_CLIENT_ID"
   YAMTRACK_CLIENT_SECRET:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "YAMTRACK_CLIENT_SECRET"
   YAMTRACK_SECRET:
     item: "Homeserver.gpu"

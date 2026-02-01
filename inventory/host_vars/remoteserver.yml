@@ -54,10 +54,10 @@ env_vars_mapping:
     item: "headscale.remoteserver"
     field: "HEADPLANE_AGENT_PRE_AUTHKEY"
   OPEN_WEB_UI_BETUS_CLIENT_ID:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "OPEN_WEB_UI_BETUS_CLIENT_ID"
   OPEN_WEB_UI_BETUS_CLIENT_SECRET:
-    item: "ilker.pocketid"
+    item: "pocketid.ilker"
     field: "OPEN_WEB_UI_BETUS_CLIENT_SECRET"
   PGID:
     item: "Homeserver.remoteserver"
