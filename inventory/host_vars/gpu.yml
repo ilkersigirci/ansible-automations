@@ -1,4 +1,7 @@
 env_vars_mapping:
+  ARCANE_API_KEY:
+    item: "arcane.gpu"
+    field: "ARCANE_API_KEY"
   ARCANE_CLIENT_ID:
     item: "pocketid.ilker"
     field: "ARCANE_CLIENT_ID"
