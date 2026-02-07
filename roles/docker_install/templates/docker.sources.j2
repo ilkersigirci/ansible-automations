@@ -1,0 +1,6 @@
+Types: deb
+URIs: https://download.docker.com/linux/{{ docker_install_apt_distro }}
+Suites: {{ ansible_facts['distribution_release'] }}
+Components: {{ docker_install_apt_release_channel }}
+Architectures: {{ docker_install_apt_arch }}
+Signed-By: {{ docker_install_apt_keyring_path }}
