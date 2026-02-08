@@ -31,7 +31,6 @@
       register: docker_pull_output
       changed_when:
         - >
-          'Pulled' in docker_pull_output.stderr or
           'Started' in docker_pull_output.stderr or
           'Recreated' in docker_pull_output.stderr or
           'Created' in docker_pull_output.stderr
