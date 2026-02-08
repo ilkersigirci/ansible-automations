@@ -11,3 +11,6 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.rpi1"
     field: "DOMAINNAME"
+  NETWORK_INTERFACE_NAMES:
+    item: "Homeserver.rpi1"
+    field: "NETWORK_INTERFACE_NAMES"

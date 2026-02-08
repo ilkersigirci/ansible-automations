@@ -35,6 +35,9 @@ env_vars_mapping:
   MAXMIND_LICENSE_KEY:
     item: "maxmind.com"
     field: "MAXMIND_LICENSE_KEY"
+  NETWORK_INTERFACE_NAMES:
+    item: "Homeserver.rpi0"
+    field: "NETWORK_INTERFACE_NAMES"
   POCKETID_ENCRYPTION_KEY:
     item: "Homeserver.rpi0"
     field: "POCKETID_ENCRYPTION_KEY"
