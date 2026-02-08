@@ -7,6 +7,8 @@ dev_devices:
 
 lxcs:
   hosts:
+    gpu_nvidia:
+      ansible_host: 192.168.2.19
     lxc1:
       ansible_host: 192.168.2.20
     gpu_coding:
@@ -16,8 +18,8 @@ rpis:
   hosts:
     rpi0:
       ansible_host: 192.168.2.12
-    # rpi1:
-    #   ansible_host: 192.168.2.13
+    rpi1:
+      ansible_host: 192.168.2.13
     rpi2:
       ansible_host: 192.168.2.14
     rpi3:
@@ -28,6 +30,9 @@ homeserver:
     gpu:
       ansible_host: 100.64.0.19
       local_static_ip: 192.168.2.9
+    gpu_nvidia:
+      ansible_host: 192.168.2.19
+      local_static_ip: 192.168.2.19
     remoteserver:
       ansible_host: 100.64.0.4
       local_static_ip: 100.64.0.4
