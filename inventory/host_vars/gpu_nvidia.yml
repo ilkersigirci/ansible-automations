@@ -1,2 +1,6 @@
 ---
 ansible_user: ilker
+env_vars_mapping:
+  DOMAINNAME:
+    item: "Homeserver.gpu_nvidia"
+    field: "DOMAINNAME"
