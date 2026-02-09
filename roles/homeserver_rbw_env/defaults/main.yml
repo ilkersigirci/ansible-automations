@@ -65,6 +65,9 @@ homeserver_rbw_env_default_mapping:
   TINYAUTH_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "TINYAUTH_CLIENT_SECRET"
+  TINYAUTH_USERS:
+    item: "Homeserver.COMMON"
+    field: "TINYAUTH_USERS"
   TZ:
     item: "Homeserver.COMMON"
     field: "TZ"

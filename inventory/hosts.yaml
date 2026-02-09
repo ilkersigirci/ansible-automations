@@ -31,7 +31,7 @@ homeserver:
       ansible_host: 100.64.0.19
       local_static_ip: 192.168.2.9
     gpu_nvidia:
-      ansible_host: 192.168.2.19
+      ansible_host: 100.64.0.23
       local_static_ip: 192.168.2.19
     remoteserver:
       ansible_host: 100.64.0.4
