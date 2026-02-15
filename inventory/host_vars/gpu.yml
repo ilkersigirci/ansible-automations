@@ -104,18 +104,15 @@ env_vars_mapping:
   LANGFUSE_CLICKHOUSE_USER:
     item: "Homeserver.gpu"
     field: "LANGFUSE_CLICKHOUSE_USER"
+  LANGFUSE_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "LANGFUSE_CLIENT_ID"
+  LANGFUSE_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "LANGFUSE_CLIENT_SECRET"
   LANGFUSE_ENCRYPTION_KEY:
     item: "Homeserver.gpu"
     field: "LANGFUSE_ENCRYPTION_KEY"
-  LANGFUSE_INIT_USER_EMAIL:
-    item: "langfuse.gpu"
-    field: "username"
-  LANGFUSE_INIT_USER_NAME:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_INIT_USER_NAME"
-  LANGFUSE_INIT_USER_PASSWORD:
-    item: "langfuse.gpu"
-    field: "password"
   LANGFUSE_REDIS_PASSWORD:
     item: "Homeserver.gpu"
     field: "LANGFUSE_REDIS_PASSWORD"
