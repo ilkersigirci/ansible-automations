@@ -1,6 +1,9 @@
 ---
 ansible_user: ilker
 env_vars_mapping:
+  ARCANE_AGENT_BOOTSTRAP_TOKEN:
+    item: "Homeserver.gpu_nvidia"
+    field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
   DOMAINNAME:
     item: "Homeserver.gpu_nvidia"
     field: "DOMAINNAME"

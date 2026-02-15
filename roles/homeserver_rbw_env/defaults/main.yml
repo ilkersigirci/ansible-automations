@@ -53,9 +53,9 @@ homeserver_rbw_env_default_mapping:
   RESTART_POLICY_MEDIA:
     item: "Homeserver.COMMON"
     field: "RESTART_POLICY_MEDIA"
-  RESTART_POLICY_ML:
+  RESTART_POLICY_PROGRAMMING:
     item: "Homeserver.COMMON"
-    field: "RESTART_POLICY_ML"
+    field: "RESTART_POLICY_PROGRAMMING"
   RESTART_POLICY_OTHERS:
     item: "Homeserver.COMMON"
     field: "RESTART_POLICY_OTHERS"
