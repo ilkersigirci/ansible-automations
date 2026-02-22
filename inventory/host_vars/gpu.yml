@@ -62,6 +62,9 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.gpu"
     field: "DOMAINNAME"
+  FORGEJO_DIND_PATH:
+    item: "Homeserver.gpu"
+    field: "FORGEJO_DIND_PATH"
   GOTIFY_LOGGIFLY_APPRISE_URL:
     item: "gotify.remoteserver"
     field: "GOTIFY_LOGGIFLY_APPRISE_URL"
