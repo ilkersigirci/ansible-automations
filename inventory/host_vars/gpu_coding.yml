@@ -1,0 +1,57 @@
+---
+ansible_user: ilker
+env_vars_mapping:
+  # ARCANE_AGENT_BOOTSTRAP_TOKEN:
+  #   item: "Homeserver.gpu_coding"
+  #   field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
+  DOMAINNAME:
+    item: "Homeserver.gpu_coding"
+    field: "DOMAINNAME"
+  LANGFUSE_CLICKHOUSE_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_CLICKHOUSE_PASSWORD"
+  LANGFUSE_CLICKHOUSE_USER:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_CLICKHOUSE_USER"
+  LANGFUSE_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "LANGFUSE_CLIENT_ID"
+  LANGFUSE_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "LANGFUSE_CLIENT_SECRET"
+  LANGFUSE_ENCRYPTION_KEY:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_ENCRYPTION_KEY"
+  LANGFUSE_REDIS_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_REDIS_PASSWORD"
+  LANGFUSE_SALT_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_SALT_NEXTAUTH_SECRET"
+  LANGFUSE_SALT:
+    item: "Homeserver.gpu"
+    field: "LANGFUSE_SALT"
+  MINIO_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "MINIO_CLIENT_ID"
+  MINIO_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "MINIO_CLIENT_SECRET"
+  MINIO_ROOT_PASSWORD:
+    item: "minio.gpu"
+    field: "password"
+  MINIO_ROOT_USER:
+    item: "minio.gpu"
+    field: "username"
+  NAS_SERVICES_PATH:
+    item: "Homeserver.gpu_coding"
+    field: "NAS_SERVICES_PATH"
+  NETWORK_INTERFACE_NAMES:
+    item: "Homeserver.gpu"
+    field: "NETWORK_INTERFACE_NAMES"
+  PGADMIN_DEFAULT_EMAIL:
+    item: "pgadmin.gpu"
+    field: "username"
+  PGADMIN_DEFAULT_PASSWORD:
+    item: "pgadmin.gpu"
+    field: "password"

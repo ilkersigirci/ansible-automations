@@ -62,9 +62,6 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.gpu"
     field: "DOMAINNAME"
-  FORGEJO_DIND_PATH:
-    item: "Homeserver.gpu"
-    field: "FORGEJO_DIND_PATH"
   GOTIFY_LOGGIFLY_APPRISE_URL:
     item: "gotify.remoteserver"
     field: "GOTIFY_LOGGIFLY_APPRISE_URL"
@@ -101,30 +98,6 @@ env_vars_mapping:
   KOMODO_DB_USERNAME:
     item: "Homeserver.gpu"
     field: "KOMODO_DB_USERNAME"
-  LANGFUSE_CLICKHOUSE_PASSWORD:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_CLICKHOUSE_PASSWORD"
-  LANGFUSE_CLICKHOUSE_USER:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_CLICKHOUSE_USER"
-  LANGFUSE_CLIENT_ID:
-    item: "pocketid.ilker"
-    field: "LANGFUSE_CLIENT_ID"
-  LANGFUSE_CLIENT_SECRET:
-    item: "pocketid.ilker"
-    field: "LANGFUSE_CLIENT_SECRET"
-  LANGFUSE_ENCRYPTION_KEY:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_ENCRYPTION_KEY"
-  LANGFUSE_REDIS_PASSWORD:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_REDIS_PASSWORD"
-  LANGFUSE_SALT_NEXTAUTH_SECRET:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_SALT_NEXTAUTH_SECRET"
-  LANGFUSE_SALT:
-    item: "Homeserver.gpu"
-    field: "LANGFUSE_SALT"
   LINKWARDEN_ACCESS_TOKEN:
     item: "linkwarden.gpu"
     field: "LINKWARDEN_ACCESS_TOKEN"
@@ -137,27 +110,6 @@ env_vars_mapping:
   LINKWARDEN_NEXTAUTH_SECRET:
     item: "Homeserver.gpu"
     field: "LINKWARDEN_NEXTAUTH_SECRET"
-  MINIO_CLIENT_ID:
-    item: "pocketid.ilker"
-    field: "MINIO_CLIENT_ID"
-  MINIO_CLIENT_SECRET:
-    item: "pocketid.ilker"
-    field: "MINIO_CLIENT_SECRET"
-  MINIO_ROOT_PASSWORD:
-    item: "minio.gpu"
-    field: "password"
-  MINIO_ROOT_USER:
-    item: "minio.gpu"
-    field: "username"
-  NETWORK_INTERFACE_NAMES:
-    item: "Homeserver.gpu"
-    field: "NETWORK_INTERFACE_NAMES"
-  PGADMIN_DEFAULT_EMAIL:
-    item: "pgadmin.gpu"
-    field: "username"
-  PGADMIN_DEFAULT_PASSWORD:
-    item: "pgadmin.gpu"
-    field: "password"
   SABNZBD_API_KEY:
     item: "sabnzbd.gpu"
     field: "SABNZBD_API_KEY"
