@@ -4,9 +4,18 @@ env_vars_mapping:
   # ARCANE_AGENT_BOOTSTRAP_TOKEN:
   #   item: "Homeserver.gpu_coding"
   #   field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
+  DOCO_CD_WEBHOOK_SECRET:
+    item: "doco-cd.coding"
+    field: "DOCO_CD_WEBHOOK_SECRET"
   DOMAINNAME:
     item: "Homeserver.gpu_coding"
     field: "DOMAINNAME"
+  FORGEJO_REPO_READ_TOKEN:
+    item: "git.coding-forgejo"
+    field: "REPO_READ_TOKEN"
+  # GOTIFY_DOCO_CD_APPRISE_URL:
+  #   item: "gotify.remoteserver"
+  #   field: "GOTIFY_DOCO_CD_APPRISE_URL"
   LANGFUSE_CLICKHOUSE_PASSWORD:
     item: "Homeserver.gpu"
     field: "LANGFUSE_CLICKHOUSE_PASSWORD"
