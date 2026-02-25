@@ -14,3 +14,7 @@ docker_install_apt_keyring_path: "/etc/apt/keyrings/docker.asc"
 docker_install_apt_gpg_url: "https://download.docker.com/linux/{{ docker_install_apt_distro }}/gpg"
 docker_install_daemon_options:
   storage-driver: "overlay2"
+  log-driver: "json-file"
+  log-opts:
+    max-size: "10m"
+    max-file: "3"
