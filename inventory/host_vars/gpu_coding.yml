@@ -64,3 +64,9 @@ env_vars_mapping:
   PGADMIN_DEFAULT_PASSWORD:
     item: "pgadmin.gpu"
     field: "password"
+  RUSTFS_ACCESS_KEY:
+    item: "rustfs.coding"
+    field: "username"
+  RUSTFS_SECRET_KEY:
+    item: "rustfs.coding"
+    field: "password"
