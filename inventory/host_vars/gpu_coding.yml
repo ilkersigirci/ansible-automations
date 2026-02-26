@@ -10,6 +10,9 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.gpu_coding"
     field: "DOMAINNAME"
+  FILESTASH_ADMIN_PASSWORD_BCRYPT:
+    item: "filestash.coding"
+    field: "FILESTASH_ADMIN_PASSWORD_BCRYPT"
   FORGEJO_REPO_READ_TOKEN:
     item: "git.coding-forgejo"
     field: "REPO_READ_TOKEN"
