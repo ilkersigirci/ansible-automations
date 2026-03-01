@@ -53,6 +53,15 @@ env_vars_mapping:
   HEADPLANE_AGENT_PRE_AUTHKEY:
     item: "headscale.remoteserver"
     field: "HEADPLANE_AGENT_PRE_AUTHKEY"
+  HEADSCALE_API_KEY:
+    item: "headscale.remoteserver"
+    field: "HEADSCALE_API_KEY"
+  HEADSCALE_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "HEADSCALE_CLIENT_ID"
+  HEADSCALE_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "HEADSCALE_CLIENT_SECRET"
   OPEN_WEB_UI_BETUS_CLIENT_ID:
     item: "pocketid.ilker"
     field: "OPEN_WEB_UI_BETUS_CLIENT_ID"
