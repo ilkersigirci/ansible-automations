@@ -62,3 +62,9 @@ env_vars_mapping:
   VAULTWARDEN_ADMIN_TOKEN:
     item: "Homeserver.rpi0"
     field: "VAULTWARDEN_ADMIN_TOKEN"
+  VAULTWARDEN_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "VAULTWARDEN_CLIENT_ID"
+  VAULTWARDEN_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "VAULTWARDEN_CLIENT_SECRET"
