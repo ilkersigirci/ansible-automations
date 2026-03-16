@@ -26,15 +26,15 @@ env_vars_mapping:
   CHANGEDETECTION_API_KEY:
     item: "changedetection.gpu"
     field: "CHANGEDETECTION_API_KEY"
-  CUSTOM_OPENAI_API_KEY:
-    item: "chat.gpu"
-    field: "CUSTOM_OPENAI_API_KEY"
-  CUSTOM_OPENAI_BASE_URL:
-    item: "chat.gpu"
-    field: "CUSTOM_OPENAI_BASE_URL"
-  CUSTOM_OPENAI_MODEL_NAME:
-    item: "chat.gpu"
-    field: "CUSTOM_OPENAI_MODEL_NAME"
+  # CUSTOM_OPENAI_API_KEY:
+  #   item: "chat.remote"
+  #   field: "CUSTOM_OPENAI_API_KEY"
+  # CUSTOM_OPENAI_BASE_URL:
+  #   item: "chat.remote"
+  #   field: "CUSTOM_OPENAI_BASE_URL"
+  # CUSTOM_OPENAI_MODEL_NAME:
+  #   item: "chat.remote"
+  #   field: "CUSTOM_OPENAI_MODEL_NAME"
   DIR_BACKUP:
     item: "Homeserver.gpu"
     field: "DIR_BACKUP"
