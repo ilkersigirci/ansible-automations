@@ -76,3 +76,9 @@ env_vars_mapping:
   RUSTFS_SECRET_KEY:
     item: "rustfs.coding"
     field: "password"
+  TRAEFIK_OTEL_GRPC_ENDPOINT:
+    item: "Homeserver.gpu_coding"
+    field: "TRAEFIK_OTEL_GRPC_ENDPOINT"
+  TRAEFIK_OTEL_GRPC_INSECURE:
+    item: "Homeserver.gpu_coding"
+    field: "TRAEFIK_OTEL_GRPC_INSECURE"
