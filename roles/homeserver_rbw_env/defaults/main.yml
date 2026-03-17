@@ -35,6 +35,15 @@ homeserver_rbw_env_default_mapping:
   OPENROUTER_API_KEY:
     item: "openrouter.ai"
     field: "OPENROUTER_API_KEY"
+  OTEL_COLLECTOR_GATEWAY_ENDPOINT:
+    item: "Homeserver.COMMON"
+    field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
+  OTEL_COLLECTOR_GATEWAY_INSECURE:
+    item: "Homeserver.COMMON"
+    field: "OTEL_COLLECTOR_GATEWAY_INSECURE"
+  OTEL_DEPLOYMENT_ENVIRONMENT:
+    item: "Homeserver.COMMON"
+    field: "OTEL_DEPLOYMENT_ENVIRONMENT"
   PGID:
     item: "Homeserver.COMMON"
     field: "PGID"
@@ -68,27 +77,9 @@ homeserver_rbw_env_default_mapping:
   TINYAUTH_USERS:
     item: "Homeserver.COMMON"
     field: "TINYAUTH_USERS"
-  TRAEFIK_OTEL_DEPLOYMENT_ENVIRONMENT:
-    item: "Homeserver.COMMON"
-    field: "TRAEFIK_OTEL_DEPLOYMENT_ENVIRONMENT"
   TRAEFIK_OTEL_ENABLED:
     item: "Homeserver.COMMON"
     field: "TRAEFIK_OTEL_ENABLED"
-  TRAEFIK_OTEL_GRPC_ENDPOINT:
-    item: "Homeserver.COMMON"
-    field: "TRAEFIK_OTEL_GRPC_ENDPOINT"
-  TRAEFIK_OTEL_GRPC_INSECURE:
-    item: "Homeserver.COMMON"
-    field: "TRAEFIK_OTEL_GRPC_INSECURE"
-  TRAEFIK_OTEL_SERVICE_NAME:
-    item: "Homeserver.COMMON"
-    field: "TRAEFIK_OTEL_SERVICE_NAME"
-  TRAEFIK_OTEL_SERVICE_NAMESPACE:
-    item: "Homeserver.COMMON"
-    field: "TRAEFIK_OTEL_SERVICE_NAMESPACE"
-  TRAEFIK_OTEL_SERVICE_VERSION:
-    item: "Homeserver.COMMON"
-    field: "TRAEFIK_OTEL_SERVICE_VERSION"
   TZ:
     item: "Homeserver.COMMON"
     field: "TZ"
