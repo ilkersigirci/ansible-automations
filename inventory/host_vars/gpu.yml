@@ -110,6 +110,12 @@ env_vars_mapping:
   LINKWARDEN_NEXTAUTH_SECRET:
     item: "Homeserver.gpu"
     field: "LINKWARDEN_NEXTAUTH_SECRET"
+  OTEL_COLLECTOR_GATEWAY_ENDPOINT:
+    item: "Homeserver.gpu"
+    field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
+  OTEL_COLLECTOR_GATEWAY_INSECURE:
+    item: "Homeserver.gpu"
+    field: "OTEL_COLLECTOR_GATEWAY_INSECURE"
   SABNZBD_API_KEY:
     item: "sabnzbd.gpu"
     field: "SABNZBD_API_KEY"
