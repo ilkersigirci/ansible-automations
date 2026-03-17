@@ -65,6 +65,12 @@ env_vars_mapping:
   GOTIFY_LOGGIFLY_APPRISE_URL:
     item: "gotify.remoteserver"
     field: "GOTIFY_LOGGIFLY_APPRISE_URL"
+  GRAFANA_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "GRAFANA_CLIENT_ID"
+  GRAFANA_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "GRAFANA_CLIENT_SECRET"
   IMMICH_API_KEY:
     item: "immich.photos.me"
     field: "IMMICH_API_KEY"

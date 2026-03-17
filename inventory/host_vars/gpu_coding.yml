@@ -22,12 +22,6 @@ env_vars_mapping:
   # GOTIFY_DOCO_CD_APPRISE_URL:
   #   item: "gotify.remoteserver"
   #   field: "GOTIFY_DOCO_CD_APPRISE_URL"
-  GRAFANA_CLIENT_ID:
-    item: "pocketid.ilker"
-    field: "GRAFANA_CLIENT_ID"
-  GRAFANA_CLIENT_SECRET:
-    item: "pocketid.ilker"
-    field: "GRAFANA_CLIENT_SECRET"
   LANGFUSE_CLICKHOUSE_PASSWORD:
     item: "Homeserver.gpu"
     field: "LANGFUSE_CLICKHOUSE_PASSWORD"
