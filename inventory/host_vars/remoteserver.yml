@@ -35,15 +35,18 @@ env_vars_mapping:
   GATUS_TITLE:
     item: "Homeserver.remoteserver"
     field: "GATUS_TITLE"
+  GOTIFY_CROWDSEC_TOKEN:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_CROWDSEC_TOKEN"
   GOTIFY_DEFAULT_USER_PASS:
     item: "gotify.remoteserver"
     field: "password"
   GOTIFY_GATUS_NOTIFICATION_TOKEN:
     item: "gotify.remoteserver"
-    field: "GOTIFY_GATUS_NOTIFICATION_TOKEN"
+    field: "GOTIFY_GATUS_TOKEN"
   GOTIFY_HOMEPAGE_CLIENT_TOKEN:
     item: "gotify.remoteserver"
-    field: "GOTIFY_HOMEPAGE_CLIENT_TOKEN"
+    field: "GOTIFY_HOMEPAGE_TOKEN"
   HEADPLANE_COOKIE_SECRET:
     item: "Homeserver.remoteserver"
     field: "HEADPLANE_COOKIE_SECRET"
