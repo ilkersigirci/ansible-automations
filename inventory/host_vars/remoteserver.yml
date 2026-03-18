@@ -68,6 +68,9 @@ env_vars_mapping:
   OPEN_WEB_UI_BETUS_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "OPEN_WEB_UI_BETUS_CLIENT_SECRET"
+  OTEL_COLLECTOR_GATEWAY_ENDPOINT:
+    item: "Homeserver.remoteserver"
+    field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
   PGID:
     item: "Homeserver.remoteserver"
     field: "PGID"
