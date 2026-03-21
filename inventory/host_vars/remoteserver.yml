@@ -65,12 +65,21 @@ env_vars_mapping:
   HEADSCALE_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "HEADSCALE_CLIENT_SECRET"
-  OPEN_WEB_UI_BETUS_CLIENT_ID:
+  HOMESERVER_API_KEY:
+    item: "api.coding"
+    field: "API_KEY_LANGFUSE"
+  HOMESERVER_API_OPENAI_BASE_URL:
+    item: "Homeserver.remoteserver"
+    field: "HOMESERVER_API_OPENAI_BASE_URL"
+  OPENWEBUI_CLIENT_ID:
     item: "pocketid.ilker"
-    field: "OPEN_WEB_UI_BETUS_CLIENT_ID"
-  OPEN_WEB_UI_BETUS_CLIENT_SECRET:
+    field: "OPENWEBUI_CLIENT_ID"
+  OPENWEBUI_CLIENT_SECRET:
     item: "pocketid.ilker"
-    field: "OPEN_WEB_UI_BETUS_CLIENT_SECRET"
+    field: "OPENWEBUI_CLIENT_SECRET"
+  OPENWEBUI_WEBUI_SECRET_KEY:
+    item: "Homeserver.remoteserver"
+    field: "OPENWEBUI_WEBUI_SECRET_KEY"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.remoteserver"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
