@@ -71,6 +71,9 @@ env_vars_mapping:
   HOMESERVER_API_OPENAI_BASE_URL:
     item: "Homeserver.remoteserver"
     field: "HOMESERVER_API_OPENAI_BASE_URL"
+  MISTRAL_API_KEY:
+    item: "mistral.ai"
+    field: "MISTRAL_API_KEY"
   OPENWEBUI_CLIENT_ID:
     item: "pocketid.ilker"
     field: "OPENWEBUI_CLIENT_ID"
