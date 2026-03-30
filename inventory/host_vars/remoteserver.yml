@@ -65,12 +65,6 @@ env_vars_mapping:
   HEADSCALE_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "HEADSCALE_CLIENT_SECRET"
-  HOMESERVER_API_KEY:
-    item: "api.coding"
-    field: "API_KEY_LANGFUSE"
-  HOMESERVER_API_OPENAI_BASE_URL:
-    item: "Homeserver.remoteserver"
-    field: "HOMESERVER_API_OPENAI_BASE_URL"
   MISTRAL_API_KEY:
     item: "mistral.ai"
     field: "MISTRAL_API_KEY"

@@ -2,6 +2,12 @@
 # Default mapping of environment variables to rbw items and fields
 # Can be overridden in inventory/group_vars or host_vars
 homeserver_rbw_env_default_mapping:
+  AIGATEWAY_BASE_URL:
+    item: "Homeserver.COMMON"
+    field: "AIGATEWAY_BASE_URL"
+  AIGATEWAY_API_KEY:
+    item: "Homeserver.COMMON"
+    field: "AIGATEWAY_API_KEY"
   ARCANE_AGENT_BOOTSTRAP_TOKEN:
     item: "Homeserver.COMMON"
     field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
@@ -26,15 +32,6 @@ homeserver_rbw_env_default_mapping:
   LOCAL_IPS:
     item: "Homeserver.COMMON"
     field: "LOCAL_IPS"
-  OPENAI_API_KEY:
-    item: "openai.work"
-    field: "restricted.api.key"
-  OPENROUTER_API_BASE_URL:
-    item: "Homeserver.COMMON"
-    field: "OPENROUTER_API_BASE_URL"
-  OPENROUTER_API_KEY:
-    item: "openrouter.ai"
-    field: "OPENROUTER_API_KEY"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.COMMON"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
