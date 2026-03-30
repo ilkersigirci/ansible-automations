@@ -29,15 +29,6 @@ env_vars_mapping:
   CROWDSEC_VICTORIAMETRICS_URL:
     item: "Homeserver.gpu"
     field: "CROWDSEC_VICTORIAMETRICS_URL"
-  # CUSTOM_OPENAI_API_KEY:
-  #   item: "chat.remote"
-  #   field: "CUSTOM_OPENAI_API_KEY"
-  # CUSTOM_OPENAI_BASE_URL:
-  #   item: "chat.remote"
-  #   field: "CUSTOM_OPENAI_BASE_URL"
-  # CUSTOM_OPENAI_MODEL_NAME:
-  #   item: "chat.remote"
-  #   field: "CUSTOM_OPENAI_MODEL_NAME"
   DIR_BACKUP:
     item: "Homeserver.gpu"
     field: "DIR_BACKUP"
@@ -119,6 +110,24 @@ env_vars_mapping:
   LINKWARDEN_NEXTAUTH_SECRET:
     item: "Homeserver.gpu"
     field: "LINKWARDEN_NEXTAUTH_SECRET"
+  OPENAI_API_KEY:
+    item: "openai.work"
+    field: "General.Restricted"
+  OPENROUTER_API_BASE_URL:
+    item: "Homeserver.COMMON"
+    field: "OPENROUTER_API_BASE_URL"
+  OPENROUTER_API_KEY:
+    item: "openrouter.ai"
+    field: "OPENROUTER_API_KEY"
+  OPENAI_HOMESERVER_API_BASE_URL:
+    item: "Homeserver.gpu"
+    field: "OPENAI_HOMESERVER_API_BASE_URL"
+  OPENAI_HOMESERVER_API_KEY:
+    item: "api.coding"
+    field: "API_KEY_LANGFUSE"
+  OPENAI_QWEN_3_5_35B_A3B_BASE_URL:
+    item: "Homeserver.gpu"
+    field: "OPENAI_QWEN_3_5_35B_A3B_BASE_URL"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.gpu"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
