@@ -113,6 +113,9 @@ env_vars_mapping:
   OPENAI_API_KEY:
     item: "openai.work"
     field: "General.Restricted"
+  OPENAI_PERSONAL_API_KEY:
+    item: "openai.ilker4fun"
+    field: "API_KEY"
   OPENROUTER_API_BASE_URL:
     item: "Homeserver.COMMON"
     field: "OPENROUTER_API_BASE_URL"
