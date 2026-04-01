@@ -4,3 +4,6 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.nas"
     field: "DOMAINNAME"
+  FILESTASH_ADMIN_PASSWORD_BCRYPT:
+    item: "filestash.nas"
+    field: "FILESTASH_ADMIN_PASSWORD_BCRYPT"
