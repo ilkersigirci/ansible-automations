@@ -1,6 +1,16 @@
 ---
-- name: Setup Debian Hosts
-  hosts: lxcs,rpis
+- name: Setup Debian LXC Hosts
+  hosts: lxcs
+  become: true
+  vars:
+    ansible_user: root
+
+  roles:
+    - role: common
+    - role: docker_install
+
+- name: Setup Debian RPI Hosts
+  hosts: rpis
   become: true
 
   roles:

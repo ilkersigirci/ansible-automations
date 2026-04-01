@@ -13,6 +13,8 @@ lxcs:
       ansible_host: 192.168.2.20
     gpu_coding:
       ansible_host: 192.168.2.21
+    nas:
+      ansible_host: 192.168.2.23
 
 rpis:
   hosts:
@@ -36,6 +38,9 @@ homeserver:
     gpu_coding:
       ansible_host: 100.64.0.22
       local_static_ip: 192.168.2.21
+    nas:
+      ansible_host: 192.168.2.23
+      local_static_ip: 192.168.2.23
     remoteserver:
       ansible_host: 100.64.0.4
       local_static_ip: 100.64.0.4
