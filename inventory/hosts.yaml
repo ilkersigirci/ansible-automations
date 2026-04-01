@@ -39,11 +39,11 @@ homeserver:
       ansible_host: 100.64.0.22
       local_static_ip: 192.168.2.21
     nas:
-      ansible_host: 192.168.2.23
+      ansible_host: 100.64.0.25
       local_static_ip: 192.168.2.23
     remoteserver:
-      ansible_host: 100.64.0.4
-      local_static_ip: 100.64.0.4
+      ansible_host: 100.64.0.1
+      local_static_ip: 100.64.0.1
       user_name: ubuntu
     rpi0:
       ansible_host: 100.64.0.17
