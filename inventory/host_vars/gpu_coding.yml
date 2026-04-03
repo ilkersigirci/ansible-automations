@@ -73,3 +73,9 @@ env_vars_mapping:
   RUSTFS_SECRET_KEY:
     item: "rustfs.coding"
     field: "password"
+  VERSITYGW_ROOT_ACCESS_KEY:
+    item: "s3-ui.nas"
+    field: "username"
+  VERSITYGW_ROOT_SECRET_KEY:
+    item: "s3-ui.nas"
+    field: "password"

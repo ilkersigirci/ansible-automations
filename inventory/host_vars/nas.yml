@@ -7,3 +7,9 @@ env_vars_mapping:
   FILESTASH_ADMIN_PASSWORD_BCRYPT:
     item: "filestash.nas"
     field: "FILESTASH_ADMIN_PASSWORD_BCRYPT"
+  VERSITYGW_ROOT_ACCESS_KEY:
+    item: "s3-ui.nas"
+    field: "username"
+  VERSITYGW_ROOT_SECRET_KEY:
+    item: "s3-ui.nas"
+    field: "password"
