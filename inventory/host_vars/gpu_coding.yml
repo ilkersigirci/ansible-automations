@@ -20,10 +20,10 @@ env_vars_mapping:
   #   item: "gotify.remoteserver"
   #   field: "GOTIFY_DOCO_CD_APPRISE_URL"
   LANGFUSE_CLICKHOUSE_PASSWORD:
-    item: "Homeserver.gpu"
+    item: "Homeserver.gpu_coding"
     field: "LANGFUSE_CLICKHOUSE_PASSWORD"
   LANGFUSE_CLICKHOUSE_USER:
-    item: "Homeserver.gpu"
+    item: "Homeserver.gpu_coding"
     field: "LANGFUSE_CLICKHOUSE_USER"
   LANGFUSE_CLIENT_ID:
     item: "pocketid.ilker"
@@ -32,16 +32,16 @@ env_vars_mapping:
     item: "pocketid.ilker"
     field: "LANGFUSE_CLIENT_SECRET"
   LANGFUSE_ENCRYPTION_KEY:
-    item: "Homeserver.gpu"
+    item: "Homeserver.gpu_coding"
     field: "LANGFUSE_ENCRYPTION_KEY"
   LANGFUSE_REDIS_PASSWORD:
-    item: "Homeserver.gpu"
+    item: "Homeserver.gpu_coding"
     field: "LANGFUSE_REDIS_PASSWORD"
   LANGFUSE_SALT_NEXTAUTH_SECRET:
-    item: "Homeserver.gpu"
+    item: "Homeserver.gpu_coding"
     field: "LANGFUSE_SALT_NEXTAUTH_SECRET"
   LANGFUSE_SALT:
-    item: "Homeserver.gpu"
+    item: "Homeserver.gpu_coding"
     field: "LANGFUSE_SALT"
   MINIO_CLIENT_ID:
     item: "pocketid.ilker"
