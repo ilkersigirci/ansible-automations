@@ -68,6 +68,9 @@ env_vars_mapping:
   MISTRAL_API_KEY:
     item: "mistral.ai"
     field: "MISTRAL_API_KEY"
+  OPENAI_IMAGE_GENERATION_MODEL:
+    item: "Homeserver.remoteserver"
+    field: "OPENAI_IMAGE_GENERATION_MODEL"
   OPENWEBUI_CLIENT_ID:
     item: "pocketid.ilker"
     field: "OPENWEBUI_CLIENT_ID"
