@@ -131,6 +131,9 @@ env_vars_mapping:
   OPENAI_QWEN_3_5_35B_A3B_BASE_URL:
     item: "Homeserver.gpu"
     field: "OPENAI_QWEN_3_5_35B_A3B_BASE_URL"
+  OPENAI_QWEN_IMAGE_2512_BASE_URL:
+    item: "Homeserver.gpu"
+    field: "OPENAI_QWEN_IMAGE_2512_BASE_URL"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.gpu"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
