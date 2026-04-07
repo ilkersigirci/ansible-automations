@@ -14,6 +14,9 @@ env_vars_mapping:
   CROWDSEC_ENROLL_CONTEXT:
     item: "Homeserver.remoteserver"
     field: "CROWDSEC_ENROLL_CONTEXT"
+  CROWDSEC_LOG_GROUP_GID:
+    item: "Homeserver.remoteserver"
+    field: "CROWDSEC_LOG_GROUP_GID"
   CROWDSEC_TRAEFIK_BOUNCER_API_KEY:
     item: "Homeserver.remoteserver"
     field: "CROWDSEC_TRAEFIK_BOUNCER_API_KEY"
