@@ -11,6 +11,9 @@ env_vars_mapping:
   AIOSTREAMS_SECRET_KEY:
     item: "Homeserver.remoteserver"
     field: "AIOSTREAMS_SECRET_KEY"
+  CONVERTX_JWT_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "CONVERTX_JWT_SECRET"
   CROWDSEC_ENROLL_CONTEXT:
     item: "Homeserver.remoteserver"
     field: "CROWDSEC_ENROLL_CONTEXT"
