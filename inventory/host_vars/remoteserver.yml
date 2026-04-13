@@ -59,9 +59,6 @@ env_vars_mapping:
   HEADPLANE_AGENT_HOST_NAME:
     item: "Homeserver.remoteserver"
     field: "HEADPLANE_AGENT_HOST_NAME"
-  HEADPLANE_AGENT_PRE_AUTHKEY:
-    item: "headscale.remoteserver"
-    field: "HEADPLANE_AGENT_PRE_AUTHKEY"
   HEADSCALE_API_KEY:
     item: "headscale.remoteserver"
     field: "HEADSCALE_API_KEY"
