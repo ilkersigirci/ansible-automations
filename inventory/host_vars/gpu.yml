@@ -122,6 +122,9 @@ env_vars_mapping:
   OPENROUTER_API_KEY:
     item: "openrouter.ai"
     field: "OPENROUTER_API_KEY"
+  OPENAI_GEMMA4_31B_IT_BASE_URL:
+    item: "Homeserver.gpu"
+    field: "OPENAI_GEMMA4_31B_IT_BASE_URL"
   OPENAI_HOMESERVER_API_BASE_URL:
     item: "Homeserver.gpu"
     field: "OPENAI_HOMESERVER_API_BASE_URL"
