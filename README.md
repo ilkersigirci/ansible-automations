@@ -28,7 +28,7 @@ ansible-playbook -i ./inventory/hosts.yaml ./playbooks/setup_debian.yml
 ```
 *If you need to provide a sudo password:*
 ```bash
-ansible-playbook -i ./inventory/hosts.yaml ./playbooks/setup_debian.yml --ask-become-pass
+ansible-playbook ./playbooks/setup_debian.yml --ask-become-pass
 ```
 
 ### 3. Ad-Hoc Commands
@@ -36,29 +36,29 @@ Run a single command on all hosts without writing a playbook.
 
 **Check disk usage:**
 ```bash
-ansible -i ./inventory/hosts.yaml all -a "df -h"
+ansible all -a "df -h"
 ```
 
 **Check memory usage:**
 ```bash
-ansible -i ./inventory/hosts.yaml all -a "free -m"
+ansible all -a "free -m"
 ```
 
 **Reboot all hosts:**
 ```bash
-ansible -i ./inventory/hosts.yaml all -a "sudo reboot"
+uv run ansible all -a "sudo reboot"
 ```
 
 ### 4. Limiting Execution
 Run the playbook only on a specific host (e.g., `lxc1`).
 ```bash
-ansible-playbook -i ./inventory/hosts.yaml ./playbooks/setup_debian.yml --limit lxc1
+uv run  ansible-playbook ./playbooks/setup_debian.yml --limit lxc1
 ```
 
 ### 5. Syntax Check
 Check your playbook for syntax errors before running.
 ```bash
-ansible-playbook -i ./inventory/hosts.yaml ./playbooks/setup_debian.yml --syntax-check
+uv run  ansible-playbook ./playbooks/setup_debian.yml --syntax-check
 ```
 
 ### 6. Handling Private Repositories
@@ -95,13 +95,13 @@ This allows your other machines to use the SSH keys on your local machine.
    ```
    *Or pass it in the command line:*
    ```bash
-   ansible-playbook -i ./inventory/hosts.yaml ./playbooks/setup_debian.yml --ssh-common-args='-o ForwardAgent=yes'
+   ansible-playbook ./playbooks/setup_debian.yml --ssh-common-args='-o ForwardAgent=yes'
    ```
 
 ### 7. Deploying Updates
 To pull the latest code and restart containers:
 ```bash
-ansible-playbook -i ./inventory/hosts.yaml ./playbooks/deploy.yml --ssh-common-args='-o ForwardAgent=yes'
+uv run  ansible-playbook ./playbooks/deploy.yml --ssh-common-args='-o ForwardAgent=yes'
 ```
 
 ## Directory Structure

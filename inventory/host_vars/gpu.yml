@@ -131,9 +131,9 @@ env_vars_mapping:
   OPENAI_HOMESERVER_API_KEY:
     item: "api.coding"
     field: "API_KEY_LANGFUSE"
-  OPENAI_QWEN_3_5_35B_A3B_BASE_URL:
+  OPENAI_QWEN_3_6_35B_A3B_BASE_URL:
     item: "Homeserver.gpu"
-    field: "OPENAI_QWEN_3_5_35B_A3B_BASE_URL"
+    field: "OPENAI_QWEN_3_6_35B_A3B_BASE_URL"
   OPENAI_QWEN_IMAGE_2512_BASE_URL:
     item: "Homeserver.gpu"
     field: "OPENAI_QWEN_IMAGE_2512_BASE_URL"
