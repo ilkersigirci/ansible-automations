@@ -1,0 +1,58 @@
+env_vars_mapping:
+  DIR_HARDDISKROOT:
+    item: "Homeserver.dell"
+    field: "DIR_HARDDISKROOT"
+  DIR_MEDIA:
+    item: "Homeserver.dell"
+    field: "DIR_MEDIA"
+  DIR_PHOTOS:
+    item: "Homeserver.dell"
+    field: "DIR_PHOTOS"
+  DOMAINNAME:
+    item: "Homeserver.dell"
+    field: "DOMAINNAME"
+  FRIGATE_RTSP_HOST:
+    item: "Homeserver.dell"
+    field: "FRIGATE_RTSP_HOST"
+  FRIGATE_RTSP_PORT:
+    item: "Homeserver.dell"
+    field: "FRIGATE_RTSP_PORT"
+  FRIGATE_RTSP_USER:
+    item: "Homeserver.dell"
+    field: "FRIGATE_RTSP_USER"
+  FRIGATE_RTSP_PASSWORD:
+    item: "Homeserver.dell"
+    field: "FRIGATE_RTSP_PASSWORD"
+  IMMICH_API_KEY:
+    item: "Homeserver.dell"
+    field: "IMMICH_API_KEY"
+  IMMICH_DB_DATABASE_NAME:
+    item: "Homeserver.dell"
+    field: "IMMICH_DB_DATABASE_NAME"
+  IMMICH_DB_HOSTNAME:
+    item: "Homeserver.dell"
+    field: "IMMICH_DB_HOSTNAME"
+  IMMICH_DB_PASSWORD:
+    item: "Homeserver.dell"
+    field: "IMMICH_DB_PASSWORD"
+  IMMICH_DB_USERNAME:
+    item: "Homeserver.dell"
+    field: "IMMICH_DB_USERNAME"
+  IMMICH_REDIS_HOSTNAME:
+    item: "Homeserver.dell"
+    field: "IMMICH_REDIS_HOSTNAME"
+  IMMICH_UPLOAD_LOCATION:
+    item: "Homeserver.dell"
+    field: "IMMICH_UPLOAD_LOCATION"
+  NETWORK_INTERFACE_NAMES:
+    item: "Homeserver.dell"
+    field: "NETWORK_INTERFACE_NAMES"
+  PGID:
+    item: "Homeserver.dell"
+    field: "PGID"
+  PUID:
+    item: "Homeserver.dell"
+    field: "PUID"
+  TRAEFIK_OTEL_ENABLED:
+    item: "Homeserver.dell"
+    field: "TRAEFIK_OTEL_ENABLED"

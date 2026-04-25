@@ -39,6 +39,12 @@
         homeserver_rbw_env_vars: "{{ dict(homeserver_rbw_env_secrets_result.stdout_lines | map('split', '=', 1)) }}"
       no_log: true
 
+- name: Resolve remote HOME for USERDIR
+  ansible.builtin.command:
+    cmd: /bin/bash -lc 'printf "%s" "$HOME"'
+  register: homeserver_rbw_env_home_result
+  changed_when: false
+
 - name: Generate .env file content (escape $ as $$ for docker-compose)
   ansible.builtin.set_fact:
     homeserver_rbw_env_content: |
@@ -47,7 +53,7 @@
       {% endfor %}
       LOCAL_STATIC_IP={{ local_static_ip }}
       REPO_PATH={{ repo_path }}
-      USERDIR=/home/{{ user_name }}
+      USERDIR={{ homeserver_rbw_env_home_result.stdout }}
   no_log: true
 
 - name: Deploy .env file
