@@ -1,9 +1,9 @@
 ---
 ansible_user: ilker
 env_vars_mapping:
-  # ARCANE_AGENT_BOOTSTRAP_TOKEN:
-  #   item: "Homeserver.gpu_coding"
-  #   field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.gpu_coding"
+    field: "ARCANE_AGENT_TOKEN"
   DOCO_CD_API_SECRET:
     item: "doco-cd.coding"
     field: "DOCO_CD_API_SECRET"

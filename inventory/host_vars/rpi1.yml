@@ -5,6 +5,9 @@ env_vars_mapping:
   ADGUARD_USERNAME:
     item: "adguardhome.rpi1"
     field: "username"
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.rpi1"
+    field: "ARCANE_AGENT_TOKEN"
   DIR_HARDDISKROOT:
     item: "Homeserver.rpi1"
     field: "DIR_HARDDISKROOT"

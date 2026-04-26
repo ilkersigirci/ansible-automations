@@ -8,9 +8,9 @@ homeserver_rbw_env_default_mapping:
   AIGATEWAY_API_KEY:
     item: "Homeserver.COMMON"
     field: "AIGATEWAY_API_KEY"
-  ARCANE_AGENT_BOOTSTRAP_TOKEN:
-    item: "Homeserver.COMMON"
-    field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
+  # ARCANE_AGENT_BOOTSTRAP_TOKEN:
+  #   item: "Homeserver.COMMON"
+  #   field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
   BASE_DOMAINNAME:
     item: "Homeserver.COMMON"
     field: "BASE_DOMAINNAME"

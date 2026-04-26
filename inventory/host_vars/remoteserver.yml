@@ -11,6 +11,9 @@ env_vars_mapping:
   AIOSTREAMS_SECRET_KEY:
     item: "Homeserver.remoteserver"
     field: "AIOSTREAMS_SECRET_KEY"
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.remoteserver"
+    field: "ARCANE_AGENT_TOKEN"
   CONVERTX_JWT_SECRET:
     item: "Homeserver.remoteserver"
     field: "CONVERTX_JWT_SECRET"

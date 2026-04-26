@@ -1,6 +1,9 @@
 ---
 ansible_user: ilker
 env_vars_mapping:
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.nas"
+    field: "ARCANE_AGENT_TOKEN"
   DOMAINNAME:
     item: "Homeserver.nas"
     field: "DOMAINNAME"

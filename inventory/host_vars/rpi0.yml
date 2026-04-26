@@ -1,4 +1,7 @@
 env_vars_mapping:
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.rpi0"
+    field: "ARCANE_AGENT_TOKEN"
   CHANGEDETECTION_API_KEY:
     item: "changedetection.gpu"
     field: "CHANGEDETECTION_API_KEY"
