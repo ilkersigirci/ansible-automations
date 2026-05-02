@@ -1,118 +1,76 @@
-# Ansible Cheatsheet for Debian Host Management
+# ansible-automations
 
-## Prerequisites
-1. **SSH Access**: Ensure you can SSH into your hosts (RPis, LXCs, VMs) as **root** from this machine.
-   ```bash
-   ssh-copy-id root@192.168.2.X
-   ```
-2. **Inventory**: Update `./inventory/hosts.yaml` with the correct IP addresses of your hosts.
+Personal Ansible automation for Debian-family machines, Raspberry Pis, LXCs,
+development devices, and homeserver Docker hosts.
 
-## Common Commands
+This repository is the control-plane glue: it bootstraps hosts, installs Docker,
+clones the separate homeserver Docker repository, syncs secrets from `rbw` into
+remote `.env` files, and runs the remote `docker-manage.sh` workflows.
 
-### 0. Install Requirements (Ansible Galaxy collections)
-Install the collections listed in `./collections/requirements.yaml` (e.g., `ansible.posix`).
+## Quick Start
+
+Install the Python/Ansible toolchain and required Galaxy collections:
+
 ```bash
-ansible-galaxy collection install -r ./collections/requirements.yaml
+uv sync --frozen
+uv run ansible-galaxy collection install -r collections/requirements.yaml
 ```
 
-### 1. Connectivity Check
-Ping all hosts in the inventory to ensure Ansible can reach them.
+Check that the configured inventory is reachable:
+
 ```bash
-ansible -i ./inventory/hosts.yaml all -m ping
+uv run ansible all -m ping
 ```
 
-### 2. Running a Playbook
-Run the setup playbook to update the system, create user, and install Docker.
+Syntax-check a playbook before touching hosts:
+
 ```bash
-ansible-playbook -i ./inventory/hosts.yaml ./playbooks/setup_debian.yml
-```
-*If you need to provide a sudo password:*
-```bash
-ansible-playbook ./playbooks/setup_debian.yml --ask-become-pass
+uv run ansible-playbook playbooks/setup_debian.yml --syntax-check
 ```
 
-### 3. Ad-Hoc Commands
-Run a single command on all hosts without writing a playbook.
+## Common Workflows
 
-**Check disk usage:**
+Bootstrap Debian LXCs and Raspberry Pis:
+
 ```bash
-ansible all -a "df -h"
+uv run ansible-playbook playbooks/setup_debian.yml
 ```
 
-**Check memory usage:**
+Limit a run to one host when you are making a targeted change:
+
 ```bash
-ansible all -a "free -m"
+uv run ansible-playbook playbooks/setup_debian.yml --limit gpu_coding
 ```
 
-**Reboot all hosts:**
+Sync homeserver `.env` files from `rbw`:
+
 ```bash
-uv run ansible all -a "sudo reboot"
+rbw unlock
+uv run ansible-playbook playbooks/homeserver/sync_env.yml
 ```
 
-### 4. Limiting Execution
-Run the playbook only on a specific host (e.g., `lxc1`).
+Run a homeserver Docker action:
+
 ```bash
-uv run  ansible-playbook ./playbooks/setup_debian.yml --limit lxc1
+uv run ansible-playbook playbooks/homeserver/docker_manage.yml \
+  -e homeserver_docker_manage_action=restart \
+  --limit localhost,gpu
 ```
 
-### 5. Syntax Check
-Check your playbook for syntax errors before running.
-```bash
-uv run  ansible-playbook ./playbooks/setup_debian.yml --syntax-check
-```
+## Safety Notes
 
-### 6. Handling Private Repositories
-If you are cloning a private GitHub repository, you need to authenticate.
+The default inventory points at real machines. Prefer `--limit`, `--check`, and
+`--diff` while developing a change.
 
-**SSH Agent Forwarding**
-This allows your other machines to use the SSH keys on your local machine.
-1. (Alternative) Add your local agent using local `ssh-agent`:
-   ```bash
-   eval "$(ssh-agent -s)"
+Secrets are read from `rbw` on the control node and written to remote `.env`
+files. Do not commit generated `.env` files or copied secret values.
 
-   ssh-add -L  # Check if key is listed
-   ssh-add ~/.ssh/id_ed25519  # Add if missing
-   ```
-   *Tip: To avoid running this every time, add the following to your `~/.bashrc` or `~/.zshrc`:*
-   ```bash
-   if [ -z "$SSH_AUTH_SOCK" ]; then
-      eval "$(ssh-agent -s)" > /dev/null
-      ssh-add ~/.ssh/id_ed25519 2> /dev/null
-   fi
-   ```
-2. Use `ssh-agent` of Unofficial Bitwarden cli `rbw` (recommended for better security):
-   ```bash
-   if [ -z "$XDG_RUNTIME_DIR" ]; then
-      export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-   fi
-   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
-   ```
+SSH agent forwarding is enabled in `ansible.cfg` because private repository
+access is part of the homeserver workflow.
 
-3. Enable forwarding in `ansible.cfg`:
-   ```ini
-   [ssh_connection]
-   ssh_args = -o ForwardAgent=yes
-   ```
-   *Or pass it in the command line:*
-   ```bash
-   ansible-playbook ./playbooks/setup_debian.yml --ssh-common-args='-o ForwardAgent=yes'
-   ```
+## Docs
 
-### 7. Deploying Updates
-To pull the latest code and restart containers:
-```bash
-uv run  ansible-playbook ./playbooks/deploy.yml --ssh-common-args='-o ForwardAgent=yes'
-```
-
-## Directory Structure
-
-- `inventory/`: Contains host inventory files.
-- `playbooks/`: Contains Ansible playbooks for various tasks.
-- `roles/`: Contains reusable Ansible roles (e.g., `common`, `docker
-`, `lxc`).
-- `ansible.cfg`: Ansible configuration file.
-
-## Additional Tips
-
-- Use `--check` with playbooks to perform a dry run without making changes.
-- Use `--diff` to see what changes would be made by the playbook.
+- [Architecture](docs/ARCHITECTURE.md)
+- [Ansible cheatsheet](docs/ANSIBLE_CHEATSHEET.md)
+- [Homeserver Docker management](docs/homeserver-docker-manage.md)
+- [Agent index](AGENTS.md)

@@ -22,5 +22,5 @@ Limit to one host when needed:
 ```bash
 uv run ansible-playbook playbooks/homeserver/docker_manage.yml \
   -e homeserver_docker_manage_action=restart \
-  --limit gpu
+  --limit localhost,gpu
 ```
