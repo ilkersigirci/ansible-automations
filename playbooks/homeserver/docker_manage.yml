@@ -1,0 +1,14 @@
+---
+- name: Check prerequisites
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - check_rbw
+
+- name: Manage homeserver Docker Compose
+  hosts: homeserver
+  become: true
+  become_user: "{{ user_name }}"
+  roles:
+    - homeserver_docker_manage

@@ -1,0 +1,59 @@
+---
+- name: Validate docker-manage action
+  ansible.builtin.assert:
+    that:
+      - homeserver_docker_manage_action | length > 0
+      - homeserver_docker_manage_action in homeserver_docker_manage_actions
+    fail_msg: >-
+      Set homeserver_docker_manage_action to one of:
+      {{ homeserver_docker_manage_actions.keys() | sort | join(', ') }}.
+    quiet: true
+
+- name: Pull latest changes from git
+  ansible.builtin.include_role:
+    name: git_pull
+  when: homeserver_docker_manage_actions[homeserver_docker_manage_action].run_git_pull | default(false) | bool
+
+- name: Check docker-manage script exists
+  ansible.builtin.stat:
+    path: "{{ homeserver_docker_manage_script_path }}"
+  register: homeserver_docker_manage_script_stat
+
+- name: Fail if docker-manage script is missing
+  ansible.builtin.fail:
+    msg: "The docker-manage script is missing at {{ homeserver_docker_manage_script_path }}"
+  when: not homeserver_docker_manage_script_stat.stat.exists
+
+- name: Ensure docker-manage script is executable
+  ansible.builtin.file:
+    path: "{{ homeserver_docker_manage_script_path }}"
+    mode: '0755'
+
+- name: Run docker-manage {{ homeserver_docker_manage_action }}
+  ansible.builtin.command:
+    argv:
+      - bash
+      - "{{ homeserver_docker_manage_script_path }}"
+      - "{{ homeserver_docker_manage_action }}"
+  args:
+    chdir: "{{ repo_path }}"
+  environment:
+    MY_HOSTNAME: "{{ inventory_hostname }}"
+  register: homeserver_docker_manage_output
+  changed_when:
+    - >-
+      (
+        homeserver_docker_manage_actions[homeserver_docker_manage_action].changed_stdout_markers
+        | default([])
+        | select('in', homeserver_docker_manage_output.stdout)
+        | list
+        | length
+      ) > 0
+      or
+      (
+        homeserver_docker_manage_actions[homeserver_docker_manage_action].changed_stderr_markers
+        | default([])
+        | select('in', homeserver_docker_manage_output.stderr)
+        | list
+        | length
+      ) > 0

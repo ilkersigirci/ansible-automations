@@ -1,0 +1,22 @@
+---
+homeserver_docker_manage_action: ""
+homeserver_docker_manage_script_path: "{{ repo_path }}/scripts/docker-manage.sh"
+homeserver_docker_manage_actions:
+  up:
+    run_git_pull: true
+    changed_stderr_markers:
+      - Started
+      - Recreated
+      - Created
+  pull:
+    run_git_pull: true
+    changed_stderr_markers:
+      - Started
+      - Recreated
+      - Created
+  down:
+    changed_stdout_markers:
+      - Stopping
+  restart:
+    changed_stdout_markers:
+      - Restarting
