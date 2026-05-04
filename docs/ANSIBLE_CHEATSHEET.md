@@ -65,6 +65,17 @@ Limit a run to one host:
 uv run ansible-playbook playbooks/setup_debian.yml --limit gpu_coding
 ```
 
+## Root-Level Access (Become)
+
+Prompt for the `become` password when a command needs root privileges:
+
+```bash
+uv run ansible-playbook playbooks/setup_debian.yml -K
+uv run ansible all -m apt -a "name=curl state=present" -b -K
+```
+
+`-K` is short for `--ask-become-pass`.
+
 ## Common Playbooks
 
 Bootstrap Debian LXCs and Raspberry Pis:
