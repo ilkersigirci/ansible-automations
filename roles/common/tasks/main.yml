@@ -1,9 +1,12 @@
 ---
-- name: Install sudo
+- name: Ensure base account packages are installed
   ansible.builtin.apt:
-    name: sudo
+    name:
+      - sudo
+      - zsh
     state: present
     update_cache: true
+    cache_valid_time: 3600
 
 - name: Gather facts
   ansible.builtin.setup:
@@ -12,7 +15,7 @@
   ansible.builtin.user:
     name: "{{ user_name }}"
     password: "{{ user_password | password_hash('sha512') }}"
-    shell: /bin/bash
+    shell: "{{ common_user_shell if (common_manage_user_shell | bool) else omit }}"
     groups: sudo
     append: true
     create_home: true

@@ -1,0 +1,35 @@
+---
+dotfiles_shell_repo_url: "{{ dotfiles_repo_url | default('https://git.coding.ilkerflix.com/ilkersigirci/dotfiles.git') }}"
+dotfiles_shell_repo_version: "{{ dotfiles_repo_version | default('main') }}"
+dotfiles_shell_checkout_dir: "{{ dotfiles_checkout_dir | default('/home/' ~ user_name ~ '/.local/share/dotfiles') }}"
+dotfiles_shell_home: "{{ dotfiles_home | default('/home/' ~ user_name) }}"
+
+dotfiles_shell_packages:
+  - zsh
+  - starship
+  - fontconfig
+  - git
+  - curl
+  - ca-certificates
+  - bat
+  - fzf
+  - fd-find
+  - tree
+
+dotfiles_shell_zshrc_src: "{{ dotfiles_shell_checkout_dir }}/.zshrc"
+dotfiles_shell_zshrc_dest: "{{ dotfiles_shell_home }}/.zshrc"
+
+dotfiles_shell_starship_src: "{{ dotfiles_shell_checkout_dir }}/.config/starship.toml"
+dotfiles_shell_starship_dest: "{{ dotfiles_shell_home }}/.config/starship.toml"
+
+dotfiles_shell_font_source_dir: "{{ dotfiles_shell_checkout_dir }}/.local/share/fonts/nerd-fonts/"
+dotfiles_shell_font_install_dir: "{{ dotfiles_font_install_dir | default('/usr/local/share/fonts/nerd-fonts') }}"
+
+dotfiles_shell_mise_keyring_dir: /etc/apt/keyrings
+dotfiles_shell_mise_keyring_path: "{{ dotfiles_shell_mise_keyring_dir }}/mise-archive-keyring.asc"
+dotfiles_shell_mise_key_url: "https://mise.jdx.dev/gpg-key.pub"
+dotfiles_shell_mise_sources_path: /etc/apt/sources.list.d/mise.sources
+dotfiles_shell_mise_repo_uri: https://mise.jdx.dev/deb
+dotfiles_shell_mise_repo_suite: stable
+dotfiles_shell_mise_repo_components:
+  - main

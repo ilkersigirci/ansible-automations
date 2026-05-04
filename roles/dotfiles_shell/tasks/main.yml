@@ -1,0 +1,195 @@
+---
+- name: Ensure shell packages are installed
+  ansible.builtin.apt:
+    name: "{{ dotfiles_shell_packages }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Ensure apt keyrings directory exists for mise
+  ansible.builtin.file:
+    path: "{{ dotfiles_shell_mise_keyring_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Install mise apt signing key
+  ansible.builtin.get_url:
+    url: "{{ dotfiles_shell_mise_key_url }}"
+    dest: "{{ dotfiles_shell_mise_keyring_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  register: dotfiles_shell_mise_key
+
+- name: Configure mise apt repository (deb822)
+  ansible.builtin.template:
+    src: mise.sources.j2
+    dest: "{{ dotfiles_shell_mise_sources_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  register: dotfiles_shell_mise_repo
+
+- name: Refresh apt cache after mise repository updates
+  ansible.builtin.apt:
+    update_cache: true
+  when: dotfiles_shell_mise_key.changed or dotfiles_shell_mise_repo.changed
+
+- name: Ensure mise is installed
+  ansible.builtin.apt:
+    name: mise
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Ensure dotfiles checkout parent directory exists
+  ansible.builtin.file:
+    path: "{{ dotfiles_shell_checkout_dir | dirname }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: '0755'
+
+- name: Clone dotfiles repository
+  ansible.builtin.git:
+    repo: "{{ dotfiles_shell_repo_url }}"
+    dest: "{{ dotfiles_shell_checkout_dir }}"
+    version: "{{ dotfiles_shell_repo_version }}"
+    update: true
+  become: true
+  become_user: "{{ user_name }}"
+
+- name: Check whether dotfiles checkout exists on target
+  ansible.builtin.stat:
+    path: "{{ dotfiles_shell_checkout_dir }}"
+  register: dotfiles_shell_checkout_stat
+
+- name: Skip checkout-dependent validations on first dry run
+  ansible.builtin.debug:
+    msg: >-
+      Skipping dotfiles source validation in check mode because
+      {{ dotfiles_shell_checkout_dir }} does not exist yet.
+  when:
+    - ansible_check_mode
+    - not dotfiles_shell_checkout_stat.stat.exists
+
+- name: Install managed shell files from dotfiles checkout
+  when: dotfiles_shell_checkout_stat.stat.exists
+  block:
+    - name: Collect dotfiles source path stats
+      ansible.builtin.stat:
+        path: "{{ item.path }}"
+      loop:
+        - path: "{{ dotfiles_shell_zshrc_src }}"
+          type: file
+        - path: "{{ dotfiles_shell_starship_src }}"
+          type: file
+        - path: "{{ dotfiles_shell_font_source_dir }}"
+          type: directory
+      register: dotfiles_shell_source_stats
+
+    - name: Assert expected source paths exist in dotfiles checkout
+      ansible.builtin.assert:
+        that:
+          - item.stat.exists
+          - (item.item.type == 'file' and item.stat.isreg) or (item.item.type == 'directory' and item.stat.isdir)
+        fail_msg: "Expected {{ item.item.type }} missing in dotfiles checkout: {{ item.item.path }}"
+        quiet: true
+      loop: "{{ dotfiles_shell_source_stats.results }}"
+
+    - name: Ensure ~/.config exists for starship config
+      ansible.builtin.file:
+        path: "{{ dotfiles_shell_starship_dest | dirname }}"
+        state: directory
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: '0755'
+
+    - name: Ensure font installation directory exists
+      ansible.builtin.file:
+        path: "{{ dotfiles_shell_font_install_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Install .zshrc from dotfiles checkout
+      ansible.builtin.copy:
+        src: "{{ dotfiles_shell_zshrc_src }}"
+        dest: "{{ dotfiles_shell_zshrc_dest }}"
+        remote_src: true
+        mode: preserve
+
+    - name: Set ownership and mode for .zshrc
+      ansible.builtin.file:
+        path: "{{ dotfiles_shell_zshrc_dest }}"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: '0644'
+        state: file
+
+    - name: Validate installed .zshrc syntax
+      ansible.builtin.command:
+        argv:
+          - zsh
+          - -n
+          - "{{ dotfiles_shell_zshrc_dest }}"
+      changed_when: false
+
+    - name: Install Starship config from dotfiles checkout
+      ansible.builtin.copy:
+        src: "{{ dotfiles_shell_starship_src }}"
+        dest: "{{ dotfiles_shell_starship_dest }}"
+        remote_src: true
+        mode: preserve
+
+    - name: Set ownership and mode for Starship config
+      ansible.builtin.file:
+        path: "{{ dotfiles_shell_starship_dest }}"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: '0644'
+        state: file
+
+    - name: Copy Nerd Font files from dotfiles checkout
+      ansible.builtin.copy:
+        src: "{{ dotfiles_shell_font_source_dir }}"
+        dest: "{{ dotfiles_shell_font_install_dir }}/"
+        remote_src: true
+        mode: preserve
+        owner: root
+        group: root
+      notify: Refresh font cache
+
+- name: Check whether bat command exists
+  ansible.builtin.stat:
+    path: /usr/bin/bat
+  register: dotfiles_shell_bat_bin
+
+- name: Check whether /usr/local/bin/bat exists
+  ansible.builtin.stat:
+    path: /usr/local/bin/bat
+  register: dotfiles_shell_bat_local_bin
+
+- name: Check whether batcat command exists
+  ansible.builtin.stat:
+    path: /usr/bin/batcat
+  register: dotfiles_shell_batcat_bin
+
+- name: Ensure bat compatibility symlink exists on Debian variants
+  ansible.builtin.file:
+    src: /usr/bin/batcat
+    dest: /usr/local/bin/bat
+    state: link
+  when:
+    - not dotfiles_shell_bat_bin.stat.exists
+    - not dotfiles_shell_bat_local_bin.stat.exists
+    - dotfiles_shell_batcat_bin.stat.exists
+
+- name: Set login shell to zsh for managed user
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    shell: /usr/bin/zsh
+    state: present

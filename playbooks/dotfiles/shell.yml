@@ -1,0 +1,7 @@
+---
+- name: Configure shell dotfiles
+  hosts: dev_devices
+  become: true
+
+  roles:
+    - role: dotfiles_shell
