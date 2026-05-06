@@ -65,6 +65,27 @@ env_vars_mapping:
   GRAFANA_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "GRAFANA_CLIENT_SECRET"
+  HYPOTHESIS_API_AUTH_COOKIE_SALT:
+    item: "Homeserver.gpu"
+    field: "HYPOTHESIS_API_AUTH_COOKIE_SALT"
+  HYPOTHESIS_API_AUTH_COOKIE_SECRET_KEY:
+    item: "Homeserver.gpu"
+    field: "HYPOTHESIS_API_AUTH_COOKIE_SECRET_KEY"
+  HYPOTHESIS_BOOTSTRAP_EMAIL:
+    item: "hypothesis.gpu"
+    field: "email"
+  HYPOTHESIS_BOOTSTRAP_PASSWORD:
+    item: "hypothesis.gpu"
+    field: "password"
+  HYPOTHESIS_BOOTSTRAP_USERNAME:
+    item: "hypothesis.gpu"
+    field: "username"
+  HYPOTHESIS_CLIENT_OAUTH_ID:
+    item: "hypothesis.gpu"
+    field: "CLIENT_OAUTH_ID"
+  HYPOTHESIS_SECRET_KEY:
+    item: "Homeserver.gpu"
+    field: "HYPOTHESIS_SECRET_KEY"
   IMMICH_API_KEY:
     item: "immich.photos.me"
     field: "IMMICH_API_KEY"
