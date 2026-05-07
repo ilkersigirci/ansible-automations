@@ -110,9 +110,24 @@ env_vars_mapping:
   JELLYFIN_API_KEY:
     item: "jellyfin.gpu"
     field: "JELLYFIN_API_KEY"
+  JELLYFIN_MEILI_MASTER_KEY:
+    item: "Homeserver.gpu"
+    field: "JELLYFIN_MEILI_MASTER_KEY"
   JELLYSEERR_API_KEY:
     item: "jellyseerr.gpu"
     field: "JELLYSEERR_API_KEY"
+  KARAKEEP_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "KARAKEEP_CLIENT_ID"
+  KARAKEEP_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "KARAKEEP_CLIENT_SECRET"
+  KARAKEEP_MEILI_MASTER_KEY:
+    item: "Homeserver.gpu"
+    field: "KARAKEEP_MEILI_MASTER_KEY"
+  KARAKEEP_NEXTAUTH_SECRET:
+    item: "Homeserver.gpu"
+    field: "KARAKEEP_NEXTAUTH_SECRET"
   KOMODO_DB_PASSWORD:
     item: "Homeserver.gpu"
     field: "KOMODO_DB_PASSWORD"
