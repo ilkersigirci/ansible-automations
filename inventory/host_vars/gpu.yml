@@ -56,6 +56,18 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.gpu"
     field: "DOMAINNAME"
+  EXCALIDASH_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "EXCALIDASH_CLIENT_ID"
+  EXCALIDASH_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "EXCALIDASH_CLIENT_SECRET"
+  EXCALIDASH_CSRF_SECRET:
+    item: "Homeserver.gpu"
+    field: "EXCALIDASH_CSRF_SECRET"
+  EXCALIDASH_JWT_SECRET:
+    item: "Homeserver.gpu"
+    field: "EXCALIDASH_JWT_SECRET"
   GOTIFY_LOGGIFLY_APPRISE_URL:
     item: "gotify.remoteserver"
     field: "GOTIFY_LOGGIFLY_APPRISE_URL"
