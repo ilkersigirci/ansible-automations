@@ -179,6 +179,9 @@ env_vars_mapping:
   OTEL_COLLECTOR_GATEWAY_INSECURE:
     item: "Homeserver.gpu"
     field: "OTEL_COLLECTOR_GATEWAY_INSECURE"
+  READECK_API_TOKEN_ALLROLES:
+    item: "readeck.gpu"
+    field: "API_TOKEN_ALLROLES"
   SABNZBD_API_KEY:
     item: "sabnzbd.gpu"
     field: "SABNZBD_API_KEY"
