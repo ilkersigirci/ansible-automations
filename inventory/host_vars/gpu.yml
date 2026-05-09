@@ -23,6 +23,12 @@ env_vars_mapping:
   BICHON_ENCRYPT_PASSWORD:
     item: "Homeserver.gpu"
     field: "BICHON_ENCRYPT_PASSWORD"
+  BIFROST_ADMIN_PASSWORD:
+    item: "aigateway.gpu"
+    field: "password"
+  BIFROST_ADMIN_USERNAME:
+    item: "aigateway.gpu"
+    field: "username"
   CHANGEDETECTION_API_KEY:
     item: "changedetection.gpu"
     field: "CHANGEDETECTION_API_KEY"
@@ -164,27 +170,12 @@ env_vars_mapping:
   OPENAI_PERSONAL_API_KEY:
     item: "openai.ilker4fun"
     field: "API_KEY"
-  OPENROUTER_API_BASE_URL:
-    item: "Homeserver.COMMON"
-    field: "OPENROUTER_API_BASE_URL"
   OPENROUTER_API_KEY:
     item: "openrouter.ai"
     field: "OPENROUTER_API_KEY"
-  OPENAI_GEMMA4_31B_IT_BASE_URL:
-    item: "Homeserver.gpu"
-    field: "OPENAI_GEMMA4_31B_IT_BASE_URL"
-  OPENAI_HOMESERVER_API_BASE_URL:
-    item: "Homeserver.gpu"
-    field: "OPENAI_HOMESERVER_API_BASE_URL"
   OPENAI_HOMESERVER_API_KEY:
     item: "api.coding"
     field: "API_KEY_LANGFUSE"
-  OPENAI_QWEN_3_6_35B_A3B_BASE_URL:
-    item: "Homeserver.gpu"
-    field: "OPENAI_QWEN_3_6_35B_A3B_BASE_URL"
-  OPENAI_QWEN_IMAGE_2512_BASE_URL:
-    item: "Homeserver.gpu"
-    field: "OPENAI_QWEN_IMAGE_2512_BASE_URL"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.gpu"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"

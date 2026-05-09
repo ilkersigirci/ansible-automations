@@ -6,8 +6,8 @@ homeserver_rbw_env_default_mapping:
     item: "Homeserver.COMMON"
     field: "AIGATEWAY_BASE_URL"
   AIGATEWAY_API_KEY:
-    item: "Homeserver.COMMON"
-    field: "AIGATEWAY_API_KEY"
+    item: "aigateway.gpu"
+    field: "API_KEY_GENERAL"
   # ARCANE_AGENT_BOOTSTRAP_TOKEN:
   #   item: "Homeserver.COMMON"
   #   field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
