@@ -8,7 +8,7 @@ env_vars_mapping:
     item: "Homeserver.nas"
     field: "DOMAINNAME"
   FILESTASH_ADMIN_PASSWORD_BCRYPT:
-    item: "filestash.nas"
+    item: "drive.nas"
     field: "FILESTASH_ADMIN_PASSWORD_BCRYPT"
   VERSITYGW_ROOT_ACCESS_KEY:
     item: "s3-ui.nas"
