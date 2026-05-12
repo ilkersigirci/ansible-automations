@@ -113,6 +113,9 @@ env_vars_mapping:
   TMDB_API_READ_ACCESS_TOKEN:
     item: "tmdb.themoviedb"
     field: "TMDB_API_READ_ACCESS_TOKEN"
+  TRAEFIK_ACCESSLOG_STATUS_CODES:
+    item: "Homeserver.remoteserver"
+    field: "TRAEFIK_ACCESSLOG_STATUS_CODES"
   ZIPLINE_CORE_SECRET:
     item: "Homeserver.remoteserver"
     field: "ZIPLINE_CORE_SECRET"
