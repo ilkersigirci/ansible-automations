@@ -107,15 +107,18 @@ env_vars_mapping:
   IMMICH_API_KEY:
     item: "immich.photos.me"
     field: "IMMICH_API_KEY"
+  IMMICH_DATA_PATH:
+    item: "Homeserver.gpu"
+    field: "IMMICH_DATA_PATH"
   IMMICH_DB_PASSWORD:
     item: "Homeserver.gpu"
     field: "IMMICH_DB_PASSWORD"
   IMMICH_DB_USERNAME:
     item: "Homeserver.gpu"
     field: "IMMICH_DB_USERNAME"
-  IMMICH_UPLOAD_LOCATION:
+  IMMICH_THUMBS_PATH:
     item: "Homeserver.gpu"
-    field: "IMMICH_UPLOAD_LOCATION"
+    field: "IMMICH_THUMBS_PATH"
   JELLYFIN_API_KEY:
     item: "jellyfin.gpu"
     field: "JELLYFIN_API_KEY"
