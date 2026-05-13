@@ -107,21 +107,12 @@ env_vars_mapping:
   IMMICH_API_KEY:
     item: "immich.photos.me"
     field: "IMMICH_API_KEY"
-  IMMICH_DB_DATABASE_NAME:
-    item: "Homeserver.gpu"
-    field: "IMMICH_DB_DATABASE_NAME"
-  IMMICH_DB_HOSTNAME:
-    item: "Homeserver.gpu"
-    field: "IMMICH_DB_HOSTNAME"
   IMMICH_DB_PASSWORD:
     item: "Homeserver.gpu"
     field: "IMMICH_DB_PASSWORD"
   IMMICH_DB_USERNAME:
     item: "Homeserver.gpu"
     field: "IMMICH_DB_USERNAME"
-  IMMICH_REDIS_HOSTNAME:
-    item: "Homeserver.gpu"
-    field: "IMMICH_REDIS_HOSTNAME"
   IMMICH_UPLOAD_LOCATION:
     item: "Homeserver.gpu"
     field: "IMMICH_UPLOAD_LOCATION"
