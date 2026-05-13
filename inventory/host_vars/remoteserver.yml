@@ -44,6 +44,18 @@ env_vars_mapping:
   # LOCAL_STATIC_IP:
   #   item: "cloud.oracle.com"
   #   field: "REMOTE_SERVER_PRIVATE_IP"
+  FILEBROWSER_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "FILEBROWSER_CLIENT_ID"
+  FILEBROWSER_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "FILEBROWSER_CLIENT_SECRET"
+  FILEBROWSER_JWT_TOKEN_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "FILEBROWSER_JWT_TOKEN_SECRET"
+  FILEBROWSER_ONLYOFFICE_SECRET:
+    item: "Homeserver.remoteserver"
+    field: "FILEBROWSER_ONLYOFFICE_SECRET"
   GATUS_TITLE:
     item: "Homeserver.remoteserver"
     field: "GATUS_TITLE"
