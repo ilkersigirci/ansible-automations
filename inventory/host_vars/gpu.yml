@@ -1,4 +1,10 @@
 env_vars_mapping:
+  AIOSTREAMS_AUTH:
+    item: "aiostreams.remoteserver"
+    field: "AIOSTREAMS_AUTH"
+  AIOSTREAMS_SECRET_KEY:
+    item: "Homeserver.remoteserver"
+    field: "AIOSTREAMS_SECRET_KEY"
   ARCANE_API_KEY:
     item: "arcane.gpu"
     field: "ARCANE_API_KEY"
@@ -200,6 +206,9 @@ env_vars_mapping:
   STRAVA_REFRESH_TOKEN:
     item: "Homeserver.gpu"
     field: "STRAVA_REFRESH_TOKEN"
+  TMDB_API_READ_ACCESS_TOKEN:
+    item: "tmdb.themoviedb"
+    field: "TMDB_API_READ_ACCESS_TOKEN"
   TRAEFIK_AUTH_BYPASS_KEY:
     item: "Homeserver.gpu"
     field: "TRAEFIK_AUTH_BYPASS_KEY"
