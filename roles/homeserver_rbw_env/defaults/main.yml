@@ -47,6 +47,9 @@ homeserver_rbw_env_default_mapping:
   PUID:
     item: "Homeserver.COMMON"
     field: "PUID"
+  RENOVATE_GITHUB_COM_TOKEN:
+    item: "github.sigirciilker"
+    field: "GITHUB_TOKEN_READONLY_PUBLIC"
   RESTART_POLICY_CORE:
     item: "Homeserver.COMMON"
     field: "RESTART_POLICY_CORE"
