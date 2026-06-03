@@ -111,10 +111,10 @@ env_vars_mapping:
     item: "Homeserver.remoteserver"
     field: "PUID"
   REMOTE_SERVER_PRIVATE_IP:
-    item: "cloud.oracle.com"
+    item: "cloud.oracle.ilker4fun"
     field: "REMOTE_SERVER_PRIVATE_IP"
   REMOTE_SERVER_PUBLIC_IP:
-    item: "cloud.oracle.com"
+    item: "cloud.oracle.ilker4fun"
     field: "REMOTE_SERVER_PUBLIC_IP"
   RYBBIT_BETTER_AUTH_SECRET:
     item: "Homeserver.remoteserver"
