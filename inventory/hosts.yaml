@@ -18,6 +18,15 @@ lxcs:
     nas:
       ansible_host: 192.168.2.23
 
+oracle_ubuntu:
+  hosts:
+    remoteserver:
+      ansible_host: 100.64.0.1
+      local_static_ip: 100.64.0.1
+    remoteserver2:
+      ansible_host: 100.64.0.14
+      local_static_ip: 100.64.0.14
+
 rpis:
   hosts:
     rpi0:
@@ -47,6 +56,9 @@ homeserver:
       ansible_host: 100.64.0.1
       local_static_ip: 100.64.0.1
       user_name: ubuntu
+    remoteserver2:
+      ansible_host: 100.64.0.14
+      local_static_ip: 100.64.0.14
     rpi0:
       ansible_host: 100.64.0.12
       local_static_ip: 192.168.2.12

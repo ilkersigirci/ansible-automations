@@ -57,6 +57,13 @@ uv run ansible-playbook playbooks/homeserver/docker_manage.yml \
   --limit localhost,gpu
 ```
 
+### Oracle Bootstrap
+
+```bash
+uv run ansible-playbook playbooks/bootstrap_oracle_ubuntu.yml --limit remoteserver
+uv run ansible-playbook playbooks/setup_debian.yml --limit remoteserver --ask-become-pass
+```
+
 ## Safety Notes
 
 The default inventory points at real machines. Prefer `--limit`, `--check`, and

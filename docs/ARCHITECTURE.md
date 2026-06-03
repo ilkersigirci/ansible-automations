@@ -66,6 +66,10 @@ autoremove sequence.
 writes daemon options, adds the managed user to the `docker` group, and ensures
 the Docker service is running.
 
+`roles/iptables_allow_all` is a one-time Oracle Ubuntu bootstrap helper. It
+installs iptables persistence support, writes an allow-all IPv4
+`/etc/iptables/rules.v4`, and applies it with `iptables-restore`.
+
 `roles/git_pull` clones or updates the external homeserver Docker repository at
 `repo_path` from `repo_url`.
 
@@ -92,6 +96,9 @@ Bootstrap flow:
 1. Pick hosts from `lxcs` or `rpis`.
 2. Apply `common` for users, SSH, packages, locales, and hostname environment.
 3. Apply `docker_install` for Docker Engine and daemon configuration.
+
+Oracle Ubuntu bootstrap also applies `iptables_allow_all` once so the initial
+cloud firewall rules do not interfere with later setup.
 
 Homeserver repository flow:
 
@@ -161,6 +168,9 @@ Change default users, SSH keys, or baseline packages in `roles/common` and
 `inventory/group_vars/all.yml`.
 
 Change Docker installation behavior in `roles/docker_install`.
+
+Change one-time Oracle Ubuntu allow-all iptables behavior in
+`roles/iptables_allow_all`.
 
 Add a shared homeserver environment variable mapping in
 `roles/homeserver_rbw_env/defaults/main.yml`. Add host-specific mappings in the

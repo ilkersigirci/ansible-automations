@@ -6,6 +6,23 @@
     update_cache: true
     cache_valid_time: 3600
 
+- name: Download Starship installer
+  ansible.builtin.get_url:
+    url: https://starship.rs/install.sh
+    dest: /tmp/starship-install.sh
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Install Starship
+  ansible.builtin.command:
+    argv:
+      - /tmp/starship-install.sh
+      - --yes
+      - --bin-dir
+      - /usr/local/bin
+    creates: /usr/local/bin/starship
+
 - name: Ensure apt keyrings directory exists for mise
   ansible.builtin.file:
     path: "{{ dotfiles_shell_mise_keyring_dir }}"
@@ -58,7 +75,7 @@
     dest: "{{ dotfiles_shell_checkout_dir }}"
     version: "{{ dotfiles_shell_repo_version }}"
     update: true
-  become: true
+  become: "{{ (ansible_user | default(user_name)) != user_name }}"
   become_user: "{{ user_name }}"
 
 - name: Check whether dotfiles checkout exists on target

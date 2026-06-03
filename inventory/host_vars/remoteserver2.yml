@@ -1,0 +1,10 @@
+env_vars_mapping:
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.remoteserver2"
+    field: "ARCANE_AGENT_TOKEN"
+  DIR_HARDDISKROOT:
+    item: "Homeserver.remoteserver2"
+    field: "DIR_HARDDISKROOT"
+  DOMAINNAME:
+    item: "Homeserver.remoteserver2"
+    field: "DOMAINNAME"

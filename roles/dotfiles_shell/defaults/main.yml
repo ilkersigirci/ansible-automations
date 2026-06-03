@@ -6,7 +6,7 @@ dotfiles_shell_home: "{{ dotfiles_home | default('/home/' ~ user_name) }}"
 
 dotfiles_shell_packages:
   - zsh
-  - starship
+  # - starship # NOTE: apt version doesn't work on arm machine yet.
   - fontconfig
   - git
   - curl

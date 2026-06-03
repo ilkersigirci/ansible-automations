@@ -1,5 +1,5 @@
 ---
-- name: Setup Debian LXC Hosts
+- name: Setup LXC Debian Hosts
   hosts: lxcs
   become: true
   vars:
@@ -10,8 +10,17 @@
     - role: docker_install
     - role: dotfiles_shell
 
-- name: Setup Debian RPI Hosts
+- name: Setup RPI Debian Hosts
   hosts: rpis
+  become: true
+
+  roles:
+    - role: common
+    - role: docker_install
+    - role: dotfiles_shell
+
+- name: Setup Oracle Ubuntu Hosts
+  hosts: oracle_ubuntu
   become: true
 
   roles:

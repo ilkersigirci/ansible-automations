@@ -1,0 +1,46 @@
+---
+# NOTE: Since the default user in oracle is `ubuntu` is unprivileged, we need to bootstrap first.
+- name: Bootstrap Oracle Ubuntu Hosts
+  hosts: oracle_ubuntu
+  become: true
+  vars:
+    ansible_user: ubuntu
+
+  tasks:
+    - name: Ensure account bootstrap packages are installed
+      ansible.builtin.apt:
+        name:
+          - sudo
+          - zsh
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Create managed user
+      ansible.builtin.user:
+        name: "{{ user_name }}"
+        password: "{{ user_password | password_hash('sha512') }}"
+        shell: /usr/bin/zsh
+        groups: sudo
+        append: true
+        create_home: true
+        update_password: on_create
+        state: present
+
+    - name: Set up authorized keys
+      ansible.posix.authorized_key:
+        user: "{{ user_name }}"
+        state: present
+        key: "{{ ssh_public_key }}"
+
+    - name: Suppress Ubuntu login MOTD for managed user
+      ansible.builtin.copy:
+        content: ""
+        dest: "/home/{{ user_name }}/.hushlogin"
+        owner: "{{ user_name }}"
+        group: "{{ user_name }}"
+        mode: '0644'
+
+    - name: Configure allow-all iptables policy
+      ansible.builtin.import_role:
+        name: iptables_allow_all

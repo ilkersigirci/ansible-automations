@@ -1,0 +1,58 @@
+---
+- name: Ensure debconf utilities are installed
+  ansible.builtin.apt:
+    name: debconf-utils
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Disable iptables-persistent install-time autosave prompts
+  ansible.builtin.debconf:
+    name: iptables-persistent
+    question: "{{ item }}"
+    value: "false"
+    vtype: boolean
+  loop:
+    - iptables-persistent/autosave_v4
+    - iptables-persistent/autosave_v6
+
+- name: Ensure iptables persistence directory exists
+  ansible.builtin.file:
+    path: "{{ iptables_allow_all_rules_v4_path | dirname }}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Write allow-all IPv4 iptables restore file
+  ansible.builtin.template:
+    src: rules.v4.j2
+    dest: "{{ iptables_allow_all_rules_v4_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  register: iptables_allow_all_rules_file
+
+- name: Ensure iptables persistence packages are installed
+  ansible.builtin.apt:
+    name: iptables-persistent
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Ensure netfilter-persistent is enabled at boot
+  ansible.builtin.service:
+    name: netfilter-persistent
+    enabled: true
+
+- name: Apply allow-all IPv4 iptables rules
+  ansible.builtin.command:
+    argv:
+      - iptables-restore
+      - --wait
+      - "{{ iptables_allow_all_wait_seconds | string }}"
+      - "{{ iptables_allow_all_rules_v4_path }}"
+  changed_when: true
+  when:
+    - not ansible_check_mode
+    - iptables_allow_all_rules_file.changed
