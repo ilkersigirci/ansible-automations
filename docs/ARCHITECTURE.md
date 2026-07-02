@@ -13,7 +13,7 @@ hosts, Raspberry Pis, LXCs, and Tailscale-reachable homeserver machines.
 The managed application stack is intentionally outside this repo. The
 `homeserver-docker` repository owns Docker Compose files and service scripts.
 This repo prepares hosts, pulls that repository, writes its `.env` file, and
-invokes its `scripts/docker-manage.sh` entry point.
+applies Docker lifecycle actions against it.
 
 There is no long-running application here. `pyproject.toml` and `uv.lock` pin
 the automation toolchain: Ansible, Ansible linting, and pre-commit support.
@@ -24,12 +24,16 @@ the automation toolchain: Ansible, Ansible linting, and pre-commit support.
 and SSH agent forwarding.
 
 `inventory/hosts.yaml` is the host topology. The main groups are `dev_devices`,
-`lxcs`, `rpis`, and `homeserver`.
+`lxcs`, `rpis`, and `homeserver`. The `debian_family` group explicitly
+classifies Debian and Ubuntu hosts so OS-specific variables do not affect
+future hosts running other operating systems. Proxmox-hosted Debian VMs belong
+to its `debian_vm` child group.
 
 `inventory/group_vars` holds shared data. `all.yml` defines the default managed
-user, SSH public key, and default `ansible_user`. `lxcs.yml` switches LXC setup
-to root. `homeserver.yml` defines the external homeserver Docker repository and
-remote checkout path.
+user, SSH public key, and default `ansible_user`. `debian_family.yml` pins the
+managed Python interpreter to Debian's system Python. `lxcs.yml` switches LXC
+setup to root. `homeserver.yml` defines the external homeserver Docker
+repository and remote checkout path.
 
 `inventory/host_vars` holds host-specific overrides. Most homeserver host files
 define `env_vars_mapping`, which maps environment variable names to `rbw` items
@@ -52,8 +56,13 @@ checkout on every `homeserver` host.
 `playbooks/homeserver/sync_env.yml` checks that `rbw` is available locally, then
 uses `homeserver_rbw_env` to render a remote `.env` file.
 
-`playbooks/homeserver/docker_manage.yml` checks local `rbw` availability, then
-runs `homeserver_docker_manage` as the managed homeserver user.
+`playbooks/homeserver/docker_compose.yml` validates the requested action and
+required Compose inputs, then runs native Compose actions against the existing
+homeserver Docker checkout and `.env` file.
+
+`playbooks/homeserver/docker_manage.yml` is the legacy wrapper that runs
+`homeserver_docker_manage` as the managed homeserver user without changing the
+repository checkout.
 
 `roles/common` creates the managed user, installs the SSH key, runs apt
 maintenance, installs baseline packages, enables locales, and writes
@@ -63,8 +72,8 @@ maintenance, installs baseline packages, enables locales, and writes
 autoremove sequence.
 
 `roles/docker_install` installs Docker CE from Docker's deb822 apt repository,
-writes daemon options, adds the managed user to the `docker` group, and ensures
-the Docker service is running.
+writes daemon options, installs Python support for Docker API modules, adds the
+managed user to the `docker` group, and ensures the Docker service is running.
 
 `roles/iptables_allow_all` is a one-time Oracle Ubuntu bootstrap helper. It
 installs iptables persistence support, writes an allow-all IPv4
@@ -79,15 +88,15 @@ installs iptables persistence support, writes an allow-all IPv4
 delegates `rbw get` calls to localhost, escapes dollar signs for Docker Compose,
 and writes the remote `.env` file with mode `0600`.
 
-`roles/homeserver_docker_manage` validates `homeserver_docker_manage_action`,
-optionally pulls the external repo, verifies `docker-manage.sh`, and runs it
-from `repo_path`.
+`roles/homeserver_docker_manage` validates `homeserver_docker_manage_action`
+and runs the external repository's `scripts/docker-manage.sh` entry point.
 
 `roles/nerd_fonts` downloads selected Nerd Font files and refreshes the font
 cache when installation changes.
 
 `collections/requirements.yaml` declares Ansible Galaxy collections. Currently
-the repo needs `ansible.posix` for authorized keys.
+the repo needs `ansible.posix` for authorized keys and `community.docker` for
+Docker Compose management.
 
 ## Main Flows
 
@@ -113,11 +122,21 @@ Homeserver secret flow:
 3. Fetch secrets locally, never on the remote host.
 4. Write the generated `.env` file to the remote `repo_path`.
 
-Homeserver Docker action flow:
+Homeserver Docker Compose action flow:
+
+1. Choose a `task` value supported by `playbooks/homeserver/docker_compose.yml`.
+2. For `prune`, remove dangling images without requiring Compose inputs.
+3. For Compose actions, validate the existing host Compose and `.env` files.
+4. Run the matching native Docker Compose action.
+
+To deploy the latest application state, run the repository flow first, then the
+secret flow, and finally the Docker Compose action flow. These remain separate
+so each playbook owns one responsibility.
+
+Legacy homeserver Docker manage flow:
 
 1. Choose an action from `homeserver_docker_manage_actions`.
-2. Pull the external repository when the action says it should.
-3. Run `scripts/docker-manage.sh` as the managed user with `MY_HOSTNAME` set.
+2. Run `scripts/docker-manage.sh` as the managed user.
 
 ## Architectural Invariants
 
@@ -133,8 +152,8 @@ Resolved secrets must stay out of git. Secret values should be fetched from
 to their remote destination.
 
 The Docker Compose application architecture belongs to the external
-`homeserver-docker` repository. This repo should call that boundary instead of
-duplicating service definitions.
+`homeserver-docker` repository. This repo should apply that Compose model
+instead of duplicating service definitions.
 
 Ansible tasks should use fully qualified module names and stay idempotent where
 the underlying operation allows it. When a command cannot be naturally
@@ -176,7 +195,9 @@ Add a shared homeserver environment variable mapping in
 `roles/homeserver_rbw_env/defaults/main.yml`. Add host-specific mappings in the
 matching file under `inventory/host_vars`.
 
-Add or tune a Docker management action in `roles/homeserver_docker_manage`.
+Add or tune a native Docker Compose action in
+`playbooks/homeserver/docker_compose.yml`.
+Keep legacy script-wrapper actions in `roles/homeserver_docker_manage`.
 
 Add a new workflow as a playbook under `playbooks/`. If the behavior will be
 reused, put it behind a role under `roles/`.

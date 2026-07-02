@@ -5,7 +5,7 @@ development devices, and homeserver Docker hosts.
 
 This repository is the control-plane glue: it bootstraps hosts, installs Docker,
 clones the separate homeserver Docker repository, syncs secrets from `rbw` into
-remote `.env` files, and runs the remote `docker-manage.sh` workflows.
+remote `.env` files, and runs homeserver Docker Compose actions.
 
 ## Quick Start
 
@@ -42,19 +42,25 @@ Limit a run to one host when you are making a targeted change:
 uv run ansible-playbook playbooks/setup_debian.yml --limit gpu_coding
 ```
 
-Sync homeserver `.env` files from `rbw`:
+Update a homeserver Docker checkout:
+
+```bash
+uv run ansible-playbook playbooks/homeserver/setup_repo.yml --limit localhost,gpu
+```
+
+Then sync its `.env` file from `rbw`:
 
 ```bash
 rbw unlock
-uv run ansible-playbook playbooks/homeserver/sync_env.yml
+uv run ansible-playbook playbooks/homeserver/sync_env.yml --limit localhost,gpu
 ```
 
-Run a homeserver Docker action:
+Finally, run a homeserver Docker Compose action:
 
 ```bash
-uv run ansible-playbook playbooks/homeserver/docker_manage.yml \
-  -e homeserver_docker_manage_action=restart \
-  --limit localhost,gpu
+uv run ansible-playbook playbooks/homeserver/docker_compose.yml \
+  -e task=update \
+  --limit gpu
 ```
 
 ### Oracle Bootstrap
@@ -79,5 +85,6 @@ access is part of the homeserver workflow.
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Ansible cheatsheet](docs/ANSIBLE_CHEATSHEET.md)
+- [Homeserver Docker Compose](docs/homeserver-docker-compose.md)
 - [Homeserver Docker management](docs/homeserver-docker-manage.md)
 - [Agent index](AGENTS.md)

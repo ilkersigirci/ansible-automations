@@ -9,11 +9,6 @@
       {{ homeserver_docker_manage_actions.keys() | sort | join(', ') }}.
     quiet: true
 
-- name: Pull latest changes from git
-  ansible.builtin.include_role:
-    name: git_pull
-  when: homeserver_docker_manage_actions[homeserver_docker_manage_action].run_git_pull | default(false) | bool
-
 - name: Check docker-manage script exists
   ansible.builtin.stat:
     path: "{{ homeserver_docker_manage_script_path }}"
@@ -37,23 +32,5 @@
       - "{{ homeserver_docker_manage_action }}"
   args:
     chdir: "{{ repo_path }}"
-  environment:
-    MY_HOSTNAME: "{{ inventory_hostname }}"
   register: homeserver_docker_manage_output
-  changed_when:
-    - >-
-      (
-        homeserver_docker_manage_actions[homeserver_docker_manage_action].changed_stdout_markers
-        | default([])
-        | select('in', homeserver_docker_manage_output.stdout)
-        | list
-        | length
-      ) > 0
-      or
-      (
-        homeserver_docker_manage_actions[homeserver_docker_manage_action].changed_stderr_markers
-        | default([])
-        | select('in', homeserver_docker_manage_output.stderr)
-        | list
-        | length
-      ) > 0
+  changed_when: false

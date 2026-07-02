@@ -18,14 +18,18 @@ lxcs:
     nas:
       ansible_host: 192.168.2.23
 
+debian_vm:
+  hosts:
+    gpu:
+
 oracle_ubuntu:
   hosts:
     remoteserver:
       ansible_host: 100.64.0.1
       local_static_ip: 100.64.0.1
     remoteserver2:
-      ansible_host: 100.64.0.14
-      local_static_ip: 100.64.0.14
+      ansible_host: 100.64.0.20
+      local_static_ip: 100.64.0.20
 
 rpis:
   hosts:
@@ -56,9 +60,9 @@ homeserver:
       ansible_host: 100.64.0.1
       local_static_ip: 100.64.0.1
       user_name: ubuntu
-    remoteserver2:
-      ansible_host: 100.64.0.14
-      local_static_ip: 100.64.0.14
+    # remoteserver2:
+    #   ansible_host: 100.64.0.20
+    #   local_static_ip: 100.64.0.20
     rpi0:
       ansible_host: 100.64.0.12
       local_static_ip: 192.168.2.12
@@ -76,3 +80,10 @@ homeserver:
     #   local_static_ip: 100.64.0.94
     #   user_name: root
     #   repo_path: "/{{ user_name }}/docker"
+
+debian_family:
+  children:
+    debian_vm:
+    lxcs:
+    oracle_ubuntu:
+    rpis:

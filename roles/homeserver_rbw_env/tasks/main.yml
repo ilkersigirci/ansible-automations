@@ -24,6 +24,7 @@
           echo "{{ key }}=$result"
           {% endfor %}
         executable: /bin/bash
+      check_mode: false
       register: homeserver_rbw_env_secrets_result
       changed_when: false
       failed_when: false
@@ -42,6 +43,7 @@
 - name: Resolve remote HOME for USERDIR
   ansible.builtin.command:
     cmd: /bin/bash -lc 'printf "%s" "$HOME"'
+  check_mode: false
   register: homeserver_rbw_env_home_result
   changed_when: false
 

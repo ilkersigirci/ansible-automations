@@ -5,6 +5,7 @@
       - ca-certificates  # TLS CA bundle for HTTPS APT repos
       - curl  # Fetch Docker GPG key over HTTPS
       - gnupg  # Handle/dearmor GPG keys when needed
+      - python3-requests  # Required by community.docker Docker API modules
     state: present
     update_cache: true
     cache_valid_time: 3600

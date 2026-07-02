@@ -108,16 +108,16 @@ Sync homeserver `.env` files from `rbw`:
 uv run ansible-playbook playbooks/homeserver/sync_env.yml
 ```
 
-Run a homeserver Docker action:
+Run a native homeserver Docker Compose action:
 
 ```bash
-uv run ansible-playbook playbooks/homeserver/docker_manage.yml \
-  -e homeserver_docker_manage_action=restart \
-  --limit localhost,gpu
+uv run ansible-playbook playbooks/homeserver/docker_compose.yml \
+  -e task=update \
+  --limit gpu
 ```
 
-Supported Docker actions are documented in
-[Homeserver Docker management](homeserver-docker-manage.md).
+Supported native Compose actions are documented in
+[Homeserver Docker Compose](homeserver-docker-compose.md).
 
 ## Ad-Hoc Commands
 

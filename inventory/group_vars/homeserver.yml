@@ -1,3 +1,25 @@
 ---
 repo_url: git@github.com:ilkersigirci/homeserver-docker.git
 repo_path: "/home/{{ user_name }}/docker"
+
+homeserver_docker_compose_allowed_actions:
+  - down
+  - prune
+  - pull
+  - restart
+  - update
+  - up
+homeserver_docker_compose_project_src: "{{ repo_path }}/compose"
+homeserver_docker_compose_files:
+  - "{{ inventory_hostname }}.yml"
+homeserver_docker_compose_env_files:
+  - ../.env
+homeserver_docker_compose_profiles:
+  - core
+  - desktop_apps
+  - maintenance
+  - media
+  - monitoring
+  - programming
+  - reading
+  - others

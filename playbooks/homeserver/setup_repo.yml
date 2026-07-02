@@ -1,15 +1,15 @@
 ---
-- name: Check prerequisites
+# The unlocked rbw SSH agent is forwarded to authenticate private Git clones.
+- name: Check rbw SSH agent prerequisite
   hosts: localhost
   connection: local
   gather_facts: false
   roles:
     - check_rbw
 
-- name: Setup Repository
+- name: Setup homeserver Docker repository
   hosts: homeserver
   become: false
   gather_facts: false
-
   roles:
     - git_pull
