@@ -133,10 +133,23 @@ Check memory:
 uv run ansible all -a "free -m"
 ```
 
+Run a simple command. Without `-m`, Ansible uses the `command` module:
+
+```bash
+uv run ansible gpu_coding -a "docker compose version"
+```
+
+Use the `shell` module only when shell features such as `&&`, pipes, redirects,
+or variable expansion are needed:
+
+```bash
+uv run ansible gpu_coding -m ansible.builtin.shell -a "echo $HOME && uptime"
+```
+
 Reboot one host:
 
 ```bash
-uv run ansible gpu_coding -a "sudo reboot"
+uv run ansible gpu_coding -b -m ansible.builtin.reboot
 ```
 
 ## SSH Agent Forwarding
