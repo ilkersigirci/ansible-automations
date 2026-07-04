@@ -45,7 +45,7 @@ uv run ansible-playbook playbooks/setup_debian.yml --limit gpu_coding
 Update a homeserver Docker checkout:
 
 ```bash
-uv run ansible-playbook playbooks/homeserver/setup_repo.yml --limit localhost,gpu
+uv run ansible-playbook playbooks/homeserver/pull_repo.yml --limit localhost,gpu
 ```
 
 Then sync its `.env` file from `rbw`:

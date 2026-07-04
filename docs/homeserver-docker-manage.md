@@ -21,7 +21,7 @@ Actions:
 - `restart`: run `docker-manage.sh restart`.
 - `down`: run `docker-manage.sh down`.
 
-This playbook does not perform Git operations. Run `setup_repo.yml` separately
+This playbook does not perform Git operations. Run `pull_repo.yml` separately
 when the repository checkout must be updated.
 
 Limit to one host when needed:

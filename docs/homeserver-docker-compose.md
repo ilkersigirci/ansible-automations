@@ -35,7 +35,7 @@ To operate on the latest repository and environment state, run these playbooks
 in order:
 
 ```bash
-uv run ansible-playbook playbooks/homeserver/setup_repo.yml \
+uv run ansible-playbook playbooks/homeserver/pull_repo.yml \
   --limit localhost,gpu
 
 uv run ansible-playbook playbooks/homeserver/sync_env.yml \

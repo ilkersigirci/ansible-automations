@@ -50,7 +50,7 @@ reboots hosts when `/var/run/reboot-required` exists.
 `playbooks/rbw.yml` is a local `rbw` demonstration and smoke test. The production
 homeserver secret flow is `playbooks/homeserver/sync_env.yml`.
 
-`playbooks/homeserver/setup_repo.yml` prepares the external homeserver Docker
+`playbooks/homeserver/pull_repo.yml` prepares the external homeserver Docker
 checkout on every `homeserver` host.
 
 `playbooks/homeserver/sync_env.yml` checks that `rbw` is available locally, then

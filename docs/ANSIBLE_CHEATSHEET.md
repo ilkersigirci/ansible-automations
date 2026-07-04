@@ -99,7 +99,7 @@ uv run ansible-playbook playbooks/font.yml
 Clone or update the homeserver Docker repository:
 
 ```bash
-uv run ansible-playbook playbooks/homeserver/setup_repo.yml
+uv run ansible-playbook playbooks/homeserver/pull_repo.yml
 ```
 
 Sync homeserver `.env` files from `rbw`:
