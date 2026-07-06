@@ -4,6 +4,8 @@ dev_devices:
       ansible_host: 192.168.2.5
     gpu_coding:
       ansible_host: 192.168.2.21
+    ge70:
+      ansible_host: 100.64.0.26
 
 lxcs:
   hosts:
