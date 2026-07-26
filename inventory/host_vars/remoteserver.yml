@@ -59,9 +59,18 @@ env_vars_mapping:
   GATUS_TITLE:
     item: "Homeserver.remoteserver"
     field: "GATUS_TITLE"
+  GOTIFY_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "GOTIFY_CLIENT_ID"
+  GOTIFY_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "GOTIFY_CLIENT_SECRET"
   GOTIFY_CROWDSEC_TOKEN:
     item: "gotify.remoteserver"
     field: "GOTIFY_CROWDSEC_TOKEN"
+  GOTIFY_DEFAULT_USER_NAME:
+    item: "gotify.remoteserver"
+    field: "username"
   GOTIFY_DEFAULT_USER_PASS:
     item: "gotify.remoteserver"
     field: "password"
