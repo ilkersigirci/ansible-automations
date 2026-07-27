@@ -164,6 +164,21 @@ env_vars_mapping:
   LINKWARDEN_NEXTAUTH_SECRET:
     item: "Homeserver.gpu"
     field: "LINKWARDEN_NEXTAUTH_SECRET"
+  LITELLM_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "LITELLM_CLIENT_ID"
+  LITELLM_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "LITELLM_CLIENT_SECRET"
+  LITELLM_DATABASE_PASSWORD:
+    item: "Homeserver.gpu"
+    field: "LITELLM_DATABASE_PASSWORD"
+  LITELLM_MASTER_KEY:
+    item: "Homeserver.gpu"
+    field: "LITELLM_MASTER_KEY"
+  LITELLM_SALT_KEY:
+    item: "Homeserver.gpu"
+    field: "LITELLM_SALT_KEY"
   OPENAI_API_KEY:
     item: "openai.work"
     field: "General.Restricted"
