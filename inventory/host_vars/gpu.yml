@@ -1,10 +1,4 @@
 env_vars_mapping:
-  AIOSTREAMS_AUTH:
-    item: "aiostreams.remoteserver"
-    field: "AIOSTREAMS_AUTH"
-  AIOSTREAMS_SECRET_KEY:
-    item: "Homeserver.remoteserver"
-    field: "AIOSTREAMS_SECRET_KEY"
   ARCANE_API_KEY:
     item: "arcane.gpu"
     field: "ARCANE_API_KEY"

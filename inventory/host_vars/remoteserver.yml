@@ -95,21 +95,6 @@ env_vars_mapping:
   HEADSCALE_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "HEADSCALE_CLIENT_SECRET"
-  MISTRAL_API_KEY:
-    item: "mistral.ai"
-    field: "MISTRAL_API_KEY"
-  OPENAI_IMAGE_GENERATION_MODEL:
-    item: "Homeserver.remoteserver"
-    field: "OPENAI_IMAGE_GENERATION_MODEL"
-  OPENWEBUI_CLIENT_ID:
-    item: "pocketid.ilker"
-    field: "OPENWEBUI_CLIENT_ID"
-  OPENWEBUI_CLIENT_SECRET:
-    item: "pocketid.ilker"
-    field: "OPENWEBUI_CLIENT_SECRET"
-  OPENWEBUI_WEBUI_SECRET_KEY:
-    item: "Homeserver.remoteserver"
-    field: "OPENWEBUI_WEBUI_SECRET_KEY"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.remoteserver"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
