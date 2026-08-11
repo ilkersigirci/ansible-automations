@@ -194,9 +194,6 @@ env_vars_mapping:
   READECK_API_TOKEN_ALLROLES:
     item: "readeck.gpu"
     field: "API_TOKEN_ALLROLES"
-  SABNZBD_API_KEY:
-    item: "sabnzbd.gpu"
-    field: "SABNZBD_API_KEY"
   SPLITPRO_CLIENT_ID:
     item: "pocketid.ilker"
     field: "SPLITPRO_CLIENT_ID"

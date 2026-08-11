@@ -29,6 +29,12 @@ homeserver_rbw_env_default_mapping:
   CLOUDFLARE_IPS:
     item: "Homeserver.COMMON"
     field: "CLOUDFLARE_IPS"
+  DIR_NAS_JET_SERVICES:
+    item: "Homeserver.COMMON"
+    field: "DIR_NAS_JET_SERVICES"
+  DIR_NAS_TANK_SERVICES:
+    item: "Homeserver.COMMON"
+    field: "DIR_NAS_TANK_SERVICES"
   LOCAL_IPS:
     item: "Homeserver.COMMON"
     field: "LOCAL_IPS"
