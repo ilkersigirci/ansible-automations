@@ -35,6 +35,9 @@ homeserver_rbw_env_default_mapping:
   DIR_NAS_TANK_SERVICES:
     item: "Homeserver.COMMON"
     field: "DIR_NAS_TANK_SERVICES"
+  GOTIFY_GATUS_NOTIFICATION_TOKEN:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_GATUS_TOKEN"
   LOCAL_IPS:
     item: "Homeserver.COMMON"
     field: "LOCAL_IPS"
