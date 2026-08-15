@@ -100,3 +100,6 @@ env_vars_mapping:
   VERSITYGW_ROOT_SECRET_KEY:
     item: "s3-ui.nas"
     field: "password"
+  ZED_WEB_TOKEN:
+    item: "Homeserver.gpu_coding"
+    field: "ZED_WEB_TOKEN"

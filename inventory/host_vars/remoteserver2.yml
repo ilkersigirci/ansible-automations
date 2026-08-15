@@ -8,3 +8,10 @@ env_vars_mapping:
   DOMAINNAME:
     item: "Homeserver.remoteserver2"
     field: "DOMAINNAME"
+  PGID:
+    item: "Homeserver.remoteserver2"
+    field: "PGID"
+  PUID:
+    item: "Homeserver.remoteserver2"
+    field: "PUID"
+# TODO GOTIFY
