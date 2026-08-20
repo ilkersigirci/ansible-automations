@@ -94,6 +94,9 @@ env_vars_mapping:
   RUSTFS_SECRET_KEY:
     item: "rustfs.coding"
     field: "password"
+  TRAEFIK_OTEL_TRACING_SAMPLE_RATE:
+    item: "Homeserver.gpu_coding"
+    field: "TRAEFIK_OTEL_TRACING_SAMPLE_RATE"
   VERSITYGW_ROOT_ACCESS_KEY:
     item: "s3-ui.nas"
     field: "username"
