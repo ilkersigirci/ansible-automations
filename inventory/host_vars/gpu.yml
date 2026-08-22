@@ -29,9 +29,6 @@ env_vars_mapping:
   BIFROST_ADMIN_USERNAME:
     item: "aigateway.gpu"
     field: "username"
-  CHANGEDETECTION_API_KEY:
-    item: "changedetection.gpu"
-    field: "CHANGEDETECTION_API_KEY"
   CROWDSEC_VICTORIAMETRICS_URL:
     item: "Homeserver.gpu"
     field: "CROWDSEC_VICTORIAMETRICS_URL"

@@ -15,7 +15,7 @@ env_vars_mapping:
     item: "Homeserver.rpi0"
     field: "ARCANE_AGENT_TOKEN"
   CHANGEDETECTION_API_KEY:
-    item: "changedetection.gpu"
+    item: "changedetection.rpi2"
     field: "CHANGEDETECTION_API_KEY"
   DIR_HARDDISKROOT:
     item: "Homeserver.rpi0"
