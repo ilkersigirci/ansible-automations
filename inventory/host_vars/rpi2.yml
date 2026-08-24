@@ -20,6 +20,12 @@ env_vars_mapping:
   DIR_HARDDISKROOT:
     item: "Homeserver.rpi2"
     field: "DIR_HARDDISKROOT"
+  DOCKER_REMOTE_HOSTS:
+    item: "Homeserver.rpi2"
+    field: "DOCKER_REMOTE_HOSTS"
   DOMAINNAME:
     item: "Homeserver.rpi2"
     field: "DOMAINNAME"
+  GOTIFY_LOGGIFLY_APPRISE_URL:
+    item: "gotify.remoteserver"
+    field: "GOTIFY_LOGGIFLY_APPRISE_URL"
