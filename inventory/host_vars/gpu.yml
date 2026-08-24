@@ -1,19 +1,7 @@
 env_vars_mapping:
-  ARCANE_API_KEY:
-    item: "arcane.gpu"
-    field: "ARCANE_API_KEY"
-  ARCANE_CLIENT_ID:
-    item: "pocketid.ilker"
-    field: "ARCANE_CLIENT_ID"
-  ARCANE_CLIENT_SECRET:
-    item: "pocketid.ilker"
-    field: "ARCANE_CLIENT_SECRET"
-  ARCANE_ENCRYPTION_KEY:
-    item: "arcane.gpu"
-    field: "ARCANE_ENCRYPTION_KEY"
-  ARCANE_JWT_SECRET:
-    item: "arcane.gpu"
-    field: "ARCANE_JWT_SECRET"
+  ARCANE_AGENT_TOKEN:
+    item: "Homeserver.gpu"
+    field: "ARCANE_AGENT_TOKEN"
   BESZEL_EMAIL:
     item: "beszel.gpu"
     field: "username"
