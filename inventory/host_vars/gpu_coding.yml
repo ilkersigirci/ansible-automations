@@ -25,6 +25,24 @@ env_vars_mapping:
   HATCHET_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "HATCHET_CLIENT_SECRET"
+  LANGFLOW_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "LANGFLOW_CLIENT_ID"
+  LANGFLOW_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "LANGFLOW_CLIENT_SECRET"
+  LANGFLOW_DATABASE_PASSWORD:
+    item: "Homeserver.gpu_coding"
+    field: "LANGFLOW_DATABASE_PASSWORD"
+  LANGFLOW_OIDC_SESSION_SECRET:
+    item: "Homeserver.gpu_coding"
+    field: "LANGFLOW_OIDC_SESSION_SECRET"
+  LANGFLOW_SECRET_KEY:
+    item: "Homeserver.gpu_coding"
+    field: "LANGFLOW_SECRET_KEY"
+  LANGFLOW_SUPERUSER_PASSWORD:
+    item: "Homeserver.gpu_coding"
+    field: "LANGFLOW_SUPERUSER_PASSWORD"
   LANGFUSE_CLICKHOUSE_PASSWORD:
     item: "Homeserver.gpu_coding"
     field: "LANGFUSE_CLICKHOUSE_PASSWORD"

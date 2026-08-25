@@ -11,12 +11,6 @@ env_vars_mapping:
   BICHON_ENCRYPT_PASSWORD:
     item: "Homeserver.gpu"
     field: "BICHON_ENCRYPT_PASSWORD"
-  BIFROST_ADMIN_PASSWORD:
-    item: "aigateway.gpu"
-    field: "password"
-  BIFROST_ADMIN_USERNAME:
-    item: "aigateway.gpu"
-    field: "username"
   CROWDSEC_VICTORIAMETRICS_URL:
     item: "Homeserver.gpu"
     field: "CROWDSEC_VICTORIAMETRICS_URL"
@@ -152,18 +146,6 @@ env_vars_mapping:
   LITELLM_SALT_KEY:
     item: "Homeserver.gpu"
     field: "LITELLM_SALT_KEY"
-  OPENAI_API_KEY:
-    item: "openai.work"
-    field: "General.Restricted"
-  OPENAI_PERSONAL_API_KEY:
-    item: "openai.ilker4fun"
-    field: "API_KEY"
-  OPENROUTER_API_KEY:
-    item: "openrouter.ai"
-    field: "OPENROUTER_API_KEY"
-  OPENAI_HOMESERVER_API_KEY:
-    item: "api.coding"
-    field: "API_KEY_LANGFUSE"
   OTEL_COLLECTOR_GATEWAY_ENDPOINT:
     item: "Homeserver.gpu"
     field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"

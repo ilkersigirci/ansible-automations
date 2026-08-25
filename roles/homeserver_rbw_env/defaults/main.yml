@@ -2,12 +2,15 @@
 # Default mapping of environment variables to rbw items and fields
 # Can be overridden in inventory/group_vars or host_vars
 homeserver_rbw_env_default_mapping:
+  AIGATEWAY_API_KEY:
+    item: "aigateway.home"
+    field: "API_KEY_GENERAL"
   AIGATEWAY_BASE_URL:
     item: "Homeserver.COMMON"
     field: "AIGATEWAY_BASE_URL"
-  AIGATEWAY_API_KEY:
-    item: "aigateway.gpu"
-    field: "API_KEY_GENERAL"
+  AIGATEWAY_HOST:
+    item: "Homeserver.COMMON"
+    field: "AIGATEWAY_HOST"
   # ARCANE_AGENT_BOOTSTRAP_TOKEN:
   #   item: "Homeserver.COMMON"
   #   field: "ARCANE_AGENT_BOOTSTRAP_TOKEN"
@@ -77,6 +80,12 @@ homeserver_rbw_env_default_mapping:
   RESTART_POLICY_OTHERS:
     item: "Homeserver.COMMON"
     field: "RESTART_POLICY_OTHERS"
+  S3_REGION:
+    item: "Homeserver.COMMON"
+    field: "S3_REGION"
+  S3_URL:
+    item: "Homeserver.COMMON"
+    field: "S3_URL"
   TINYAUTH_CLIENT_ID:
     item: "pocketid.ilker"
     field: "TINYAUTH_CLIENT_ID"

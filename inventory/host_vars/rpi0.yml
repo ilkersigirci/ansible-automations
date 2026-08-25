@@ -14,6 +14,12 @@ env_vars_mapping:
   ARCANE_AGENT_TOKEN:
     item: "Homeserver.rpi0"
     field: "ARCANE_AGENT_TOKEN"
+  BIFROST_ADMIN_PASSWORD:
+    item: "aigateway.home"
+    field: "password"
+  BIFROST_ADMIN_USERNAME:
+    item: "aigateway.home"
+    field: "username"
   CHANGEDETECTION_API_KEY:
     item: "changedetection.rpi2"
     field: "CHANGEDETECTION_API_KEY"
@@ -53,6 +59,18 @@ env_vars_mapping:
   NETWORK_INTERFACE_NAMES:
     item: "Homeserver.rpi0"
     field: "NETWORK_INTERFACE_NAMES"
+  OPENAI_API_KEY:
+    item: "openai.work"
+    field: "General.Restricted"
+  OPENAI_PERSONAL_API_KEY:
+    item: "openai.ilker4fun"
+    field: "API_KEY"
+  OPENROUTER_API_KEY:
+    item: "openrouter.ai"
+    field: "OPENROUTER_API_KEY"
+  OPENAI_HOMESERVER_API_KEY:
+    item: "api.coding"
+    field: "API_KEY_LANGFUSE"
   POCKETID_ENCRYPTION_KEY:
     item: "Homeserver.rpi0"
     field: "POCKETID_ENCRYPTION_KEY"
