@@ -155,6 +155,12 @@ env_vars_mapping:
   READECK_API_TOKEN_ALLROLES:
     item: "readeck.gpu"
     field: "API_TOKEN_ALLROLES"
+  READECK_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "READECK_CLIENT_ID"
+  READECK_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "READECK_CLIENT_SECRET"
   SPLITPRO_CLIENT_ID:
     item: "pocketid.ilker"
     field: "SPLITPRO_CLIENT_ID"
