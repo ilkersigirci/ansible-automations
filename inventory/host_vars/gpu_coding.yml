@@ -58,6 +58,12 @@ env_vars_mapping:
   LANGFUSE_ENCRYPTION_KEY:
     item: "Homeserver.gpu_coding"
     field: "LANGFUSE_ENCRYPTION_KEY"
+  LANGFUSE_PUBLIC_KEY_LANGFLOW:
+    item: "langfuse.coding"
+    field: "LANGFUSE_PUBLIC_KEY_LANGFLOW"
+  LANGFUSE_SECRET_KEY_LANGFLOW:
+    item: "langfuse.coding"
+    field: "LANGFUSE_SECRET_KEY_LANGFLOW"
   LANGFUSE_REDIS_PASSWORD:
     item: "Homeserver.gpu_coding"
     field: "LANGFUSE_REDIS_PASSWORD"

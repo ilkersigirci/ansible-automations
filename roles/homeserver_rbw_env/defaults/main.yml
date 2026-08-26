@@ -41,6 +41,9 @@ homeserver_rbw_env_default_mapping:
   GOTIFY_GATUS_NOTIFICATION_TOKEN:
     item: "gotify.remoteserver"
     field: "GOTIFY_GATUS_TOKEN"
+  LANGFUSE_BASE_URL:
+    item: "Homeserver.COMMON"
+    field: "LANGFUSE_BASE_URL"
   LOCAL_IPS:
     item: "Homeserver.COMMON"
     field: "LOCAL_IPS"
