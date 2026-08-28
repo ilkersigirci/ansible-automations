@@ -73,6 +73,9 @@ env_vars_mapping:
   LANGFUSE_SALT:
     item: "Homeserver.gpu_coding"
     field: "LANGFUSE_SALT"
+  MARIMO_PATH_LGOS_NOTEBOOK:
+    item: "Homeserver.gpu_coding"
+    field: "MARIMO_PATH_LGOS_NOTEBOOK"
   MINIO_CLIENT_ID:
     item: "pocketid.ilker"
     field: "MINIO_CLIENT_ID"
