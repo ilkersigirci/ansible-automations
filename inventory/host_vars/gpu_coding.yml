@@ -73,6 +73,21 @@ env_vars_mapping:
   LANGFUSE_SALT:
     item: "Homeserver.gpu_coding"
     field: "LANGFUSE_SALT"
+  LITELLM_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "LITELLM_CLIENT_ID"
+  LITELLM_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "LITELLM_CLIENT_SECRET"
+  LITELLM_DATABASE_PASSWORD:
+    item: "Homeserver.gpu_coding"
+    field: "LITELLM_DATABASE_PASSWORD"
+  LITELLM_MASTER_KEY:
+    item: "Homeserver.gpu_coding"
+    field: "LITELLM_MASTER_KEY"
+  LITELLM_SALT_KEY:
+    item: "Homeserver.gpu_coding"
+    field: "LITELLM_SALT_KEY"
   MARIMO_PATH_LGOS_NOTEBOOK:
     item: "Homeserver.gpu_coding"
     field: "MARIMO_PATH_LGOS_NOTEBOOK"
