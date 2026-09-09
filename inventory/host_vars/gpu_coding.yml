@@ -73,6 +73,12 @@ env_vars_mapping:
   LANGFUSE_SALT:
     item: "Homeserver.gpu_coding"
     field: "LANGFUSE_SALT"
+  LGOS_API_KEY:
+    item: "Homeserver.gpu_coding"
+    field: "LGOS_API_KEY"
+  LGOS_HOST_IP:
+    item: "Homeserver.gpu_coding"
+    field: "LGOS_HOST_IP"
   LITELLM_CLIENT_ID:
     item: "pocketid.ilker"
     field: "LITELLM_CLIENT_ID"
