@@ -62,9 +62,9 @@ homeserver:
       ansible_host: 100.64.0.1
       local_static_ip: 100.64.0.1
       user_name: ubuntu
-    remoteserver2:
-      ansible_host: 100.64.0.20
-      local_static_ip: 100.64.0.20
+    # remoteserver2:
+    #   ansible_host: 100.64.0.20
+    #   local_static_ip: 100.64.0.20
     rpi0:
       ansible_host: 100.64.0.12
       local_static_ip: 192.168.2.12
