@@ -121,9 +121,6 @@ env_vars_mapping:
   NETWORK_INTERFACE_NAMES:
     item: "Homeserver.gpu"
     field: "NETWORK_INTERFACE_NAMES"
-  OPENAI_IMAGE_GENERATION_MODEL:
-    item: "Homeserver.gpu_coding"
-    field: "OPENAI_IMAGE_GENERATION_MODEL"
   OPENWEBUI_CLIENT_ID:
     item: "pocketid.ilker"
     field: "OPENWEBUI_CLIENT_ID"
