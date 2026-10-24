@@ -6,7 +6,7 @@ env_vars_mapping:
     item: "adguardhome.rpi1"
     field: "username"
   AIOSTREAMS_AUTH:
-    item: "aiostreams.remoteserver"
+    item: "aiostreams.home"
     field: "AIOSTREAMS_AUTH"
   AIOSTREAMS_SECRET_KEY:
     item: "Homeserver.remoteserver"

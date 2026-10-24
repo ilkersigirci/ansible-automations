@@ -1,6 +1,6 @@
 env_vars_mapping:
   AIOSTREAMS_AUTH:
-    item: "aiostreams.remoteserver"
+    item: "aiostreams.home"
     field: "AIOSTREAMS_AUTH"
   AIOSTREAMS_CLIENT_ID:
     item: "pocketid.ilker"
