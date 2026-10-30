@@ -65,8 +65,8 @@ homeserver Docker checkout and `.env` file.
 repository checkout.
 
 `roles/common` creates the managed user, installs the SSH key, runs apt
-maintenance, installs baseline packages, enables locales, and writes
-`MY_HOSTNAME` to `/etc/environment`.
+maintenance, installs baseline packages, enables locales, sets the default
+system locale, and writes `MY_HOSTNAME` to `/etc/environment`.
 
 `roles/apt_update` is the reusable apt update, dist-upgrade, autoclean, and
 autoremove sequence.

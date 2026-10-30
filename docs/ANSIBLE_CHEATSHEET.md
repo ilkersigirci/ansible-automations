@@ -84,6 +84,12 @@ Bootstrap Debian LXCs and Raspberry Pis:
 uv run ansible-playbook playbooks/setup_debian.yml
 ```
 
+Apply only the locale settings from the bootstrap playbook:
+
+```bash
+uv run ansible-playbook playbooks/setup_debian.yml --tags locale
+```
+
 Update packages and reboot when needed:
 
 ```bash

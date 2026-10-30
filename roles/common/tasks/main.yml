@@ -55,6 +55,14 @@
     - "en_US.UTF-8 UTF-8"
     - "tr_TR.UTF-8 UTF-8"
   notify: Generate locales
+  tags: locale
+
+- name: Set system default locale
+  ansible.builtin.lineinfile:
+    path: /etc/default/locale
+    regexp: '^LANG='
+    line: "LANG={{ common_system_locale }}"
+  tags: locale
 
 - name: Set MY_HOSTNAME environment variable
   ansible.builtin.lineinfile:

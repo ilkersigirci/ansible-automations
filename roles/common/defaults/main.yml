@@ -1,3 +1,4 @@
 ---
 common_manage_user_shell: true
 common_user_shell: /usr/bin/zsh
+common_system_locale: en_US.UTF-8  # Must be one of the locales enabled in tasks/main.yml
