@@ -56,6 +56,9 @@ env_vars_mapping:
   GRAFANA_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "GRAFANA_CLIENT_SECRET"
+  HATCHET_HOST_IP:
+    item: "Homeserver.gpu"
+    field: "HATCHET_HOST_IP"
   HYPOTHESIS_API_AUTH_COOKIE_SALT:
     item: "Homeserver.gpu"
     field: "HYPOTHESIS_API_AUTH_COOKIE_SALT"
