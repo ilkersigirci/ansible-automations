@@ -7,6 +7,9 @@ env_vars_mapping:
   DEGOOG_SETTINGS_PASSWORDS:
     item: "Homeserver.gpu_coding"
     field: "DEGOOG_SETTINGS_PASSWORDS"
+  DIR_NOTES:
+    item: "Homeserver.gpu_coding"
+    field: "DIR_NOTES"
   DOCO_CD_API_SECRET:
     item: "doco-cd.coding"
     field: "DOCO_CD_API_SECRET"
