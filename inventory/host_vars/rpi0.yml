@@ -61,7 +61,7 @@ env_vars_mapping:
     field: "NETWORK_INTERFACE_NAMES"
   OPENAI_API_KEY:
     item: "openai.work"
-    field: "General.Restricted"
+    field: "litellm.service_account.key"
   OPENROUTER_API_KEY:
     item: "openrouter.ai"
     field: "OPENROUTER_API_KEY"
