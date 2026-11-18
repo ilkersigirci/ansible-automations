@@ -5,12 +5,6 @@ env_vars_mapping:
   ADGUARD_USERNAME:
     item: "adguardhome.rpi1"
     field: "username"
-  AIOSTREAMS_AUTH:
-    item: "aiostreams.home"
-    field: "AIOSTREAMS_AUTH"
-  AIOSTREAMS_SECRET_KEY:
-    item: "Homeserver.remoteserver"
-    field: "AIOSTREAMS_SECRET_KEY"
   ARCANE_AGENT_TOKEN:
     item: "Homeserver.remoteserver"
     field: "ARCANE_AGENT_TOKEN"

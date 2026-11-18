@@ -9,7 +9,7 @@ env_vars_mapping:
     item: "pocketid.ilker"
     field: "AIOSTREAMS_CLIENT_SECRET"
   AIOSTREAMS_SECRET_KEY:
-    item: "Homeserver.remoteserver"
+    item: "Homeserver.rpi0"
     field: "AIOSTREAMS_SECRET_KEY"
   ARCANE_AGENT_TOKEN:
     item: "Homeserver.rpi0"
