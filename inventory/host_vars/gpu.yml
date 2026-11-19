@@ -11,9 +11,6 @@ env_vars_mapping:
   BICHON_ENCRYPT_PASSWORD:
     item: "Homeserver.gpu"
     field: "BICHON_ENCRYPT_PASSWORD"
-  CROWDSEC_VICTORIAMETRICS_URL:
-    item: "Homeserver.gpu"
-    field: "CROWDSEC_VICTORIAMETRICS_URL"
   DIR_BACKUP:
     item: "Homeserver.gpu"
     field: "DIR_BACKUP"
@@ -50,9 +47,6 @@ env_vars_mapping:
   EXCALIDASH_JWT_SECRET:
     item: "Homeserver.gpu"
     field: "EXCALIDASH_JWT_SECRET"
-  HATCHET_HOST_IP:
-    item: "Homeserver.gpu"
-    field: "HATCHET_HOST_IP"
   HYPOTHESIS_API_AUTH_COOKIE_SALT:
     item: "Homeserver.gpu"
     field: "HYPOTHESIS_API_AUTH_COOKIE_SALT"
