@@ -1,31 +1,18 @@
 ---
-# -------------------------------------------------------------------------
-# PREREQUISITES:
-# 1. Install Unofficial Bitwarden CLI ('rbw') https://github.com/doy/rbw
-# 2. Ensure rbw is configured and unlocked (run 'rbw login' and 'rbw unlock')
-# -------------------------------------------------------------------------
-
-- name: Showcase Vaultwarden as Secret Manager
+- name: Verify the controller can read the Ansible.Test vault entry
   hosts: localhost
   connection: local
   gather_facts: false
+  roles:
+    - check_rbw
 
   tasks:
-    - name: Ensure rbw is unlocked
-      ansible.builtin.include_role:
-        name: check_rbw
-
-    - name: Set ansible credentials
-      ansible.builtin.set_fact:
-        ansible_user: "{{ lookup('pipe', 'rbw get  Ansible.Test --field username') }}"
-        ansible_password: "{{ lookup('pipe', 'rbw get Ansible.Test') }}"
-
-    - name: Display the retrieved username
-      ansible.builtin.debug:
-        msg: "The ansible user is: {{ ansible_user }}"
-      failed_when: false
-
-    - name: Display the retrieved password
-      ansible.builtin.debug:
-        msg: "The ansible password is: {{ ansible_password }}"
-      failed_when: false
+    - name: Verify the test username and password are readable
+      ansible.builtin.command:
+        argv: [rbw, get, Ansible.Test, --field, "{{ item }}"]
+      loop: [username, password]
+      check_mode: false
+      changed_when: false
+      register: rbw_test_field
+      failed_when: rbw_test_field.rc != 0 or rbw_test_field.stdout | length == 0
+      no_log: true
