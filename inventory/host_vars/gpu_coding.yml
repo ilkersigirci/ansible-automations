@@ -4,6 +4,9 @@ env_vars_mapping:
   ARCANE_AGENT_TOKEN:
     item: "Homeserver.gpu_coding"
     field: "ARCANE_AGENT_TOKEN"
+  CROWDSEC_VICTORIAMETRICS_URL:
+    item: "Homeserver.gpu_coding"
+    field: "CROWDSEC_VICTORIAMETRICS_URL"
   DEGOOG_SETTINGS_PASSWORDS:
     item: "Homeserver.gpu_coding"
     field: "DEGOOG_SETTINGS_PASSWORDS"
@@ -25,12 +28,21 @@ env_vars_mapping:
   # GOTIFY_DOCO_CD_APPRISE_URL:
   #   item: "gotify.remoteserver"
   #   field: "GOTIFY_DOCO_CD_APPRISE_URL"
+  GRAFANA_CLIENT_ID:
+    item: "pocketid.ilker"
+    field: "GRAFANA_CLIENT_ID"
+  GRAFANA_CLIENT_SECRET:
+    item: "pocketid.ilker"
+    field: "GRAFANA_CLIENT_SECRET"
   HATCHET_CLIENT_ID:
     item: "pocketid.ilker"
     field: "HATCHET_CLIENT_ID"
   HATCHET_CLIENT_SECRET:
     item: "pocketid.ilker"
     field: "HATCHET_CLIENT_SECRET"
+  HATCHET_HOST_IP:
+    item: "Homeserver.gpu_coding"
+    field: "HATCHET_HOST_IP"
   LANGFLOW_CLIENT_ID:
     item: "pocketid.ilker"
     field: "LANGFLOW_CLIENT_ID"
@@ -133,6 +145,12 @@ env_vars_mapping:
   OPENWEBUI_WEBUI_SECRET_KEY:
     item: "Homeserver.gpu_coding"
     field: "OPENWEBUI_WEBUI_SECRET_KEY"
+  OTEL_COLLECTOR_GATEWAY_ENDPOINT:
+    item: "Homeserver.gpu_coding"
+    field: "OTEL_COLLECTOR_GATEWAY_ENDPOINT"
+  OTEL_COLLECTOR_GATEWAY_INSECURE:
+    item: "Homeserver.gpu_coding"
+    field: "OTEL_COLLECTOR_GATEWAY_INSECURE"
   PGADMIN_DEFAULT_EMAIL:
     item: "pgadmin.gpu"
     field: "username"
