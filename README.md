@@ -4,8 +4,8 @@ Personal Ansible automation for Debian-family machines, Raspberry Pis, LXCs,
 development devices, and homeserver Docker hosts.
 
 This repository provisions hosts and owns the shared inventory. Application
-deployment runs from the homeserver Docker repository on `gpu_coding`. See the
-[homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-gpu_coding).
+deployment runs from the homeserver Docker repository on `coding`. See the
+[homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-coding).
 
 ## Quick Start
 
@@ -39,7 +39,7 @@ uv run ansible-playbook playbooks/setup_debian.yml
 Limit a run to one host when you are making a targeted change:
 
 ```bash
-uv run ansible-playbook playbooks/setup_debian.yml --limit gpu_coding
+uv run ansible-playbook playbooks/setup_debian.yml --limit coding
 ```
 
 ### Oracle Bootstrap

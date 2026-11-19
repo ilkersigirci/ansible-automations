@@ -2,7 +2,7 @@ dev_devices:
   hosts:
     l13:
       ansible_host: 192.168.2.5
-    gpu_coding:
+    coding:
       ansible_host: 192.168.2.21
     ge70:
       ansible_host: 100.64.0.26
@@ -11,11 +11,11 @@ lxcs:
   hosts:
     ansible_test:
       ansible_host: 192.168.2.166
-    gpu_nvidia:
+    titan:
       ansible_host: 192.168.2.19
     lxc1:
       ansible_host: 192.168.2.20
-    gpu_coding:
+    coding:
       ansible_host: 192.168.2.21
     nas:
       ansible_host: 192.168.2.23
@@ -49,10 +49,10 @@ homeserver:
     gpu:
       ansible_host: 100.64.0.9
       local_static_ip: 192.168.2.9
-    gpu_nvidia:
+    titan:
       ansible_host: 100.64.0.19
       local_static_ip: 192.168.2.19
-    gpu_coding:
+    coding:
       ansible_host: 100.64.0.21
       local_static_ip: 192.168.2.21
     nas:

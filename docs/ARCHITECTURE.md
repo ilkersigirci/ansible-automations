@@ -12,7 +12,7 @@ hosts, Raspberry Pis, LXCs, and Tailscale-reachable homeserver machines.
 
 The `homeserver-docker` repository owns Compose, service scripts and application
 deployment. Its Ansible playbooks use this inventory and pinned toolchain on
-`gpu_coding`. See the [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-gpu_coding).
+`coding`. See the [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-coding).
 
 There is no long-running application here. `pyproject.toml` and `uv.lock` pin
 the automation toolchain: Ansible, Ansible linting, and pre-commit support.

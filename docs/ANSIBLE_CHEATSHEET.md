@@ -56,7 +56,7 @@ uv run ansible-playbook playbooks/setup_debian.yml --check --diff
 Limit a run to one host:
 
 ```bash
-uv run ansible-playbook playbooks/setup_debian.yml --limit gpu_coding
+uv run ansible-playbook playbooks/setup_debian.yml --limit coding
 ```
 
 ## Root-Level Access (Become)
@@ -97,7 +97,7 @@ uv run ansible-playbook playbooks/font.yml
 ```
 
 For application deployments, run `~/docker/ansible/run deploy.yml --limit gpu`
-on the control node. See the [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-gpu_coding).
+on the control node. See the [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-coding).
 
 ## Ad-Hoc Commands
 
@@ -116,20 +116,20 @@ uv run ansible all -a "free -m"
 Run a simple command. Without `-m`, Ansible uses the `command` module:
 
 ```bash
-uv run ansible gpu_coding -a "docker compose version"
+uv run ansible coding -a "docker compose version"
 ```
 
 Use the `shell` module only when shell features such as `&&`, pipes, redirects,
 or variable expansion are needed:
 
 ```bash
-uv run ansible gpu_coding -m ansible.builtin.shell -a "echo $HOME && uptime"
+uv run ansible coding -m ansible.builtin.shell -a "echo $HOME && uptime"
 ```
 
 Reboot one host:
 
 ```bash
-uv run ansible gpu_coding -b -m ansible.builtin.reboot
+uv run ansible coding -b -m ansible.builtin.reboot
 ```
 
 ## SSH Agent Forwarding
