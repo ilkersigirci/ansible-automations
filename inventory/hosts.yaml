@@ -81,7 +81,6 @@ homeserver:
     #   ansible_host: 100.64.0.94
     #   local_static_ip: 100.64.0.94
     #   user_name: root
-    #   repo_path: "/{{ user_name }}/docker"
 
 debian_family:
   children:

@@ -1,8 +1,0 @@
----
-- name: Manage homeserver Docker Compose
-  hosts: homeserver
-  gather_facts: false
-  become: true
-  become_user: "{{ user_name }}"
-  roles:
-    - homeserver_docker_manage

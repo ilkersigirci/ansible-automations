@@ -5,7 +5,6 @@ link it from here.
 
 - [Architecture](docs/ARCHITECTURE.md) - project map, boundaries, and invariants.
 - [Ansible cheatsheet](docs/ANSIBLE_CHEATSHEET.md) - command patterns for this repo.
-- [Homeserver Docker Compose](docs/homeserver-docker-compose.md) - native Compose actions.
-- [Homeserver Docker management](docs/homeserver-docker-manage.md) - legacy script actions.
+- [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-gpu_coding) - application deployment from the Docker repository.
 
 Use `README.md` for human-facing project onboarding only.

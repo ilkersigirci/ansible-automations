@@ -19,12 +19,6 @@ uv sync --frozen
 uv run ansible-galaxy collection install -r collections/requirements.yaml
 ```
 
-For homeserver secret workflows, configure and unlock `rbw` locally:
-
-```bash
-rbw unlock
-```
-
 ## Inventory Checks
 
 Ping every host:
@@ -102,28 +96,8 @@ Install Nerd Fonts on development devices:
 uv run ansible-playbook playbooks/font.yml
 ```
 
-Clone or update the homeserver Docker repository:
-
-```bash
-uv run ansible-playbook playbooks/homeserver/pull_repo.yml
-```
-
-Sync homeserver `.env` files from `rbw`:
-
-```bash
-uv run ansible-playbook playbooks/homeserver/sync_env.yml
-```
-
-Run a native homeserver Docker Compose action:
-
-```bash
-uv run ansible-playbook playbooks/homeserver/docker_compose.yml \
-  -e task=update \
-  --limit gpu
-```
-
-Supported native Compose actions are documented in
-[Homeserver Docker Compose](homeserver-docker-compose.md).
+For application deployments, run `~/docker/ansible/run deploy.yml --limit gpu`
+on the control node. See the [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-gpu_coding).
 
 ## Ad-Hoc Commands
 
