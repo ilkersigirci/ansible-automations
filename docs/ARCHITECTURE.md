@@ -25,8 +25,7 @@ and SSH agent forwarding.
 `inventory/hosts.yaml` is the host topology. The main groups are `dev_devices`,
 `lxcs`, `rpis`, and `homeserver`. The `debian_family` group explicitly
 classifies Debian and Ubuntu hosts so OS-specific variables do not affect
-future hosts running other operating systems. Proxmox-hosted Debian VMs belong
-to its `debian_vm` child group.
+future hosts running other operating systems.
 
 `inventory/group_vars` holds shared data. `all.yml` defines the default managed
 user, SSH public key, and default `ansible_user`. `debian_family.yml` pins the

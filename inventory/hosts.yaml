@@ -20,9 +20,9 @@ lxcs:
     nas:
       ansible_host: 192.168.2.23
 
-debian_vm:
-  hosts:
-    gpu:
+# debian_vm:
+#   hosts:
+#     gpu:
 
 oracle_ubuntu:
   hosts:
@@ -46,9 +46,6 @@ rpis:
 
 homeserver:
   hosts:
-    gpu:
-      ansible_host: 100.64.0.9
-      local_static_ip: 192.168.2.9
     titan:
       ansible_host: 100.64.0.19
       local_static_ip: 192.168.2.19
@@ -84,7 +81,7 @@ homeserver:
 
 debian_family:
   children:
-    debian_vm:
+    # debian_vm:
     lxcs:
     oracle_ubuntu:
     rpis:

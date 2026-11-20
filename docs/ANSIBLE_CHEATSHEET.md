@@ -96,7 +96,7 @@ Install Nerd Fonts on development devices:
 uv run ansible-playbook playbooks/font.yml
 ```
 
-For application deployments, run `~/docker/ansible/run deploy.yml --limit gpu`
+For application deployments, run `~/docker/ansible/run deploy.yml --limit titan`
 on the control node. See the [homeserver deployment runbook](https://github.com/ilkersigirci/homeserver-docker/blob/main/docs/RUNNING.md#deploy-from-coding).
 
 ## Ad-Hoc Commands
